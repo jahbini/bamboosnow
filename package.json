@@ -1,0 +1,22 @@
+{
+  "name": "bamboosnow",
+  "version": "1.0.0",
+  "description": "Original Disclosure of Bamboo Snow - making, attributes and using",
+  "main": "site.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://BambooJim@bitbucket.org/BambooJim/bamboosnow.git"
+  },
+  "keywords": [
+    "bamboo",
+    "organic",
+    "commodity",
+    "hygiene"
+  ],
+  "author": "James A. Hinds",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/BambooJim/bamboosnow#readme"
+}
