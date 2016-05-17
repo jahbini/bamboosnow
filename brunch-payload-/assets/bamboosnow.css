@@ -1,15 +1,4 @@
 @charset "UTF-8";
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3SZ2oysoEQEeKwjgmXLRnTc.ttf) format("truetype"); }
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700 ;
-  src: local("Open Sans Bold"), local("OpenSans-Bold"), url(https://fonts.gstatic.com/s/opensans/v10/k3k702ZOKiLJc3WVjuplzJS3E-kSBmtLoNJPDtbj2Pk.ttf) format("truetype"); }
 
 @font-face {
   font-family: 'Merriweather';
@@ -41,8 +30,40 @@
   font-weight: 700;
   src: local("Merriweather Bold Italic"), local("Merriweather-BoldItalic"), url(https://fonts.gstatic.com/s/merriweather/v8/EYh7Vl4ywhowqULgRdYwII1kRdeHIFWYEsp6A2f99b0.ttf) format("truetype"); }
 
-html {
+@font-face {
+  font-family: 'TeamSpirit';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Team Spirit"), url(../fonts/team-spirit-nf.ttf) format("truetype"); }
+
+  @font-face {
+    font-family: 'Vast Shadow';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Vast Shadow Regular'), local('VastShadow-Regular'), url(../fonts/vastshadow.woff) format('woff');
+  }
+  @font-face {
+    font-family: 'Vidaloka';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Vidaloka '), local('Vidaloka-Regular'), url(../fonts/vidaloka.woff) format('woff');
+  }
+
+.team-spirit-loaded .adv-head {
+  font-family:"TeamSpirit",fantasy;
+  letter-spacing: normal
+}
+.vidaloka-loaded .adv-text {
+  font-family: "Vidaloka",cursive
+}
+html.merriweather-loaded {
   font-family: "Merriweather", sans-serif;
+}
+.merriweather-loaded body {
+  font-family: "Merriweather", sans-serif;
+}
+html {
+  font-family: Tahoma, Geneva, sans-serif;
   font-size: 62.5%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -55,8 +76,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: white;
-  font-family: "Merriweather", sans-serif;
+  font-family: Tahoma, Geneva, sans-serif;
   font-size: 1.5rem;
   line-height: 1.85em;
   letter-spacing: 0.01em;
@@ -97,13 +117,13 @@ h3 {
   font-size: 2rem; }
 
 h4 {
-  font-size: 1.8rem; }
+  font-size: 1.6rem; }
 
 h5 {
-  font-size: 1.7rem; }
+  font-size: 1.4rem; }
 
 h6 {
-  font-size: 1.6rem; }
+  font-size: 1.1rem; }
 
 p,
 ul,
@@ -160,8 +180,9 @@ abbr {
 
 blockquote {
   border-left: 2px solid #d1dced;
-  padding: 10px 20px; }
-  blockquote cite:before {
+  margin: 0 0 0 1.4rem;
+  padding: 10px 5px; }
+blockquote cite:before {
     content: ' — ';
     padding: 0 0.3em; }
 
@@ -454,7 +475,7 @@ blockquote {
 #main {
   display: block;
   min-height: 100%;
-  background: #ffffff;
+  background: bg-lighten-1;
   transition: transform 0.25s ease-in-out;
   -webkit-transition: -webkit-transform 0.25s ease-in-out; }
 
@@ -1778,7 +1799,7 @@ a.link-unstyled a.link:active {
 .share-options-bar {
   position: fixed;
   bottom: -155px;
-  background: white;
+  background: bg-white;
   height: 155px;
   clear: both;
   border-top: 1px solid #eef2f8;
