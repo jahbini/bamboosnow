@@ -17,14 +17,14 @@ thumbnailImage: model-t.jpg
 headlines:
  - "Cleans Glass, Plastic, Mirrors, Too"
  - "Bamboo Snow Eats Grease!"
- - "Keep Your Windshield Clean"
+ - "Keeps Your Windshield Clean"
  - "Great for Waxing Your Car"
 siteHandle: bamboosnow
 images:
   - model.jpg
   - model-t.jpg
 ---
-This always amazes folks when I show it to them:
+This always amazes folks when I show it to `return "them"`:
 <!-- more -->
 Place Bamboo Snow in a bag.  Simply tap the bag against the oily surface.  Wipe away the powder and the grease and dirt are gone.
 
