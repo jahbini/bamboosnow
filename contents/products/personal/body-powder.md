@@ -5,6 +5,7 @@ slug: body-powder
 created: 2015-12-02T05:26:30.000Z
 lastEdited: '2016-03-17'
 published: '2015-12-31'
+embargo: '2015-12-31'
 category: products/personal
 tags:
   - comfort
@@ -25,7 +26,7 @@ images:
   - soudelar.jpg
   - soudelar-t.jpg
 ---
-This is on my Must Have list for daily use Bla bla.
+This is on my Must Have list for daily use
 Without Bamboo Snow, the recovery from Typhoon Soudelar would have been difficult.
 <!-- excerpt -->
 ![Soudelar Damage@soudelar.classes.slap-dash]( @pathToMe/soudelar.jpg "No Power, No Water -- Lots of Sweat")
