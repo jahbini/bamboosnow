@@ -29,7 +29,7 @@ images:
 This is on my Must Have list for daily use
 Without Bamboo Snow, the recovery from Typhoon Soudelar would have been difficult.
 <!-- excerpt -->
-![Soudelar Damage@soudelar.classes.slap-dash]( @pathToMe/soudelar.jpg "No Power, No Water -- Lots of Sweat")
+![Soudelar Damage@soudelar.classes.fancybox]( @pathToMe/soudelar.jpg "No Power, No Water -- Lots of Sweat")
 Early in August of 2015, a typhoon of magnificent proportions slammed my homey little island in the Pacific.  It uprooted giant trees and utility poles.  It shut down our wells.  Trees cluttered the roads.  Waiting in the line for gasoline or bottled water took hours.
 
 The clean-up is still in progress: folks off the main roads still do not have electricity.  (in all fairness, I should add that some people on Saipan did not have electricity *even before* Soudelar.)

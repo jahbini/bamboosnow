@@ -64,7 +64,7 @@ module.exports = class BamboosnowLook
             h1 '.white', 'Bamboo Snow -- Multi-Purpose Boon for the World'
 
         div '.flex-auto.md-flex', ->
-          tag "main", '#storybar.flex-auto.order-1.with-columns.p2.bg-lighten-4', ->
+          tag "main", '#storybar.flex-auto.order-1.p2.bg-lighten-4', ->
             h1 options.title
             hr()
             raw story.tmp.cooked || story.get "final"

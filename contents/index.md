@@ -3,7 +3,7 @@ debug: "marked"
 className: Story
 created: '2016-03-11 12:40:04'
 lastEdited: '2016-03-11 14:20:28'
-title: 'Bamboo Snow Starts Here'
+title: 'the Bamboo Snow Story'
 embargo: '2016-03-11 12:40:04'
 category: /
 slug: index
@@ -19,7 +19,7 @@ memberOf: []
 snippets: {  }
 sourcePath: bamboosnow/index.md
 ---
-#### Bamboo Snow is the Multi-Purpose Boon for the World
+#### Bamboo Snow: the Multi-Purpose Boon for the World
 
 * Bamboo Snow is new, and ancient.
 * Bamboo Snow controls bacteria - from zero bacteria growth to 100%.
