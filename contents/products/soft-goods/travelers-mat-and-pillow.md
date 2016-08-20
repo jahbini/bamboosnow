@@ -15,7 +15,7 @@ autoThumbnailImage: false
 thumbnailImage: pillow1-t.jpeg
 headlines:
  - "Hot and Sweaty Waiting for Take-Off?"
- - "Absorbant Pillow for those Long Layovers"
+ - "Absorbent Pillow for those Long Layovers"
  - "Pillow Topper for Maximum Comfort"
 siteHandle: bamboosnow
 images:

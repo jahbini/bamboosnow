@@ -32,6 +32,7 @@ The World
 
 Date:
 December 2, 2015
+Spelling corrections Aug 21, 2016 -- Thanks to Patrick Timlick
 
 
 ## Two Years Experience with Bamboo Snow
@@ -47,7 +48,7 @@ Anyone who knows me will be quite surprised that I noticed my floor or anything 
 My Grand Experiment was to honor a Mission Statement that I posted on my wall, and read everyday.  I had written it months earlier when I decided where to focus my energies:  I want a better Saipan.  I live here.  And I wanted to do it with Bamboo. Because.
 
 > # The Mission Statement
-> *Goal:* Economic undependance for the CNMI, broad spetrum acceptance of the CNMI as economic, social and political entity
+> *Goal:* Economic undependance for the CNMI, broad spectrum acceptance of the CNMI as economic, social and political entity
 >
 > Cultural theme “Where East Meets West”
 >
@@ -71,7 +72,7 @@ It was decay that caught my eye.
 
 In one corner near a doorway, I noticed some tan dust on the floor around the base of an eight foot long section of bamboo.  It had been there for about three months.  The bamboo, that is.  The dust was a bit more recent.  The dust seemed to coat the outside of the shaft of bamboo and fell slowly, like snow to the floor.
 
-I bent down, picked up a pinch of this Bamboo Snow and rubbed some on my hands.  My hands instantly became dry and smooth. Extra sensitive. I felt I could crack a safe - If I knew how.  Dry, Smooth, Sensitive.  I was totally surprised by how effective this stuff was.  In the next few days, I gave small samples to people.  Nobody’s hands fell off.  I sent some to an esthetician for feedback: Bamboo Snow was effective for removing excess skin oil and opening up surface acne.  Bamboo Snow was a super-super absorbant.
+I bent down, picked up a pinch of this Bamboo Snow and rubbed some on my hands.  My hands instantly became dry and smooth. Extra sensitive. I felt I could crack a safe - If I knew how.  Dry, Smooth, Sensitive.  I was totally surprised by how effective this stuff was.  In the next few days, I gave small samples to people.  Nobody’s hands fell off.  I sent some to an esthetician for feedback: Bamboo Snow was effective for removing excess skin oil and opening up surface acne.  Bamboo Snow was a super-super absorbent.
 
 Realizing that this stuff might have many uses, in the months that followed I did many, many strange things with Bamboo Snow — I wet it, froze it, mixed it with oils, lighter fluid, put it in containers and waited for it to smell or decay.  Every experiment geve me new insight into what this stuff could do.  And it does some amazing stuff.
 
@@ -82,7 +83,7 @@ _Liquids:_ Bamboo Snow is dry and thirsty.  It will absorb any liquid it touches
 
 Bamboo Snow turns household water, oils or glue into a putty that can be hand molded and can take any shape.  And, no matter what the liquid is, adding more bamboo snow will break up residual putty that sticks to your hands or work. Bamboo snow makes project clean-up easier.  When the glue is dry, the result can be sanded, cut, drilled, stained or painted.
 
-> Now I know that some of you good readers may remark: “no matter what the liquid is?  What if the liquid is boiling hydrocloric acid? Ha!”
+> Now I know that some of you good readers may remark: “no matter what the liquid is?  What if the liquid is boiling hydrochloric acid? Ha!”
 > Let me respond that you would need to be willing to touch the liquid in question.  As far as strong acids or bases are concerned, more research is needed. *Send money.*
 
 When the liquid is water, any minerals will remain in the bamboo snow ball and will give it some amount of strength.  The result will not shrink or swell, hot or cold, wet or dry.  Blocks made with 1/2 Plaster of Paris and 1/2 Bamboo Snow do not burn, but will wick up both petroleums and water.
@@ -91,9 +92,9 @@ _Gasses:_ Bamboo Snow is full of openings, much like activated carbon.  The diff
 
 _Temperature:_ Bamboo is always the right temperature. It never feels too cold or too hot.  It has very little thermal inertia, or heat holding capability.  Bamboo Snow is the same in this regard: when dry, you can put it in a pressure cooker and raise it’s temperature to 240F, and be able to touch it only seconds after opening the cooker.  I regularly use bamboo snow as insulation: it even prevents steam burns, condensing the steam and holding back the heat.
 
-Dry bamboo snow will stay powdery and adsorbant down to extremely low temperatures.  Experiments with dry ice or liquid nitrogen have not been done, but my expectation is that the bamboo snow would hold both of these, and release them slowly back when re-exposed to normal atmosphere.  Freeze drying of bamboo snow is quite easy,  ice cubes of frozen bamboo snow will sublimate the water in a frost-free freezer in less than a week.  The resulting cube will retain the minerals of the water, and hold the shape exactly, neither expanding, contracting or crumbling over several repeated soaking, freezing and drying cycles.
+Dry bamboo snow will stay powdery and adsorbent down to extremely low temperatures.  Experiments with dry ice or liquid nitrogen have not been done, but my expectation is that the bamboo snow would hold both of these, and release them slowly back when re-exposed to normal atmosphere.  Freeze drying of bamboo snow is quite easy,  ice cubes of frozen bamboo snow will sublimate the water in a frost-free freezer in less than a week.  The resulting cube will retain the minerals of the water, and hold the shape exactly, neither expanding, contracting or crumbling over several repeated soaking, freezing and drying cycles.
 
-This non-expansion property of bamboo snow would be useful to mend cracks in masonry by filling the space with a non-decaying, non-hygroscopic water absorbant material.  It won’t expand during freezing weather.
+This non-expansion property of bamboo snow would be useful to mend cracks in masonry by filling the space with a non-decaying, non-hygroscopic water absorbent material.  It won’t expand during freezing weather.
 
 Higher temperatures will cause bamboo snow to char somewhere above 240F.  The charring will impart a slightly nutty taste.  When ignited, virgin bamboo snow burns very slowly, with no visible flame, except veins of reddish glow.  The normal access to oxygen is very limited and the reaction proceeds slowly to a very fine black charcoal.  The smoke is pleasant and non-acrid.  Several of us have used this smoke to keep mosquitoes away after Typhoon Soudelar.  The amount of silicon in the smoke is unknown, but as the bulk of silicon in bamboo snow is in the form of glass deposits called phytolyths.  These would be present during any fire that burns bamboo.  Bamboo is generally regarded as clean burning firestock.  Production of charcoal is simple: Heating dry bamboo snow in a terra cotta pot embedded in a fire’s dying embers results in a large quantity of very fine charcoal.
 
@@ -162,7 +163,7 @@ Really easy: nature does all the work.
 
 5. collect the tan dust that settles to the floor.
 
-The harvest is continual.  Production rises and peaks with the natural cycles of the insects (mostly the bamboo borer), when the growth spurt from juvenile to adult borer requires them to consume more bamboo.  A forty foot culm, approximetly 5 inches in diameter at the base, will produce more than five gallons of bamboo snow as it decays.
+The harvest is continual.  Production rises and peaks with the natural cycles of the insects (mostly the bamboo borer), when the growth spurt from juvenile to adult borer requires them to consume more bamboo.  A forty foot culm, approximatly 5 inches in diameter at the base, will produce more than five gallons of bamboo snow as it decays.
 
 Bamboo Snow is useful.  It is very easy to produce, and can be done wherever bamboo grows.  In some languages, the word for bamboo also means “villlage” — bamboo snow can be made by even the smallest village or cooperative.   The range of finished products that can be produced from this versatile substance is very broad, and each product will take on some of bamboo snow’s unique and useful properties.
 
