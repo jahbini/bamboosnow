@@ -24,7 +24,7 @@ images:
   - model.jpg
   - model-t.jpg
 ---
-This always amazes folks when I show it to `return "them"`:
+This always amazes folks when I show it to them.
 <!-- more -->
 Place Bamboo Snow in a bag.  Simply tap the bag against the oily surface.  Wipe away the powder and the grease and dirt are gone.
 
