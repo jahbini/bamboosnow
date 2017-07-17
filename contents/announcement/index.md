@@ -12,8 +12,6 @@ headlines:
   - 'Take Notice'
   - 'For Your Eyes!'
   - 'The Important Stuff'
-categories:
-  - general
 date: 2015-12-31T22:51:40.000Z
 priority: 2000
 tags: null

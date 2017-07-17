@@ -4,9 +4,6 @@ title: 'Saipan Market Potentials'
 author: 'James A. Hinds'
 category: economic
 slug: saipan-market-potentials
-categories:
-  - economic
-  - Saipan
 tags:
   - chamorro
   - demographics

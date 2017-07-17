@@ -5,7 +5,7 @@ created: '2016-03-11 12:40:04'
 lastEdited: '2016-03-11 14:20:28'
 title: 'the Bamboo Snow Story'
 embargo: '2016-03-11 12:40:04'
-category: /
+category: "/" 
 slug: index
 siteHandle: bamboosnow
 domain: bamboosnow.com
