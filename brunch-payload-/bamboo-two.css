@@ -62,7 +62,6 @@
 .merriweather-loaded body {
   font-family: "Merriweather", sans-serif;
 }
-../public-bamboosnow/css/app.css {}
 html {
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 62.5%;
@@ -83,7 +82,6 @@ body {
     letter-spacing: 0.01em;
     -webkit-font-smoothing: subpixel-antialiased;
     font-smoothing: subpixel-antialiased; }
-
 body.pushed {
         overflow-x: hidden; }
 
