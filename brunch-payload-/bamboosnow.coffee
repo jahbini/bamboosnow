@@ -1,40 +1,7 @@
 ###
 styling: "Lookand Feel"
 ###
-ST = require "teact"
-T = require "teacup"
-
-try
-  $ ->
-    FontFaceObserver = require 'font-face-observer'
-    observeTeamSpirit = new FontFaceObserver "TeamSpirit",
-      weight: 400
-    observeTeamSpirit.check(null, 10000)
-      .then(
-        ()-> document.documentElement.className += " team-spirit-loaded"
-        ()->  console.log "TeamSpirit Font Problem?!"
-        )
-
-    observeVidaLoca = new FontFaceObserver "vidaloka",
-      weight: 400
-    observeVidaLoca.check(null, 10000)
-      .then(
-        ()->  document.documentElement.className += " vidaloka-loaded"
-        ()->  console.log "Vida Loka Font Problem?!"
-        )
-    observeVastShadow = new FontFaceObserver "vastshadow",
-      weight: 400
-    observeVastShadow.check(null, 10000)
-      .then(
-        ()->  document.documentElement.className += " vastshadow-loaded"
-        ()->  console.log "vastshadow Font Problem?!"
-        )
-
-catch badDog
-  console.log "Font Loader Error-- OK for site-master build phase"
-  console.log badDog
-  
-console.log "Proceeding after font load"  
+T = require "teact"
 
 try
   headerLogoNav = require './header-logo-nav.coffee'
@@ -59,19 +26,15 @@ module.exports = class BamboosnowLook
       delete attrs.id
       title = attrs.title
       delete attrs.title
-      if attrs.class?
-        attrs.class.push "widget-wrap"
-      else
-        attrs.class = [ "widget-wrap"]
+      attrs.className = "widget-wrap"
       T.div attrs , ->
         T.h3 ".widget-title.white", title unless !title
         T.div ".widget.white", contents
 
 
-  formatStory: T.renderable (story) ->
+  formatStory: (story) ->
     options = story.attributes
 
-    T.comment "\nThe Body\n"
     T.body ->
       T.div '.flex.flex-column', style: 'min-height:100vh', ->
         T.header '.center.flex-wrap.p2.border-bottom.bg-darken-4', ->

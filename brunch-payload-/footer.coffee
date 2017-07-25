@@ -3,8 +3,8 @@ styling: "skeleton"
 _options:
 
 ###
-T  = require "teacup"
-module.exports = T.renderable (story) ->
+T  = require "teact"
+module.exports = (story) ->
   options = story.attributes
   T.footer "#footer.main-content-wrap.bg-white", ->
     T.h2 "All contents copyright 2015, James A. Hinds"

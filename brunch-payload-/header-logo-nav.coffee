@@ -3,9 +3,9 @@ styling: "skeleton"
 _options:
 
 ###
-T = require "teacup"
+T = require "teact"
 
-module.exports = T.renderable (story) ->
+module.exports = (story) ->
   options = story.attributes
   siteHandle = story.get 'siteHandle'
   T.header "#header", "data-behavior":"1", ->
