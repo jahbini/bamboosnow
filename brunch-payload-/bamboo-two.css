@@ -56,10 +56,10 @@
 .vidaloka-loaded .adv-text {
   font-family: "Vidaloka",cursive
 }
-.vastshadow-loaded h1 {
+.vastshadow-loaded {
   font-family:"VastShadow",serif;
 }
-.merriweather-loaded body {
+.merriweather-loaded {
   font-family: "Merriweather", sans-serif;
 }
 html {
@@ -82,7 +82,7 @@ body {
     letter-spacing: 0.01em;
     -webkit-font-smoothing: subpixel-antialiased;
     font-smoothing: subpixel-antialiased; }
-body.pushed {
+pushed {
         overflow-x: hidden; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -91,9 +91,7 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: 700;
       line-height: 1.45em;
       color: #090909; }
-.vastshadow-loaded h1 { font-family: "vastshadow",serif}
-.vastshadow-loaded h2 { font-family: "vastshadow",serif}
-.vastshadow-loaded h3 { font-family: "vastshadow",serif}
+.vastshadow-loaded { font-family: "vastshadow",serif}
 
 .color-tan-bamboo { color: hsla(51, 75%, 60%, 1) }
 .bg-tan-bamboo { background-color: hsla(51, 75%, 60%,1) }
