@@ -1,7 +1,9 @@
 ###
 styling: "Lookand Feel"
 ###
-T = require "teact"
+#global pylon
+
+T = Pylon.Teact
 
 $ ->
   try
