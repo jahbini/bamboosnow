@@ -49,7 +49,17 @@ module.exports = T.bless class BodyFormatter extends React.Component
               'data-show-faces': "true"
               'data-auto-logout-link': "true"
               'data-use-continue-as': "true"
-            T.nav '#sidebar', style: 'min-width':'33rem'
+            T.div "#sidecar",()->
+              T.div ".fb-login-button.bg-gray", height:48,
+                width: 300
+                'data-width': "33rem"
+                'data-max-rows': "1"
+                'data-size': "large"
+                'data-button-type': "login_with"
+                'data-show-faces': "true"
+                'data-auto-logout-link': "true"
+                'data-use-continue-as': "true"
+              T.aside "#sidebar"
           if false
             T.aside '#sidebar2.p2.border-left.order-3.col-2', style: 'min-width':'8rem', ->
               T.h1 "Sidebar2"

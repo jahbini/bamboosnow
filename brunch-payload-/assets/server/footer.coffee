@@ -11,6 +11,6 @@ module.exports= T.bless class Footer extends React.Component
         T.Small 'AKA Baba Bamboo Jim'
         T.Avatar size: 48, src: 'http://www.gravatar.com/avatar/c105eda1978979dfb13059b8878ef95d'
         T.Small '.center.m0','The ideas are yours to keep and share, the wording is mine.'
-        T.a href: 'http://rebass.com/', target: '_blank', '(styled components -- rebass.com)'
+        T.a href: 'http://jxnblk.com/rebass', target: '_blank', '(styled components -- http://jxnblk.com/rebass)'
         
         
