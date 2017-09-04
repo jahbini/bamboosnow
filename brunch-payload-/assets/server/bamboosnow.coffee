@@ -20,8 +20,7 @@ module.exports = T.bless class BodyFormatter extends React.Component
     final = @props.page.final
     story = @.props.story
   
-    result = T.body ->
-      T.div '.flex.flex-column', style: 'min-height':'100vh', ->
+    result = T.div "#bamboosnow-body.flex.flex-column", style: 'min-height':'100vh', ->
         HeaderLogoNav @props
         ###
         T.tag 'fb:login-button', scope:"public_profile,email",
@@ -40,32 +39,13 @@ module.exports = T.bless class BodyFormatter extends React.Component
             T.hr()
             T.crel "Bloviation", ".contents", dangerouslySetInnerHTML: __html: final
           T.div "#sidebarTop.order-0.bg-darken-2.flex-auto.col-4.px2",style: 'min-width':'33rem',()->
-            T.div ".fb-login-button.bg-gray", height:48,
-              width: 'inherit'
-              'data-width': "33rem"
-              'data-max-rows': "1"
-              'data-size': "large"
-              'data-button-type': "login_with"
-              'data-show-faces': "true"
-              'data-auto-logout-link': "true"
-              'data-use-continue-as': "true"
-            T.div "#sidecar",()->
-              T.div ".fb-login-button.bg-gray", height:48,
-                width: 300
-                'data-width': "33rem"
-                'data-max-rows': "1"
-                'data-size': "large"
-                'data-button-type': "login_with"
-                'data-show-faces': "true"
-                'data-auto-logout-link': "true"
-                'data-use-continue-as': "true"
-              T.aside "#sidebar"
+            T.aside "#sidebar"
           if false
             T.aside '#sidebar2.p2.border-left.order-3.col-2', style: 'min-width':'8rem', ->
               T.h1 "Sidebar2"
               T.p 'Sidebar2'
         Footer @props
-      T.div "#cover", style: 'background-image': 'url(assets/images/cover.jpg);'
+        T.div "#cover", style: 'background-image': 'url(assets/images/cover.jpg);'
   
     console.log "Proceeding after HTML definition of page for bamboosnow"  
     return result

@@ -117,11 +117,7 @@ ul{ margin:0 0 1.75em}
 }
 @media only screen and (min-width: 1024px) {
 }
-.flex-row{ -webkit-box-orient:vertical;
-   -webkit-box-direction:normal;
-   -webkit-flex-direction:row;
-   -ms-flex-direction:row;
-   flex-direction:row }
+
 .main-content-wrap{ display:block;max-width:750px;margin:0 auto;padding-right:20px;padding-left:20px}
 .category {color:white}
 
