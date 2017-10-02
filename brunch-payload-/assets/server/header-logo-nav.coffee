@@ -6,9 +6,16 @@ React = require 'react'
 T = require "teact"
 
 module.exports = T.bless class HeaderLogoNav extends React.Component
+  constructor: (props)->
+    super()
+    @props = props
+    @
+    
   render: ()=>
     story = @props.story
-    T.header '#header.center.flex.p2.border-bottom.bg-darken-4', ->
+    navLinks =  @props.navLinks
+    id = @props.id || 'header'
+    T.header '##{id}.center.flex.p2.border-bottom.bg-darken-4', ->
       T.div '.flex-auto','min-height': '250px',->
         T.a  href: '//bamboosnow.com', target: '_blank', ->
           T.img '#logoimg.align-middle',src: 'assets/images/logo.svg', width: "150px"

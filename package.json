@@ -20,7 +20,6 @@
   "license": "UNLICENSED",
   "homepage": "https://github.com/BambooJim/bamboosnow#readme",
   "dependencies": {
-    "teacup": "^2.0.0",
     "teact": "https://github.com/jahbini/teact#esBless",
     "underscore": "^1.8.3"
   }

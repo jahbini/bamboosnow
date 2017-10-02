@@ -48,8 +48,7 @@ module.exports = class BamboosnowLook
       title = attrs.title
       delete attrs.title
       attrs.bg = '#c5a31788'
-      T.Container attrs , ->
-        T.Border bottom: true, ()->
-          T.Text f:3, color: 'black', bg: '#c5a317', title unless !title
-          T.div contents
+      T.div '.Container.widget-wrap.bg-silver.p2.m1', attrs , ->
+        T.h3 '.Text.widget-title', f:3, color: 'black', bg: '#c5a317', title unless !title
+        T.div '.widget.m2.p2', contents
 

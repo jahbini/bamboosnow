@@ -3,6 +3,7 @@ styling: "Lookand Feel"
 ###
 React = require 'react'
 T = require "teact"
+_ = require 'underscore'
 
 try
   HeaderLogoNav = require '/site-server-master/public/server/header-logo-nav.coffee'
@@ -15,13 +16,16 @@ catch ermsg
   
 
 module.exports = T.bless class BodyFormatter extends React.Component
-
+  constructor:(@props)->
+    #console.log "BAMBOOSNOW SERVERSIDE CONSTRUCT", @props
+    @
   render: ()=>
     final = @props.page.final
     story = @.props.story
   
+    headerOptions = _.pick @props, ['navLinks','story','page']
     result = T.div "#bamboosnow-body.flex.flex-column", style: 'min-height':'100vh', ->
-        HeaderLogoNav @props
+        HeaderLogoNav '#bamboosnow__header',headerOptions
         ###
         T.tag 'fb:login-button', scope:"public_profile,email",
           onlogin:"checkLoginState();"
