@@ -1,6 +1,6 @@
 {
   "name": "bamboosnow",
-  "version": "1.0.0",
+  "version": "1.7.1",
   "description": "Original Disclosure of Bamboo Snow - making, attributes and using",
   "main": "site.coffee",
   "scripts": {
