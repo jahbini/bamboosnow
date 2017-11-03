@@ -3,7 +3,7 @@ styling: "Lookand Feel"
 ###
 #global pylon
 
-T = Pylon.Teact
+T = Pylon.Halvalla
 
 $ ->
   try
@@ -38,8 +38,6 @@ $ ->
     console.log "Proceeding after font load"  
 
 module.exports = class BamboosnowLook
-  constructor: (@T=T)->
-    return this
     
   widgetWrap: ->
       {attrs,contents} = T.normalizeArgs arguments
@@ -50,5 +48,5 @@ module.exports = class BamboosnowLook
       attrs.bg = '#c5a31788'
       T.div '.Container.widget-wrap.bg-silver.p2.m1', attrs , ->
         T.h3 '.Text.widget-title', f:3, color: 'black', bg: '#c5a317', title unless !title
-        T.div '.widget.m2.p2', contents
+        T.div '.widget.m2.p2', ->contents
 

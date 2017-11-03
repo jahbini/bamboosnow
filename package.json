@@ -8,11 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://BambooJim@bitbucket.org/BambooJim/bamboosnow.git"
+    "url": "git+https://github.com/jahbini/bamboosnow.git"
   },
   "keywords": [
     "bamboo",
     "organic",
+    "cleaning",
+    "insulating",
+    "anti-bacterial",
     "commodity",
     "hygiene"
   ],
@@ -20,7 +23,6 @@
   "license": "UNLICENSED",
   "homepage": "https://github.com/BambooJim/bamboosnow#readme",
   "dependencies": {
-    "teact": "https://github.com/jahbini/teact#esBless",
     "underscore": "^1.8.3"
   }
 }

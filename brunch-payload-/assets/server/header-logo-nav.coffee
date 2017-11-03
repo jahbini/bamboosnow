@@ -2,19 +2,14 @@
 #bamboo snow
 #
 ###
-React = require 'react'
-T = require "teact"
+T = require "halvalla"
 
-module.exports = T.bless class HeaderLogoNav extends React.Component
-  constructor: (props)->
-    super()
-    @props = props
-    @
+module.exports = T.bless class HeaderLogoNav extends T.Component
     
-  render: ()=>
-    story = @props.story
-    navLinks =  @props.navLinks
-    id = @props.id || 'header'
+  view: (props)=>
+    story = props.story
+    navLinks =  props.navLinks
+    id = props.id || 'header'
     T.header '##{id}.center.flex.p2.border-bottom.bg-darken-4', ->
       T.div '.flex-auto','min-height': '250px',->
         T.a  href: '//bamboosnow.com', target: '_blank', ->

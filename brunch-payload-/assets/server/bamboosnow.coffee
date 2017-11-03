@@ -1,8 +1,7 @@
 ###
 styling: "Lookand Feel"
 ###
-React = require 'react'
-T = require "teact"
+T = require "halvalla"
 _ = require 'underscore'
 
 try
@@ -15,16 +14,18 @@ catch ermsg
     
   
 
-module.exports = T.bless class BodyFormatter extends React.Component
-  constructor:(@props)->
-    #console.log "BAMBOOSNOW SERVERSIDE CONSTRUCT", @props
-    @
-  render: ()=>
-    final = @props.page.final
-    story = @.props.story
+module.exports = T.bless class BodyFormatter extends T.Component
+  constructor:()->
+    #console.log "BAMBOOSNOW SERVERSIDE CONSTRUCT"
+    return
+    
+  view: (props)=>
+    final = props.page.final
+    story = props.story
   
-    headerOptions = _.pick @props, ['navLinks','story','page']
-    result = T.div "#bamboosnow-body.flex.flex-column", style: 'min-height':'100vh', ->
+    headerOptions = _.pick props, ['navLinks','story','page']
+    result = T.div "#bamboosnow-body.c-text.o-grid--full", style: 'minHeight':'100vh', ->
+      T.div '.c-hero.o-grid__cell.u-higher', ()->
         HeaderLogoNav '#bamboosnow__header',headerOptions
         ###
         T.tag 'fb:login-button', scope:"public_profile,email",
@@ -37,19 +38,20 @@ module.exports = T.bless class BodyFormatter extends React.Component
           'data-auto-logout-link': true
           'data-use-continue-as': true
         ###
-        T.div '.flex-auto.md-flex', ->
-          T.crel "main", '#storybar.flex-auto.order-1.p2.bg-lighten-4', ->
-            T.h1 story.title
-            T.hr()
-            T.crel "Bloviation", ".contents", dangerouslySetInnerHTML: __html: final
-          T.div "#sidebarTop.order-0.bg-darken-2.flex-auto.col-4.px2",style: 'min-width':'33rem',()->
-            T.aside "#sidebar"
+        T.div '.o-grid__cell', ->
+          T.div '.o-grid',->
+            T.tag "main", '#storybar.o-grid__cell.order-1.bg-lighten-4', ->
+              T.h1 story.title
+              T.hr()
+              T.tag "Bloviation", ".contents", dangerouslySetInnerHTML: __html: final
+            T.div "#sidebarTop.o-grid__cell.o-grid__cell--width-25.order-0.bg-darken-2",style: 'minWidth':'33rem',()->
+              T.aside "#sidebar"
           if false
-            T.aside '#sidebar2.p2.border-left.order-3.col-2', style: 'min-width':'8rem', ->
+            T.aside '#sidebar2.o-grid__cell.o-grid__cell--width-20.p2.border-left.order-3', style: 'minWidth':'8rem', ->
               T.h1 "Sidebar2"
               T.p 'Sidebar2'
-        Footer @props
-        T.div "#cover", style: 'background-image': 'url(assets/images/cover.jpg);'
+        Footer props
+        T.div "#cover", style: 'backgroundImage': 'url(assets/images/cover.jpg);'
   
     console.log "Proceeding after HTML definition of page for bamboosnow"  
     return result
