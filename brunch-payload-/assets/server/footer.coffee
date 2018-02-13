@@ -19,9 +19,9 @@ T = require "halvalla"
 module.exports = T.bless class FootFesh extends T.Component
     
   view: ()=>
-    T.tag 'foot', "#footer", ->
+    T.div "#footer", ->
       T.div ".outer", ->
-        T.div "#footer-info.inner", ->
+        T.div ".inner", ->
           T.text " © 2016 James A. Hinds"
           T.br()
           T.text " Powered by "

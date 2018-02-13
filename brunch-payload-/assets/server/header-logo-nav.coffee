@@ -15,7 +15,7 @@ module.exports = T.bless class HeaderLogoNav extends T.Component
         T.a  href: '//bamboosnow.com', target: '_blank', ->
           T.img '#logoimg.align-middle',src: 'assets/images/logo.svg', width: "150px"
       T.div '.flex-auto.align-middle',->
-        T.h1 '#slogan.silver','Bamboo Snow -- Multi-Purpose Boon for the World'
+        T.h1 '.slogan.silver','Bamboo Snow -- Multi-Purpose Boon for the World'
       T.div "#sidecar.flex-auto.border.rounded.bg-silver",'min-width':'33rem',->
         T.div ".fb-login-button", height:48,
           width: '250px'

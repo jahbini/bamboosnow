@@ -26,7 +26,7 @@ module.exports = T.bless class BodyFormatter extends T.Component
     headerOptions = _.pick props, ['navLinks','story','page']
     result = T.div "#bamboosnow-body.c-text.o-grid--full", style: 'minHeight':'100vh', ->
       T.div '.c-hero.o-grid__cell.u-higher', ()->
-        HeaderLogoNav '#bamboosnow__header',headerOptions
+        HeaderLogoNav headerOptions
         ###
         T.tag 'fb:login-button', scope:"public_profile,email",
           onlogin:"checkLoginState();"
@@ -40,10 +40,10 @@ module.exports = T.bless class BodyFormatter extends T.Component
         ###
         T.div '.o-grid__cell', ->
           T.div '.o-grid',->
-            T.tag "main", '#storybar.o-grid__cell.order-1.bg-lighten-4', ->
+            T.div '#storybar.o-grid__cell.order-1.bg-lighten-4', ->
               T.h1 story.title
               T.hr()
-              T.tag "Bloviation", ".contents", dangerouslySetInnerHTML: __html: final
+              T.div "#bloviation.contents", dangerouslySetInnerHTML: __html: final
             T.div "#sidebarTop.o-grid__cell.o-grid__cell--width-25.order-0.bg-darken-2",style: 'minWidth':'33rem',()->
               T.aside "#sidebar"
           if false
