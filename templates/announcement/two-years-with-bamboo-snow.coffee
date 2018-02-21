@@ -3,175 +3,31 @@ class two_years_with_bamboo_snow extends bamboosnowtemplate
   # 
   # section html
   # 
-  html: =>
-    T.doctype 'html'
-    T.html =>
-      T.head =>
-        T.base href: "/"
-        T.meta name: "author", content: "James A. Hinds: Bubba Baba Bamboo Jim"
-        T.meta "http-equiv": "Content-Type", content: "text/html", charset: "UTF-8"
-        T.meta name: "viewport", content: "width=device-width, initial-scale=1"
-        T.title => T.raw "Bamboo Snow: The Amazing Substance"
-        T.meta name: "description", content: "All that is known about Bamboo Snow"
-        T.meta name: "keywords", content: "bamboo snow,dinoderus minutus,absorbant,dessicant,organic,bamboo byproduct,bamboo"
-        T.meta property: "fb:admins", content: "263369930812986"
-        T.script """
-// This is called with the results from from FB.getLoginStatus().
-function statusChangeCallback(response) {
-//console.log('statusChangeCallback');
-//console.log(response);
-// The response object is returned with a status field that lets the
-// app know the current login status of the person.
-// Full docs on the response object can be found in the documentation
-// for FB.getLoginStatus().
-if (response.status === 'connected') {
-  // Logged into your app and Facebook.
-  testAPI();
-} else {
-  // The person is not logged into your app or we are unable to tell.
-  document.getElementById('fb-status').innerHTML = 'Please log ' +
-    'into this app.';
-}
-}
-
-// This function is called when someone finishes with the Login
-// Button.  See the onlogin handler attached to it in the sample
-// code below.
-function checkLoginState() {
-FB.getLoginStatus(function(response) {
-  statusChangeCallback(response);
-});
-}
-
-window.fbAsyncInit = function() {
-FB.init({
-appId      : '263369930812986',
-cookie     : true,  // enable cookies to allow the server to access 
-                    // the session
-xfbml      : true,  // parse social plugins on this page
-version    : 'v2.8' // use graph api version 2.8
-});
-
-// Now that we've initialized the JavaScript SDK, we call 
-// FB.getLoginStatus().  This function gets the state of the
-// person visiting this page and can return one of three states to
-// the callback you provide.  They can be:
-//
-// 1. Logged into your app ('connected')
-// 2. Logged into Facebook, but not your app ('not_authorized')
-// 3. Not logged into Facebook and can't tell if they are logged into
-//    your app or not.
-//
-// These three cases are handled in the callback function.
-
-FB.getLoginStatus(function(response) {
-statusChangeCallback(response);
-});
-
-};
-
-// Load the SDK asynchronously
-(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = \"//connect.facebook.net/en_US/sdk.js\";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-// Here we run a very simple test of the Graph API after login is
-// successful.  See statusChangeCallback() for when this call is made.
-function testAPI() {
-//console.log('Welcome!  Fetching your information.... ');
-FB.api('/me', 'get', {'fields':'first_name,gender'}, function(response) {
-  //console.log('Successful login for: ', response);
-  $('.FBname').text(response.first_name);
-  document.getElementById('fb-status').innerHTML =
-    'Thanks for logging in, ' + response.first_name + '!';
-});
-}
-"""
-        T.script "document.styling = {\"palx\":\"#03c\",\"black\":\"#000\",\"white\":\"#fff\"}"
-        T.link rel: "apple-touch-icon", sizes: "57x57", href: "/assets/icons/apple-icon-57x57.png"
-        T.link rel: "apple-touch-icon", sizes: "60x60", href: "/assets/icons/apple-icon-60x60.png"
-        T.link rel: "apple-touch-icon", sizes: "72x72", href: "/assets/icons/apple-icon-72x72.png"
-        T.link rel: "apple-touch-icon", sizes: "76x76", href: "/assets/icons/apple-icon-76x76.png"
-        T.link rel: "apple-touch-icon", sizes: "114x114", href: "/assets/icons/apple-icon-114x114.png"
-        T.link rel: "apple-touch-icon", sizes: "120x120", href: "/assets/icons/apple-icon-120x120.png"
-        T.link rel: "apple-touch-icon", sizes: "144x144", href: "/assets/icons/apple-icon-144x144.png"
-        T.link rel: "apple-touch-icon", sizes: "152x152", href: "/assets/icons/apple-icon-152x152.png"
-        T.link rel: "apple-touch-icon", sizes: "180x180", href: "/assets/icons/apple-icon-180x180.png"
-        T.link rel: "icon", type: "image/png", sizes: "192x192", href: "/assets/icons/android-icon-192x192.png"
-        T.link rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/icons/favicon-32x32.png"
-        T.link rel: "icon", type: "image/png", sizes: "96x96", href: "/assets/icons/favicon-96x96.png"
-        T.link rel: "icon", type: "image/png", sizes: "16x16", href: "/assets/icons/favicon-16x16.png"
-        T.link rel: "manifest", href: "/assets/manifest.json"
-        T.meta name: "msapplication-TileColor", content: "#ffffff"
-        T.meta name: "msapplication-TileImage", content: "/assets/icons/ms-icon-144x144.png"
-        T.meta name: "theme-color", content: "#ffffff"
-        T.link rel: "stylesheet", href: "assets/css/vendor.css", "-content--encoding": "gzip"
-        T.link rel: "stylesheet", href: "https://unpkg.com/blaze", "-content--encoding": "gzip"
-        T.link rel: "stylesheet", href: "assets/css/app.css", "-content--encoding": "gzip"
-        T.link rel: "shortcut icon", href: "assets/icons/favicon.ico", type: "image/x-icon"
-        T.link rel: "icon", href: "assets/icons/favicon.ico", type: "image/x-icon"
-        T.script src: "api/allstories"
-        T.script src: "api/mystories"
-        T.script src: "assets/js/vendor.js", "-content--type": "text/javascript", "-content--encoding": "gzip"
-        T.script src: "assets/js/app.js", "-content--type": "text/javascript", "-content--encoding": "gzip"
-        T.script "siteHandle = 'bamboosnow'; topDomain = 'bamboosnow.com'; require('initialize');"
-      T.body =>
-        @bamboosnow_body()
   # 
   # section bamboosnow_body
   # 
-  bamboosnow_body: =>
-    T.div "#bamboosnow-body.c-text.o-grid--full", id: "bamboosnow-body", class: "c-text o-grid--full", style: "min-height:100vh", =>
-      T.div ".c-hero.o-grid__cell.u-higher", class: "c-hero o-grid__cell u-higher", =>
-        T.header ".center.flex.p2.border-bottom.bg-darken-4", class: "center flex p2 border-bottom bg-darken-4", =>
-          T.div ".flex-auto", class: "flex-auto", "min-height": "250px", =>
-            T.a href: "//bamboosnow.com", target: "_blank", =>
-              @logoimg()
-          T.div ".flex-auto.align-middle", class: "flex-auto align-middle", =>
-            T.h1 ".slogan.silver", class: "slogan silver", => T.raw "Bamboo Snow -- Multi-Purpose Boon for the World"
-          @sidecar()
-        T.div ".o-grid__cell", class: "o-grid__cell", =>
-          T.div ".o-grid", class: "o-grid", =>
-            @storybar()
-            @sidebarTop()
-        @footer()
-        @cover()
   # 
   # section cover
   # 
   cover: =>
-    T.div "#cover", id: "cover", style: "background-image:url(assets/images/cover.jpg);"
+    T.div "#cover", style: "background-image:url(assets/images/cover.jpg);"
   # 
   # section footer
   # 
-  footer: =>
-    T.div "#footer", id: "footer", =>
-      T.div ".outer", class: "outer", =>
-        T.div ".inner", class: "inner", =>
-          T.raw "© 2016 James A. Hinds"
-          T.br()
-          T.raw "Powered by"
-          T.a href: "https://github.com/jahbini/site-master", target: "_blank", => T.raw "Site Master"
   # 
   # section sidebarTop
   # 
   sidebarTop: =>
-    T.div "#sidebarTop.o-grid__cell.o-grid__cell--width-25.order-0.bg-darken-2", id: "sidebarTop", class: "o-grid__cell o-grid__cell--width-25 order-0 bg-darken-2", style: "min-width:33rem", =>
+    T.div "#sidebarTop.o-grid__cell.o-grid__cell--width-25.order-0.bg-darken-2", style: "min-width:33rem", =>
       @sidebar()
   # 
   # section sidebar
   # 
-  sidebar: =>
-    T.aside "#sidebar", id: "sidebar"
   # 
   # section storybar
   # 
   storybar: =>
-    T.div "#storybar.o-grid__cell.order-1.bg-lighten-4", id: "storybar", class: "o-grid__cell order-1 bg-lighten-4", =>
+    T.div "#storybar.o-grid__cell.order-1.bg-lighten-4", =>
       T.h1 => T.raw "Two Years with Bamboo Snow"
       T.hr()
       @bloviation()
@@ -179,7 +35,7 @@ FB.api('/me', 'get', {'fields':'first_name,gender'}, function(response) {
   # section bloviation
   # 
   bloviation: =>
-    T.div "#bloviation.contents", id: "bloviation", class: "contents", "dangerously-set-inner-h-t-m-l": "[object Object]", =>
+    T.div "#bloviation.contents", "dangerously-set-inner-h-t-m-l": "[object Object]", =>
       T.p =>
         T.raw "Being part of the open source documentation project regarding the natural substance:"
         T.em => T.raw "Bamboo Snow"
@@ -202,14 +58,10 @@ Spelling corrections Aug 21, 2016 – Thanks to Patrick Timlick
       @rags_to_riches_lemons_to_lemonade_shit_to_super_cleanser_dust_to_water_saver_destruction_to_continuation()
       T.p =>
         T.em => T.raw "Let me start off with an apology."
-        T.raw """
-I am late.  I had given myself a drop-dead, end-of-the-plank ultimatum to have this finished by July 22, 2015.  Unfortunately, I had been given my come-uppance this year by Mother Nature and Uncle Internet.  On my island universe of Saipan, the entire internet was down for three weeks during  July because of a broken underwater fiber-optic cable.  As soon as service was restored, a major storm, Typhoon Soudelar, wiped out water, power and most communications over the entire island.  A month or so later, another typhoon blew out my very nice printer.   I’m sorry, Mz Stitt and Mz Eggleston and Mz Loren for not having my assignment done.  I know they are tut-tutting from some celestial pedestal.
-"""
+        T.raw "I am late.  I had given myself a drop-dead, end-of-the-plank ultimatum to have this finished by July 22, 2015.  Unfortunately, I had been given my come-uppance this year by Mother Nature and Uncle Internet.  On my island universe of Saipan, the entire internet was down for three weeks during  July because of a broken underwater fiber-optic cable.  As soon as service was restored, a major storm, Typhoon Soudelar, wiped out water, power and most communications over the entire island.  A month or so later, another typhoon blew out my very nice printer.   I’m sorry, Mz Stitt and Mz Eggleston and Mz Loren for not having my assignment done.  I know they are tut-tutting from some celestial pedestal."
       T.p =>
         T.em => T.raw "With that said, we start sometime in late June of 2013:"
-        T.raw """
-My best recollection is that sometime in the very last week of June, let’s say June 25, 2013, I noticed some dust on the floor.
-"""
+        T.raw "My best recollection is that sometime in the very last week of June, let’s say June 25, 2013, I noticed some dust on the floor."
       T.p => T.raw "Anyone who knows me will be quite surprised that I noticed my floor or anything on it.  I have a very high tolerance for clutter and chaos, much to the chagrin of sensible people, like yourself.  But this dust was part of my Grand Experiment."
       T.p => T.raw "My Grand Experiment was to honor a Mission Statement that I posted on my wall, and read everyday.  I had written it months earlier when I decided where to focus my energies:  I want a better Saipan.  I live here.  And I wanted to do it with Bamboo. Because."
       T.p =>
@@ -296,9 +148,7 @@ It was decay that caught my eye.
       T.p =>
         T.em =>
           T.em => T.raw "The Fifth Element — Life"
-        T.raw """
-An amazing feature of Bamboo Snow is it’s ability to moderate bacterial, fungal or insect life.  When dry, nothng can live or survive in bamboo snow.  While care must be taken to assure a low moisture environment, the bamboo snow will dessicate any organic or food material and prevent bacterial decay.  But, if water is added the rate of bacterial or other growth is enhanced.
-"""
+        T.raw "An amazing feature of Bamboo Snow is it’s ability to moderate bacterial, fungal or insect life.  When dry, nothng can live or survive in bamboo snow.  While care must be taken to assure a low moisture environment, the bamboo snow will dessicate any organic or food material and prevent bacterial decay.  But, if water is added the rate of bacterial or other growth is enhanced."
         T.em => T.raw "Death:"
         T.raw "Think of the bamboo snow as the left over apartment blocks of the bamboo cells.  Each dwelling has walls and is made of good strong stuff, just right to make a bacteria sized playground.  When there is little water, it mostly goes into the framework of the old walls: the cellulose.  The result is that bacteria do not have enough water to thrive."
       T.p =>
@@ -362,44 +212,38 @@ Normally, virgin bamboo snow has absolutely NO usable food.  Those cell walls ar
   # section how_to_make_bamboo_snow_
   # 
   how_to_make_bamboo_snow_: =>
-    T.h1 "#how-to-make-bamboo-snow-", id: "how-to-make-bamboo-snow-", => T.raw "How to make Bamboo Snow:"
+    T.h1 "#how-to-make-bamboo-snow-", => T.raw "How to make Bamboo Snow:"
   # 
   # section economic_impact_
   # 
   economic_impact_: =>
-    T.h2 "#economic-impact-", id: "economic-impact-", => T.raw "Economic Impact:"
+    T.h2 "#economic-impact-", => T.raw "Economic Impact:"
   # 
   # section the_four_elements_air_earth_fire_and_water
   # 
   the_four_elements_air_earth_fire_and_water: =>
-    T.h2 "#the-four-elements-air-earth-fire-and-water", id: "the-four-elements-air-earth-fire-and-water", => T.raw "The Four Elements: Air, Earth, Fire and Water"
+    T.h2 "#the-four-elements-air-earth-fire-and-water", => T.raw "The Four Elements: Air, Earth, Fire and Water"
   # 
   # section rags_to_riches_lemons_to_lemonade_shit_to_super_cleanser_dust_to_water_saver_destruction_to_continuation
   # 
   rags_to_riches_lemons_to_lemonade_shit_to_super_cleanser_dust_to_water_saver_destruction_to_continuation: =>
-    T.h3 "#rags-to-riches-lemons-to-lemonade-shit-to-super-cleanser-dust-to-water-saver-destruction-to-continuation", id: "rags-to-riches-lemons-to-lemonade-shit-to-super-cleanser-dust-to-water-saver-destruction-to-continuation", => T.raw "Rags to Riches, Lemons to Lemonade, Shit to Super Cleanser, Dust to Water Saver, Destruction to Continuation"
+    T.h3 "#rags-to-riches-lemons-to-lemonade-shit-to-super-cleanser-dust-to-water-saver-destruction-to-continuation", => T.raw "Rags to Riches, Lemons to Lemonade, Shit to Super Cleanser, Dust to Water Saver, Destruction to Continuation"
   # 
   # section two_years_experience_with_bamboo_snow
   # 
   two_years_experience_with_bamboo_snow: =>
-    T.h2 "#two-years-experience-with-bamboo-snow", id: "two-years-experience-with-bamboo-snow", => T.raw "Two Years Experience with Bamboo Snow"
+    T.h2 "#two-years-experience-with-bamboo-snow", => T.raw "Two Years Experience with Bamboo Snow"
   # 
   # section sidecar
   # 
-  sidecar: =>
-    T.div "#sidecar.flex-auto.border.rounded.bg-silver", id: "sidecar", class: "flex-auto border rounded bg-silver", "min-width": "33rem", =>
-      T.div ".fb-login-button", class: "fb-login-button", width: "250px", "data-width": "33rem", "data-max-rows": "1", "data-size": "large", "data-button-type": "login_with", "data-show-faces": "true", "data-auto-logout-link": "true", "data-use-continue-as": "true"
-      @fb_status()
   # 
   # section fb_status
   # 
-  fb_status: =>
-    T.div "#fb-status", id: "fb-status"
   # 
   # section logoimg
   # 
   logoimg: =>
-    T.img "#logoimg.align-middle", id: "logoimg", class: "align-middle", src: "assets/images/logo.svg", width: "150px"
+    T.img "#logoimg.align-middle", src: "assets/images/logo.svg", width: "150px"
   allMeta = [[["name","author"],["content","James A. Hinds: Bubba Baba Bamboo Jim"]],[["http-equiv","Content-Type"],["content","text/html"],["charset","UTF-8"]],[["name","viewport"],["content","width=device-width, initial-scale=1"]],[["name","description"],["content","All that is known about Bamboo Snow"]],[["name","keywords"],["content","bamboo snow,dinoderus minutus,absorbant,dessicant,organic,bamboo byproduct,bamboo"]],[["property","fb:admins"],["content","263369930812986"]],[["name","msapplication-TileColor"],["content","#ffffff"]],[["name","msapplication-TileImage"],["content","/assets/icons/ms-icon-144x144.png"]],[["name","theme-color"],["content","#ffffff"]]]
   htmlTitle = "Bamboo Snow: The Amazing Substance"
 page = new two_years_with_bamboo_snow
