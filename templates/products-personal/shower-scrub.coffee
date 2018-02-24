@@ -43,8 +43,8 @@ class shower_scrub extends bamboosnowtemplate
       T.p =>
         T.div ".clearfix.mb2.border-bottom.fit.shower.right.fancybox.ml1", =>
           T.comment "href=@pathToMe/shower.jpg &amp;amp;quot;Scrub-a-dub clean&amp;amp;quot; title=null text=#shower.right.fancybox.ml1"
-          T.a ".block.mx-auto", href: "products-personal/shower-scrub/shower.jpg &amp;amp;quot;Scrub-a-dub clean&amp;amp;quot;", title: "title", =>
-            T.img ".fig-img", src: "products-personal/shower-scrub/shower-t.jpg &amp;amp;quot;Scrub-a-dub clean&amp;amp;quot;", alt: "alt"
+          T.a ".block.mx-auto", href: "products-personal/shower-scrub/shower.jpg", title: "title", =>
+            T.img ".fig-img", src: "products-personal/shower-scrub/shower-t.jpg", alt: "alt"
           T.p ".caption"
       T.p => T.raw "I have used bamboo snow for two full years:  I have personally verified that bamboo snow is compatible with skin.  Every part.  Yes, that too."
       T.p => T.raw "Bamboo Snow mixes with liquid shower soap to make a very effective face and body scrub.  It cleans away dead skin with ease and rinses thoroughly."

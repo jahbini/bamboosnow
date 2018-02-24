@@ -42,10 +42,9 @@ Without Bamboo Snow, the recovery from Typhoon Soudelar would have been difficul
 """
       T.p =>
         T.div ".clearfix.mb2.border-bottom.fit.soudelar.classes.fancybox", =>
-          T.comment "href=@pathToMe/soudelar.jpg &amp;amp;quot;No Power, No Water -- Lots of Sweat&amp;amp;quot; title=null text=Soudelar Damage@soudelar.classes.fancybox"
-          T.a ".block.mx-auto", href: "products-personal/body-powder/soudelar.jpg &amp;amp;quot;No Power, No Water -- Lots of Sweat&amp;amp;quot;", title: "title", =>
-            T.img ".fig-img", src: "products-personal/body-powder/soudelar-t.jpg &amp;amp;quot;No Power, No Water -- Lots of Sweat&amp;amp;quot;", alt: "Soudelar Damage"
-          T.p ".caption"
+          T.a ".block.mx-auto", href: "products-personal/body-powder/soudelar.jpg", title: "title", =>
+            T.img ".fig-img", src: "products-personal/body-powder/soudelar-t.jpg", alt: "Soudelar Damage"
+          T.p ".caption" ,"No Power, No Water -- Lots of Sweat"
         T.raw "Early in August of 2015, a typhoon of magnificent proportions slammed my homey little island in the Pacific.  It uprooted giant trees and utility poles.  It shut down our wells.  Trees cluttered the roads.  Waiting in the line for gasoline or bottled water took hours."
       T.p =>
         T.raw "The clean-up is still in progress: folks off the main roads still do not have electricity.  (in all fairness, I should add that some people on Saipan did not have electricity"

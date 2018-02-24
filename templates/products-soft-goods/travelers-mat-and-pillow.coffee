@@ -39,18 +39,16 @@ class travelers_mat_and_pillow extends bamboosnowtemplate
       T.p => T.raw "This traveler’s mat has many uses."
       T.p =>
         T.div ".clearfix.mb2.border-bottom.fit.pillow2.right.fancybox", =>
-          T.comment "href=@pathToMe/pillow2.jpeg &amp;amp;quot;Rolled up, your best friend during flights&amp;amp;quot; title=null text=travellers pillow#pillow2.right.fancybox"
-          T.a ".block.mx-auto", href: "products-soft-goods/travelers-mat-and-pillow/pillow2.jpeg &amp;amp;quot;Rolled up, your best friend during flights&amp;amp;quot;", title: "title", =>
-            T.img ".fig-img", src: "products-soft-goods/travelers-mat-and-pillow/pillow2-t.jpeg &amp;amp;quot;Rolled up, your best friend during flights&amp;amp;quot;", alt: "travellers pillow"
-          T.p ".caption"
+          T.a ".block.mx-auto", href: "products-soft-goods/travelers-mat-and-pillow/pillow2.jpeg", title: "title", =>
+            T.img ".fig-img", src: "products-soft-goods/travelers-mat-and-pillow/pillow2-t.jpeg", alt: "travellers pillow"
+          T.p ".caption" ,"Rolled up, your best friend during flights"
         T.raw "Rolled up it makes a neck pillow for waiting between flights.  It makes a great ironing surface to keep your clothes neat while traveling."
       T.p =>
         T.div()
         T.div ".clearfix.mb2.border-bottom.fit.pillow1.left.fancybox", =>
-          T.comment "href=@pathToMe/pillow1.jpeg &amp;amp;quot;multiPurpose!&amp;amp;quot; title=null text=Many Uses#pillow1.left.fancybox"
-          T.a ".block.mx-auto", href: "products-soft-goods/travelers-mat-and-pillow/pillow1.jpeg &amp;amp;quot;multiPurpose!&amp;amp;quot;", title: "title", =>
-            T.img ".fig-img", src: "products-soft-goods/travelers-mat-and-pillow/pillow1-t.jpeg &amp;amp;quot;multiPurpose!&amp;amp;quot;", alt: "Many Uses"
-          T.p ".caption"
+          T.a ".block.mx-auto", href: "products-soft-goods/travelers-mat-and-pillow/pillow1.jpeg", title: "title", =>
+            T.img ".fig-img", src: "products-soft-goods/travelers-mat-and-pillow/pillow1-t.jpeg", alt: "Many Uses"
+          T.p ".caption" ,"multiPurpose!"
         T.raw "Warm it up for 15 seconds in a microwave to make a great muscle relaxer.  Or, freeze it to make a cold pack!"
   # 
   # section sidecar

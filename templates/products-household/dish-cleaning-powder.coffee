@@ -40,20 +40,19 @@ class dish_cleaning_powder extends bamboosnowtemplate
       T.p => T.raw "The water shuts off when somebody on Saipan flushes.  This is what I do:"
       T.p =>
         T.div ".clearfix.mb2.border-bottom.fit.dirty.fancybox.fig-20", =>
-          T.comment "href=@pathToMe/dirty.jpg &amp;amp;quot;Dirty Lid&amp;amp;quot; title=null text=Dirty@dirty.fancybox.fig-20"
-          T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/dirty.jpg &amp;amp;quot;Dirty Lid&amp;amp;quot;", title: "title", =>
-            T.img ".fig-img", src: "products-household/dish-cleaning-powder/dirty-t.jpg &amp;amp;quot;Dirty Lid&amp;amp;quot;", alt: "Dirty"
-          T.p ".caption"
+          T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/dirty.jpg", title: "title", =>
+            T.img ".fig-img", src: "products-household/dish-cleaning-powder/dirty-t.jpg", alt: "Dirty"
+          T.p ".caption","Dirty Lid"
         T.div ".clearfix.mb2.border-bottom.fit.ready.fancybox.fig-20", =>
           T.comment "href=@pathToMe/ready.jpg &amp;amp;quot;Ready, get set&amp;amp;quot; title=null text=Ready@ready.fancybox.fig-20"
-          T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/ready.jpg &amp;amp;quot;Ready, get set&amp;amp;quot;", title: "title", =>
-            T.img ".fig-img", src: "products-household/dish-cleaning-powder/ready-t.jpg &amp;amp;quot;Ready, get set&amp;amp;quot;", alt: "Ready"
-          T.p ".caption"
+          T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/ready.jpg", title: "title", =>
+            T.img ".fig-img", src: "products-household/dish-cleaning-powder/ready-t.jpg", alt: "Ready"
+          T.p ".caption","Get set."
         T.div ".clearfix.mb2.border-bottom.fit.fancybox.fig-20", =>
           T.comment "href=@pathToMe/just-brush.jpg &amp;amp;quot;Go!&amp;amp;quot; title=null text=justBrush@fancybox.fig-20"
-          T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/just-brush.jpg &amp;amp;quot;Go!&amp;amp;quot;", title: "title", =>
-            T.img ".fig-img", src: "products-household/dish-cleaning-powder/just-brush-t.jpg &amp;amp;quot;Go!&amp;amp;quot;", alt: "justBrush"
-          T.p ".caption"
+          T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/just-brush.jpg", title: "title", =>
+            T.img ".fig-img", src: "products-household/dish-cleaning-powder/just-brush-t.jpg", alt: "justBrush"
+          T.p ".caption","Go!"
         @cleanTop()
         @cleanBottom()
       T.ol =>
@@ -66,19 +65,18 @@ class dish_cleaning_powder extends bamboosnowtemplate
   # 
   cleanBottom: =>
     T.div "#cleanBottom.clearfix.mb2.border-bottom.fit.#cleanBottom.fig-20.clear.fancybox", =>
-      T.comment "href=@pathToMe/clean-bottom.jpg &amp;amp;quot;and bottom&amp;amp;quot; title=null text=Squeaky Clean Underneath@#cleanBottom.fig-20.clear.fancybox"
-      T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/clean-bottom.jpg &amp;amp;quot;and bottom&amp;amp;quot;", title: "title", =>
-        T.img ".fig-img", src: "products-household/dish-cleaning-powder/clean-bottom-t.jpg &amp;amp;quot;and bottom&amp;amp;quot;", alt: "Squeaky Clean Underneath"
-      T.p ".caption"
+      T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/clean-bottom.jpg", title: "title", =>
+        T.img ".fig-img", src: "products-household/dish-cleaning-powder/clean-bottom-t.jpg", alt: "Squeaky Clean Underneath"
+      T.p ".caption","and bottom"
   # 
   # section cleanTop
   # 
   cleanTop: =>
     T.div "#cleanTop.clearfix.mb2.border-bottom.fit.#cleanTop.fancybox.fig-20", =>
       T.comment "href=@pathToMe/clean-top.jpg &amp;amp;quot;Clean top&amp;amp;quot; title=null text=Squeaky Clean Top@#cleanTop.fancybox.fig-20"
-      T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/clean-top.jpg &amp;amp;quot;Clean top&amp;amp;quot;", title: "title", =>
-        T.img ".fig-img", src: "products-household/dish-cleaning-powder/clean-top-t.jpg &amp;amp;quot;Clean top&amp;amp;quot;", alt: "Squeaky Clean Top"
-      T.p ".caption"
+      T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/clean-top.jpg", title: "title", =>
+        T.img ".fig-img", src: "products-household/dish-cleaning-powder/clean-top-t.jpg", alt: "Squeaky Clean Top"
+      T.p ".caption","Clean top"
   # 
   # section sidecar
   # 

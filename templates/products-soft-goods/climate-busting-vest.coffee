@@ -38,16 +38,13 @@ class climate_busting_vest extends bamboosnowtemplate
     T.div "#bloviation.contents", "dangerously-set-inner-h-t-m-l": "[object Object]", =>
       T.p => T.raw "Bamboo Snow also breathes — it will absorb the sweat from your body and keep you and your clothes dry when the humidity rises."
       T.p =>
-        T.img ".fancy", title: "title", alt: "vest1", src: "products-soft-goods/climate-busting-vest/vest1.jpg &amp;amp;quot;reversable vest- black out&amp;amp;quot;"
-        T.comment "href=@pathToMe/vest1.jpg &amp;amp;quot;reversable vest- black out&amp;amp;quot; title=null text=vest1@fancy...."
-        T.img ".fancy", title: "title", alt: "vest2", src: "products-soft-goods/climate-busting-vest/vest2.jpg &amp;amp;quot;reversable vest - white out&amp;amp;quot;"
-        T.comment "href=@pathToMe/vest2.jpg &amp;amp;quot;reversable vest - white out&amp;amp;quot; title=null text=vest2@fancy...."
+        T.img ".fancy", title: "title", alt: "vest1", src: "products-soft-goods/climate-busting-vest/vest1.jpg"
+        T.img ".fancy", title: "title", alt: "vest2", src: "products-soft-goods/climate-busting-vest/vest2.jpg"
         T.raw "A vest made with a one quarter to one half inch of bamboo snow filling absorbs sweat far better than cotton."
       T.p => T.raw "Bamboo Snow is an excellent thermal insulator, and keeps you warm in the cold, and cool in the heat."
       T.p => T.raw "Bamboo Snow also breathes — it will absorb the sweat from your body and keep you and your clothes dry when the humidity rises."
       T.p =>
-        T.img ".fancy", title: "title", alt: "vest3", src: "products-soft-goods/climate-busting-vest/vest3.jpg &amp;amp;quot;Climate Control Vestnogo!"
-        T.comment "href=@pathToMe/vest3.jpg &amp;amp;quot;Climate Control Vest@320px 240px&amp;amp;quot; title=null text=vest3@fancy...."
+        T.img ".fancy", title: "title", alt: "vest3", src: "products-soft-goods/climate-busting-vest/vest3.jpg"
         T.raw "The vest was tested by several island residents, including two athletes who used it during training: all confirmed the utility of the vest."
       T.p => T.raw """
 #Use and Care
