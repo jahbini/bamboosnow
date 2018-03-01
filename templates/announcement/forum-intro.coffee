@@ -72,34 +72,6 @@ page = new forum_intro
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
-db[id="59782473d3cfff7cc5f926db"] =
-  title: "The Forum Is Open"
-  slug: "forum-intro"
-  category: "announcement"
-  site: "59781236d3cfff7cc5f92608"
-  accepted: false
-  index: false
-  sourcePath: "bamboosnow/contents/announcement/forum-intro.md"
-  headlines: [
-    "Hear, Ye. Listen We."
-    "Speak! And Add to the Knowledge of Mankind"
-    "If we know about it, we will discuss it here"
-    "What Do We Want? Forum!  When Do We Want It? Now!"
-    "It's Not Wisdom Unless It's Out There"
-  ]
-  tags: []
-  snippets: "{}"
-  memberOf: []
-  created: "2016-08-05T05:26:30.000Z"
-  lastEdited: "2016-08-06T00:00:00.000Z"
-  published: "2016-08-06T00:00:00.000Z"
-  embargo: "2030-01-01T00:00:00.000Z"
-  captureDate: "2017-07-26T05:11:15.000Z"
-  TimeStamp: "1501045875000"
-  author: ""
-  debug: ""
-  id: "59782473d3cfff7cc5f926db"
-  name: "The Forum Is Open"
 ##
 db[id="59782473d3cfff7cc5f926db"] =
   title: "The Forum Is Open"

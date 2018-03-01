@@ -54,12 +54,13 @@ page = new index
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+##
 db[id="59782473d3cfff7cc5f926d7"] =
   title: "Economic Benefits"
   slug: "index"
   category: "economic"
   site: "59781236d3cfff7cc5f92608"
-  accepted: true
+  accepted: false
   index: true
   sourcePath: "bamboosnow/contents/economic/index.md"
   headlines: [
