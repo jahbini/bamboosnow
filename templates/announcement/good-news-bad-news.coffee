@@ -1,5 +1,5 @@
-# 
-class good_news_bad_news extends bamboosnowtemplate
+# #-------- class start
+class  good_news_bad_news extends bamboosnowtemplate
   # 
   # section html
   # 
@@ -95,5 +95,35 @@ class good_news_bad_news extends bamboosnowtemplate
     T.img "#logoimg.align-middle", src: "assets/images/logo.svg", width: "150px"
   allMeta = [[["name","author"],["content","James A. Hinds: Bubba Baba Bamboo Jim"]],[["http-equiv","Content-Type"],["content","text/html"],["charset","UTF-8"]],[["name","viewport"],["content","width=device-width, initial-scale=1"]],[["name","description"],["content","All that is known about Bamboo Snow"]],[["name","keywords"],["content","bamboo snow,dinoderus minutus,absorbant,dessicant,organic,bamboo byproduct,bamboo"]],[["property","fb:admins"],["content","263369930812986"]],[["name","msapplication-TileColor"],["content","#ffffff"]],[["name","msapplication-TileImage"],["content","/assets/icons/ms-icon-144x144.png"]],[["name","theme-color"],["content","#ffffff"]]]
   htmlTitle = "Bamboo Snow: The Amazing Substance"
+#-------- class end
 page = new good_news_bad_news
-console.log T.render page.html
+rendered =  T.render page.html
+# ------- db start
+db = {} unless db
+db[id="59782473d3cfff7cc5f926dd"] =
+  title: "Good News Bad News"
+  slug: "good-news-bad-news"
+  category: "announcement"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  sourcePath: "bamboosnow/contents/announcement/good-news-bad-news.md"
+  headlines: [
+    "Insane Inventor Finds Greatest Boon in Dust"
+    "Saipan Scientist Proves Everything He Knew was Wrong!"
+    "Bamboo Snow is Purified Bamboo!"
+  ]
+  tags: []
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-02T05:26:30.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2016-01-01T00:00:00.000Z"
+  embargo: "2016-01-01T00:00:00.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: ""
+  debug: ""
+  id: "59782473d3cfff7cc5f926dd"
+  name: "Good News Bad News"
+#

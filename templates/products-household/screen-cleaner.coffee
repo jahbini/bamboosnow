@@ -1,5 +1,5 @@
-# 
-class screen_cleaner extends bamboosnowtemplate
+# #-------- class start
+class  screen_cleaner extends bamboosnowtemplate
   # 
   # section html
   # 
@@ -55,5 +55,38 @@ class screen_cleaner extends bamboosnowtemplate
     T.img "#logoimg.align-middle", src: "assets/images/logo.svg", width: "150px"
   allMeta = [[["name","author"],["content","James A. Hinds: Bubba Baba Bamboo Jim"]],[["http-equiv","Content-Type"],["content","text/html"],["charset","UTF-8"]],[["name","viewport"],["content","width=device-width, initial-scale=1"]],[["name","description"],["content","All that is known about Bamboo Snow"]],[["name","keywords"],["content","bamboo snow,dinoderus minutus,absorbant,dessicant,organic,bamboo byproduct,bamboo"]],[["property","fb:admins"],["content","263369930812986"]],[["name","msapplication-TileColor"],["content","#ffffff"]],[["name","msapplication-TileImage"],["content","/assets/icons/ms-icon-144x144.png"]],[["name","theme-color"],["content","#ffffff"]]]
   htmlTitle = "Bamboo Snow: The Amazing Substance"
+#-------- class end
 page = new screen_cleaner
-console.log T.render page.html
+rendered =  T.render page.html
+# ------- db start
+db = {} unless db
+db[id="59782473d3cfff7cc5f926e6"] =
+  title: "Screen Cleaner"
+  slug: "screen-cleaner"
+  category: "products-household"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  sourcePath: "bamboosnow/contents/products/household/screen-cleaner.md"
+  headlines: [
+    "Cleans Glass, Plastic, Mirrors, Too"
+    "Bamboo Snow Eats Grease!"
+    "Keeps Your Windshield Clean"
+    "Great for Waxing Your Car"
+  ]
+  tags: [
+    "59782473d3cfff7cc5f926c6"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-05T05:26:30.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2015-12-31T00:00:00.000Z"
+  embargo: "2015-12-31T00:00:00.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: ""
+  debug: ""
+  id: "59782473d3cfff7cc5f926e6"
+  name: "Screen Cleaner"
+#

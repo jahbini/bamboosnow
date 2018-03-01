@@ -1,5 +1,5 @@
-# 
-class saipan_market_potentials extends bamboosnowtemplate
+# #-------- class start
+class  saipan_market_potentials extends bamboosnowtemplate
   # 
   # section html
   # 
@@ -121,5 +121,38 @@ Camorros started coming back about the time of the Spanish-American war.  They a
     T.img "#logoimg.align-middle", src: "assets/images/logo.svg", width: "150px"
   allMeta = [[["name","author"],["content","James A. Hinds: Bubba Baba Bamboo Jim"]],[["http-equiv","Content-Type"],["content","text/html"],["charset","UTF-8"]],[["name","viewport"],["content","width=device-width, initial-scale=1"]],[["name","description"],["content","All that is known about Bamboo Snow"]],[["name","keywords"],["content","bamboo snow,dinoderus minutus,absorbant,dessicant,organic,bamboo byproduct,bamboo"]],[["property","fb:admins"],["content","263369930812986"]],[["name","msapplication-TileColor"],["content","#ffffff"]],[["name","msapplication-TileImage"],["content","/assets/icons/ms-icon-144x144.png"]],[["name","theme-color"],["content","#ffffff"]]]
   htmlTitle = "Bamboo Snow: The Amazing Substance"
+#-------- class end
 page = new saipan_market_potentials
-console.log T.render page.html
+rendered =  T.render page.html
+# ------- db start
+db = {} unless db
+db[id="59782473d3cfff7cc5f926ea"] =
+  title: "Saipan Market Potentials"
+  slug: "saipan-market-potentials"
+  category: "economic"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  sourcePath: "bamboosnow/contents/economic/saipan-market-potentials.md"
+  headlines: []
+  tags: [
+    "59782473d3cfff7cc5f926d2"
+    "59782473d3cfff7cc5f926c7"
+    "59782473d3cfff7cc5f926d3"
+    "59782473d3cfff7cc5f926d4"
+    "59782473d3cfff7cc5f926d5"
+    "59782473d3cfff7cc5f926d6"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2017-07-26T05:11:15.000Z"
+  lastEdited: "2017-07-26T05:11:15.000Z"
+  published: "2017-07-26T05:11:15.000Z"
+  embargo: "2017-12-31T23:59:59.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: ""
+  debug: ""
+  id: "59782473d3cfff7cc5f926ea"
+  name: "Saipan Market Potentials"
+#
