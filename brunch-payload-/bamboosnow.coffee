@@ -8,13 +8,6 @@ T = Pylon.Halvalla
 $ ->
   try
     FontFaceObserver = require 'font-face-observer'
-    observeTeamSpirit = new FontFaceObserver "TeamSpirit",
-      weight: 400
-    observeTeamSpirit.check(null, 10000)
-      .then(
-        ()-> document.documentElement.className += " team-spirit-loaded"
-        ()->  console.warn "TeamSpirit Font Problem?!"
-        )
 
     observeVidaLoca = new FontFaceObserver "vidaloka",
       weight: 400
