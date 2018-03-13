@@ -156,6 +156,8 @@ page = new product_possibilities
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+
+
 db[id="59782473d3cfff7cc5f926d8"] =
   title: "Product Possibilites"
   slug: "product-possibilities"
@@ -163,7 +165,6 @@ db[id="59782473d3cfff7cc5f926d8"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: false
-  sourcePath: "bamboosnow/contents/economic/product-breakdown.md"
   headlines: [
     "Easy Starter Business Ideas"
     "Go Into Business for Pennies!"
@@ -178,7 +179,7 @@ db[id="59782473d3cfff7cc5f926d8"] =
   embargo: "2017-12-31T23:59:59.000Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: ""
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   debug: ""
   id: "59782473d3cfff7cc5f926d8"
   name: "Product Possibilites"

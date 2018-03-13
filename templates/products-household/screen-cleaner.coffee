@@ -60,6 +60,8 @@ page = new screen_cleaner
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+
+
 db[id="59782473d3cfff7cc5f926e6"] =
   title: "Screen Cleaner"
   slug: "screen-cleaner"
@@ -67,7 +69,6 @@ db[id="59782473d3cfff7cc5f926e6"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: false
-  sourcePath: "bamboosnow/contents/products/household/screen-cleaner.md"
   headlines: [
     "Cleans Glass, Plastic, Mirrors, Too"
     "Bamboo Snow Eats Grease!"
@@ -85,7 +86,7 @@ db[id="59782473d3cfff7cc5f926e6"] =
   embargo: "2015-12-31T00:00:00.000Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: ""
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   debug: ""
   id: "59782473d3cfff7cc5f926e6"
   name: "Screen Cleaner"

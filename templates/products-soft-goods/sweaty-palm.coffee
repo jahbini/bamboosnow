@@ -60,6 +60,8 @@ page = new sweaty_palm
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+
+
 db[id="59782473d3cfff7cc5f926e5"] =
   title: "Sweaty Palm"
   slug: "sweaty-palm"
@@ -67,7 +69,6 @@ db[id="59782473d3cfff7cc5f926e5"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: false
-  sourcePath: "bamboosnow/contents/products/soft-goods/sweaty-palm.md"
   headlines: [
     "Worried About that First Impression?"
     "Assured: A Dry, Clean Handshake"
@@ -84,7 +85,7 @@ db[id="59782473d3cfff7cc5f926e5"] =
   embargo: "2017-12-31T23:59:59.000Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: ""
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   debug: ""
   id: "59782473d3cfff7cc5f926e5"
   name: "Sweaty Palm"

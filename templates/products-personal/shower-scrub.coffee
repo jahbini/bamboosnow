@@ -70,6 +70,8 @@ page = new shower_scrub
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+
+
 db[id="59782473d3cfff7cc5f926ec"] =
   title: "Shower Scrub"
   slug: "shower-scrub"
@@ -77,7 +79,6 @@ db[id="59782473d3cfff7cc5f926ec"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: false
-  sourcePath: "bamboosnow/contents/products/personal/shower-scrub.md"
   headlines: [
     "Two Years of Field Testing!"
     "Cleans All the Way Down, and Back Up"
@@ -97,7 +98,7 @@ db[id="59782473d3cfff7cc5f926ec"] =
   embargo: "2017-12-31T23:59:59.000Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: ""
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   debug: ""
   id: "59782473d3cfff7cc5f926ec"
   name: "Shower Scrub"

@@ -70,6 +70,8 @@ page = new index
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+
+
 db[id="59782473d3cfff7cc5f926de"] =
   title: "the Bamboo Snow Story"
   slug: "index"
@@ -77,7 +79,6 @@ db[id="59782473d3cfff7cc5f926de"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: true
-  sourcePath: "bamboosnow/contents/index.md"
   headlines: [
     "Inventor Discovers Miracle Substance"
     "Dust Farmer Tells All"
@@ -93,7 +94,7 @@ db[id="59782473d3cfff7cc5f926de"] =
   embargo: "2016-03-11T12:40:04.000Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: ""
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   debug: "marked"
   id: "59782473d3cfff7cc5f926de"
   name: "the Bamboo Snow Story"

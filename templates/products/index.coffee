@@ -54,6 +54,8 @@ page = new index
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+
+
 db[id="59782473d3cfff7cc5f926e2"] =
   title: "Product Prototypes"
   slug: "index"
@@ -61,7 +63,6 @@ db[id="59782473d3cfff7cc5f926e2"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: false
   index: true
-  sourcePath: "bamboosnow/contents/products/index.md"
   headlines: [
     "Things that work!"
     "Value for the World!"
@@ -76,7 +77,7 @@ db[id="59782473d3cfff7cc5f926e2"] =
   embargo: "2030-01-01T00:00:00.000Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: ""
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   debug: ""
   id: "59782473d3cfff7cc5f926e2"
   name: "Product Prototypes"

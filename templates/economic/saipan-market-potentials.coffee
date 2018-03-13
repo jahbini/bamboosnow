@@ -126,6 +126,8 @@ page = new saipan_market_potentials
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+
+
 db[id="59782473d3cfff7cc5f926ea"] =
   title: "Saipan Market Potentials"
   slug: "saipan-market-potentials"
@@ -133,7 +135,6 @@ db[id="59782473d3cfff7cc5f926ea"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: false
-  sourcePath: "bamboosnow/contents/economic/saipan-market-potentials.md"
   headlines: []
   tags: [
     "59782473d3cfff7cc5f926d2"
@@ -151,7 +152,7 @@ db[id="59782473d3cfff7cc5f926ea"] =
   embargo: "2017-12-31T23:59:59.000Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: ""
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   debug: ""
   id: "59782473d3cfff7cc5f926ea"
   name: "Saipan Market Potentials"

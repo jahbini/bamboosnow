@@ -72,6 +72,8 @@ page = new craft_powder
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+
+
 db[id="59782473d3cfff7cc5f926eb"] =
   title: "Craft Powder"
   slug: "craft-powder"
@@ -79,7 +81,6 @@ db[id="59782473d3cfff7cc5f926eb"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: false
-  sourcePath: "bamboosnow/contents/products/household/craft-powder.md"
   headlines: [
     "Crafter's Delight"
     "This Craft Powder Cleans You Up, When Job is Done!"
@@ -102,7 +103,7 @@ db[id="59782473d3cfff7cc5f926eb"] =
   embargo: "2016-12-31T00:00:00.000Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: ""
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   debug: ""
   id: "59782473d3cfff7cc5f926eb"
   name: "Craft Powder"

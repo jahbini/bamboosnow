@@ -58,6 +58,8 @@ page = new compost
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+
+
 db[id="59782473d3cfff7cc5f926bc"] =
   title: "Compost"
   slug: "compost"
@@ -65,7 +67,6 @@ db[id="59782473d3cfff7cc5f926bc"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: false
-  sourcePath: "bamboosnow/contents/products/organic/compost.md"
   headlines: [
     "Vermin Free Cmpost"
     "Make Your Own Fertilizer"
@@ -82,7 +83,7 @@ db[id="59782473d3cfff7cc5f926bc"] =
   embargo: "2018-02-24T06:00:11.991Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: ""
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   debug: ""
   bazoogies: "2018-02-24T05:35:09.350Z"
   id: "59782473d3cfff7cc5f926bc"

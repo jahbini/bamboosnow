@@ -251,6 +251,8 @@ page = new two_years_with_bamboo_snow
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+
+
 db[id="59782473d3cfff7cc5f926d9"] =
   title: "Two Years with Bamboo Snow"
   slug: "two-years-with-bamboo-snow"
@@ -258,7 +260,6 @@ db[id="59782473d3cfff7cc5f926d9"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: false
-  sourcePath: "bamboosnow/contents/announcement/two-years-with-bamboo-snow.md"
   headlines: [
     "The Most Import Announcement in 100,000 Years"
   ]
@@ -271,7 +272,7 @@ db[id="59782473d3cfff7cc5f926d9"] =
   embargo: "2015-12-31T00:00:00.000Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: ""
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   debug: ""
   id: "59782473d3cfff7cc5f926d9"
   name: "Two Years with Bamboo Snow"

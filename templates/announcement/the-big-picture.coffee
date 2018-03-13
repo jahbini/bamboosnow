@@ -81,6 +81,8 @@ page = new the_big_picture
 rendered =  T.render page.html
 # ------- db start
 db = {} unless db
+
+
 db[id="59782473d3cfff7cc5f926dc"] =
   title: "The Big Picture"
   slug: "the-big-picture"
@@ -88,7 +90,6 @@ db[id="59782473d3cfff7cc5f926dc"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: false
-  sourcePath: "bamboosnow/contents/announcement/the-big-picture.md"
   headlines: [
     "A Rising Tide Lifts All boats"
     "Nature is the source of all abundance"
@@ -104,7 +105,7 @@ db[id="59782473d3cfff7cc5f926dc"] =
   embargo: "2015-12-31T00:00:00.000Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: ""
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   debug: ""
   id: "59782473d3cfff7cc5f926dc"
   name: "The Big Picture"

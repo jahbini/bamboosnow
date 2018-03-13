@@ -57,6 +57,8 @@ page = new index
 rendered =  T.render page.html
 db = {} unless db
 #
+
+
 db[id="bamboosnowerror404"] =
   title: "404"
   slug: "404"
@@ -64,7 +66,6 @@ db[id="bamboosnowerror404"] =
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: false
-  sourcePath: ""
   headlines: []
   tags: []
   snippets: "{\"first name\":\"first name\"}"
@@ -76,30 +77,7 @@ db[id="bamboosnowerror404"] =
   captureDate: "2018-03-05T04:46:34.621Z"
   TimeStamp: 1520225194621
   debug: ""
-  author: "James A. Hinds: Bubba Baba Bamboo Jim"
-  id: "bamboosnowerror404"
-  name: "404"
-##
-db[id="bamboosnowerror404"] =
-  title: "404"
-  slug: "404"
-  category: "error"
-  site: "59781236d3cfff7cc5f92608"
-  accepted: true
-  index: false
-  sourcePath: ""
-  headlines: []
-  tags: []
-  snippets: "{\"first name\":\"first name\"}"
-  memberOf: []
-  created: "2018-03-05T04:46:34.618Z"
-  lastEdited: "2018-03-05T04:46:34.621Z"
-  published: "2018-03-05T04:46:34.621Z"
-  embargo: "2018-03-05T04:46:34.621Z"
-  captureDate: "2018-03-05T04:46:34.621Z"
-  TimeStamp: 1520225194621
-  debug: ""
-  author: "James A. Hinds: Bubba Baba Bamboo Jim"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
   id: "bamboosnowerror404"
   name: "404"
 #
