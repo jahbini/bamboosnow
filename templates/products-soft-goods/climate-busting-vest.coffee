@@ -53,9 +53,9 @@ This vest is reversable one side reflects heat back to the body, and the other i
       T.p =>
         T.raw "When I’m not wearing it I let it air in the open, and never put it in a closed container."
         T.br()
-        T.raw "It the surface gets soiled, I just mix a bit of cleaner with bamboo snow, and use a brush to clean.  Washing in the laundry is"
+        T.raw "It the surface gets soiled, I just mix a bit of cleaner with bamboo snow, and use a brush to clean.  Washing in the laundry is "
         T.strong => T.raw "not"
-        T.raw "recommended."
+        T.raw " recommended."
       @production_notes()
       T.p =>
         T.raw "alert@@This prototype vest allows the bamboo snow to move, and collect at the bottom."

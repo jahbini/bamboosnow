@@ -44,12 +44,10 @@ class  dish_cleaning_powder extends bamboosnowtemplate
             T.img ".fig-img", src: "products-household/dish-cleaning-powder/dirty-t.jpg", alt: "Dirty"
           T.p ".caption","Dirty Lid"
         T.div ".clearfix.mb2.border-bottom.fit.ready.fancybox.fig-20", =>
-          T.comment "href=@pathToMe/ready.jpg &amp;amp;quot;Ready, get set&amp;amp;quot; title=null text=Ready@ready.fancybox.fig-20"
           T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/ready.jpg", title: "title", =>
             T.img ".fig-img", src: "products-household/dish-cleaning-powder/ready-t.jpg", alt: "Ready"
           T.p ".caption","Get set."
         T.div ".clearfix.mb2.border-bottom.fit.fancybox.fig-20", =>
-          T.comment "href=@pathToMe/just-brush.jpg &amp;amp;quot;Go!&amp;amp;quot; title=null text=justBrush@fancybox.fig-20"
           T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/just-brush.jpg", title: "title", =>
             T.img ".fig-img", src: "products-household/dish-cleaning-powder/just-brush-t.jpg", alt: "justBrush"
           T.p ".caption","Go!"
@@ -73,7 +71,6 @@ class  dish_cleaning_powder extends bamboosnowtemplate
   # 
   cleanTop: =>
     T.div "#cleanTop.clearfix.mb2.border-bottom.fit.#cleanTop.fancybox.fig-20", =>
-      T.comment "href=@pathToMe/clean-top.jpg &amp;amp;quot;Clean top&amp;amp;quot; title=null text=Squeaky Clean Top@#cleanTop.fancybox.fig-20"
       T.a ".block.mx-auto", href: "products-household/dish-cleaning-powder/clean-top.jpg", title: "title", =>
         T.img ".fig-img", src: "products-household/dish-cleaning-powder/clean-top-t.jpg", alt: "Squeaky Clean Top"
       T.p ".caption","Clean top"

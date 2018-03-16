@@ -39,9 +39,8 @@ class  sweat_band extends bamboosnowtemplate
       T.p => T.raw "Keep the sweat out of your eyes!"
       T.p =>
         T.div ".clearfix.mb2.border-bottom.fit.right.fancybox", =>
-          T.comment "href=@pathToMe/sweat-band.jpeg  &amp;amp;quot;no sweat head band@240px 320px&amp;amp;quot; title=null text=sweatband.right.fancybox"
-          T.a ".block.mx-auto", href: "products-soft-goods/sweat-band/sweat-band.jpeg  &amp;amp;quot;no sweat head bandnogo!", title: "title", =>
-            T.img ".fig-img", src: "products-soft-goods/sweat-band/sweat-band-t.jpeg  &amp;amp;quot;no sweat head bandnogo!", alt: "sweatband"
+          T.a ".block.mx-auto", href: "products-soft-goods/sweat-band/sweat-band.jpeg", title: "title", =>
+            T.img ".fig-img", src: "products-soft-goods/sweat-band/sweat-band-t.jpeg" , alt: "sweatband"
           T.p ".caption"
         T.raw "This sweatband keeps working while you do."
   # 

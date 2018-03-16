@@ -38,18 +38,16 @@ class  good_news_bad_news extends bamboosnowtemplate
     T.div "#bloviation.contents", "dangerously-set-inner-h-t-m-l": "[object Object]", =>
       @the_good_news()
       T.p =>
-        T.raw "I have discovered an abundant, ancient, but"
-        T.strong => T.raw "overlooked"
-        T.raw "natural resource that can reduce water consumption worldwide. It is currently in the environment and has been well tolerated by humans for"
+        T.raw "I have discovered an abundant, ancient, but "
+        T.strong "overlooked"
+        T.raw " natural resource that can reduce water consumption worldwide. It is currently in the environment and has been well tolerated by humans for"
         T.em => T.raw "millions"
         T.raw "of years. It can be used daily by millions of people for personal comfort and cleanliness.  It also can be used in construction, agriculture and sanitation."
       T.div()
       T.p =>
-        T.raw "With an infinite shelf life, this commodity is easily and quickly produced wherever bamboo grows. Minimal processing is required to make finished products, merely sifting, mixing or sewing."
+        T.raw "With an infinite shelf life, this commodity is easily and quickly produced wherever bamboo grows. Minimal processing is required to make finished products, merely sifting, mixing or sewing. "
         T.em =>
-          T.raw "This means plantations and remote villages can add this revenue stream with"
-          T.strong => T.raw "no"
-          T.raw "capital investment."
+          T.raw "This means plantations and remote villages can add this revenue stream without costly investment"
       @the_bad_news()
       T.p =>
         T.raw "It’s bug poop.  From"

@@ -94,7 +94,7 @@ construction
 Environmental gains
 &gt;
 """
-        T.strong => T.raw """
+        T.em => T.raw """
 mosquito control
 &gt;
 """

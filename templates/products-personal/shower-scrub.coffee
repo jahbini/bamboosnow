@@ -37,12 +37,11 @@ class  shower_scrub extends bamboosnowtemplate
   bloviation: =>
     T.div "#bloviation.contents", "dangerously-set-inner-h-t-m-l": "[object Object]", =>
       T.p =>
-        T.raw "This is on my"
-        T.strong => T.raw "Must Have"
-        T.raw "List for daily use!"
+        T.raw "This is on my "
+        T.strong "Must Have"
+        T.raw " list for daily use!"
       T.p =>
         T.div ".clearfix.mb2.border-bottom.fit.shower.right.fancybox.ml1", =>
-          T.comment "href=@pathToMe/shower.jpg &amp;amp;quot;Scrub-a-dub clean&amp;amp;quot; title=null text=#shower.right.fancybox.ml1"
           T.a ".block.mx-auto", href: "products-personal/shower-scrub/shower.jpg", title: "title", =>
             T.img ".fig-img", src: "products-personal/shower-scrub/shower-t.jpg", alt: "alt"
           T.p ".caption"
