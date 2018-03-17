@@ -31,7 +31,7 @@ class  two_years_with_bamboo_snow extends bamboosnowtemplate
       T.h1 => T.raw "Two Years with Bamboo Snow"
       T.hr()
       @bloviation()
-  # 
+  #
   # section bloviation
   # 
   bloviation: =>
@@ -54,6 +54,11 @@ Date:
 December 2, 2015
 Spelling corrections Aug 21, 2016 – Thanks to Patrick Timlick
 """
+      T.p => T.raw """
+Date:
+March 17, 2018
+Reformat for move to new web engine structure
+"""
       @two_years_experience_with_bamboo_snow()
       @rags_to_riches_lemons_to_lemonade_shit_to_super_cleanser_dust_to_water_saver_destruction_to_continuation()
       T.p =>
@@ -64,52 +69,26 @@ Spelling corrections Aug 21, 2016 – Thanks to Patrick Timlick
         T.raw "My best recollection is that sometime in the very last week of June, let’s say June 25, 2013, I noticed some dust on the floor."
       T.p => T.raw "Anyone who knows me will be quite surprised that I noticed my floor or anything on it.  I have a very high tolerance for clutter and chaos, much to the chagrin of sensible people, like yourself.  But this dust was part of my Grand Experiment."
       T.p => T.raw "My Grand Experiment was to honor a Mission Statement that I posted on my wall, and read everyday.  I had written it months earlier when I decided where to focus my energies:  I want a better Saipan.  I live here.  And I wanted to do it with Bamboo. Because."
-      T.p =>
-        T.raw """
-&gt; # The Mission Statement
-&gt;
-"""
-        T.em => T.raw "Goal:"
-        T.raw """
-Economic undependance for the CNMI, broad spectrum acceptance of the CNMI as economic, social and political entity
-&gt;
-&gt; Cultural theme “Where East Meets West”
-&gt;
-&gt; Bamboo as first vehicle
-&gt;
-"""
-        T.em => T.raw """
-charcoal
-&gt;
-"""
-        T.raw """
-crafts
-&gt;
-"""
-        T.em => T.raw """
-construction
-&gt;
-"""
-        T.raw """
-Environmental gains
-&gt;
-"""
-        T.em => T.raw """
-mosquito control
-&gt;
-"""
-        T.raw """
-biochar
-&gt;
-"""
-        T.em => T.raw """
-* soil and water remediation (there are still remnants of WWII in the soil of Saipan)
-&gt;
-"""
-        T.raw """
-Energy undependance to reduce oil imports
-&gt; * Construction — replace rust-prone rebar with bamboo equivalent
-"""
+      T.aside =>
+        T.h1 "The Mission Statement"
+        T.p =>
+          T.em "Goal:"
+          T.text "Economic undependance for the CNMI, broad spectrum acceptance of the CNMI as economic, social and political entity"
+        T.blockquote ".c-blockquote",=>
+          T.div ".c-blockquote-body",=>
+            T.p "Cultural theme “Where East Meets West”"
+            T.div "Bamboo as first vehicle"
+            T.ul =>
+              T.li "Charcoal"
+              T.li "Crafts"
+              T.li "Construction"
+              T.li "Environmental Gains"
+              T.li "Mosquito control"
+              T.li "Biochar"
+              T.li "Soil and water remediation (there are still remnants of WWII in the soil of Saipan and Tinian)"
+              T.li "Energy undependance to reduce oil imports"
+              T.li "Construction — replace rust-prone rebar with bamboo equivalent"
+          T.footer ".c-blockquote-footer"," -- Original Vision"
       T.p => T.raw "On Saipan, Bamboo grows wild, mostly.  If a farmer has bamboo growing on the land, that land is unproductive, at least in western terms: Our western technologies are stumped by the utility of bamboo.  We prefer big slabs of trees to do much of our building.  Bamboo requires craftsmen. Craftsmen are the exact opposite of mass production, and we have masses of bamboo.  Bamboo crafts depend on local supplies: There are no local supplies of bamboo in europe, and very very few in North America.  So western mass production grew up without bamboo."
       T.p => T.raw "When I arrived in Saipan, I was unprepared for the fact that even though there were many stands of bamboo on the island, absolutely nobody gave them more than a glance.  Other than minor decorative uses, bamboo was a total nusiance for the locals."
       T.p => T.raw """
@@ -125,12 +104,11 @@ It was decay that caught my eye.
         T.em => T.raw "Liquids:"
         T.raw "Bamboo Snow is dry and thirsty.  It will absorb any liquid it touches instantly.  Oil on the floor? Soaked up and ready to sweep into a pan instantly.  Bamboo Snow will absorb up to two times it’s weight in oil, and if that wasn’t enough, you can add another three times that original weight with water.  The result is a soft ball that holds it’s shape.  If left to dry, the ball remains, but the water is gone.  The oil, may or may not evaporate, but will be contained in the mass."
       T.p => T.raw "Bamboo Snow turns household water, oils or glue into a putty that can be hand molded and can take any shape.  And, no matter what the liquid is, adding more bamboo snow will break up residual putty that sticks to your hands or work. Bamboo snow makes project clean-up easier.  When the glue is dry, the result can be sanded, cut, drilled, stained or painted."
-      T.p =>
-        T.raw """
-&gt; Now I know that some of you good readers may remark: “no matter what the liquid is?  What if the liquid is boiling hydrochloric acid? Ha!”
-&gt; Let me respond that you would need to be willing to touch the liquid in question.  As far as strong acids or bases are concerned, more research is needed.
-"""
-        T.em => T.raw "Send money."
+      T.blockquote ".c-blockquote", =>
+        T.div ".c-blockquote-body", =>
+          T.p "Now I know that some of you good readers may remark: “no matter what the liquid is?  What if the liquid is boiling hydrochloric acid? Ha!”"
+          T.p "Let me respond that you would need to be willing to touch the liquid in question.  As far as strong acids or bases are concerned, more research is needed."
+        T.div ".c-blockquote-footer", "Send money."
       T.p => T.raw "When the liquid is water, any minerals will remain in the bamboo snow ball and will give it some amount of strength.  The result will not shrink or swell, hot or cold, wet or dry.  Blocks made with 1/2 Plaster of Paris and 1/2 Bamboo Snow do not burn, but will wick up both petroleums and water."
       T.p =>
         T.em => T.raw "Gasses:"
