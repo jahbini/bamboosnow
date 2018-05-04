@@ -108,3 +108,40 @@ db[id="59782473d3cfff7cc5f926eb"] =
   id: "59782473d3cfff7cc5f926eb"
   name: "Craft Powder"
 #
+
+
+
+db[id="bamboosnow/products-household/craft-powder"] =
+  title: "Craft Powder"
+  slug: "craft-powder"
+  category: "products-household"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: [
+    "Crafter's Delight"
+    "This Craft Powder Cleans You Up, When Job is Done!"
+    "No One Trick Pony, This Powder Is The Crafter's Best Friend"
+    "Bamboo Snow Tames Glue!"
+    "Turns Glues Into Putty"
+  ]
+  tags: [
+    "59782473d3cfff7cc5f926bd"
+    "59782473d3cfff7cc5f926be"
+    "59782473d3cfff7cc5f926bf"
+    "59782473d3cfff7cc5f926c0"
+    "59782473d3cfff7cc5f926c1"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-02T05:26:30.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2015-12-31T00:00:00.000Z"
+  embargo: "2016-12-31T00:00:00.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/products-household/craft-powder"
+  name: "Craft Powder"
+#

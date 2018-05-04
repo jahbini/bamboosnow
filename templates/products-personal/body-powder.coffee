@@ -107,3 +107,36 @@ db[id="59782473d3cfff7cc5f926ef"] =
   id: "59782473d3cfff7cc5f926ef"
   name: "Body Powder"
 #
+
+
+
+db[id="bamboosnow/products-personal/body-powder"] =
+  title: "Body Powder"
+  slug: "body-powder"
+  category: "products-personal"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: [
+    "What To Do When There is NO Water"
+    "Can't Shower?"
+    "Dry Skin Beats Prickly Heat"
+  ]
+  tags: [
+    "59782473d3cfff7cc5f926ed"
+    "59782473d3cfff7cc5f926ee"
+    "59782473d3cfff7cc5f926c4"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-02T05:26:30.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2015-12-31T00:00:00.000Z"
+  embargo: "2015-12-31T00:00:00.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/products-personal/body-powder"
+  name: "Body Powder"
+#

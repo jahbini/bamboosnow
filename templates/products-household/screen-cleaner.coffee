@@ -91,3 +91,35 @@ db[id="59782473d3cfff7cc5f926e6"] =
   id: "59782473d3cfff7cc5f926e6"
   name: "Screen Cleaner"
 #
+
+
+
+db[id="bamboosnow/products-household/screen-cleaner"] =
+  title: "Screen Cleaner"
+  slug: "screen-cleaner"
+  category: "products-household"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: [
+    "Cleans Glass, Plastic, Mirrors, Too"
+    "Bamboo Snow Eats Grease!"
+    "Keeps Your Windshield Clean"
+    "Great for Waxing Your Car"
+  ]
+  tags: [
+    "59782473d3cfff7cc5f926c6"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-05T05:26:30.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2015-12-31T00:00:00.000Z"
+  embargo: "2015-12-31T00:00:00.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/products-household/screen-cleaner"
+  name: "Screen Cleaner"
+#

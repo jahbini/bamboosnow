@@ -102,3 +102,37 @@ db[id="59782473d3cfff7cc5f926ec"] =
   id: "59782473d3cfff7cc5f926ec"
   name: "Shower Scrub"
 #
+
+
+
+db[id="bamboosnow/products-personal/shower-scrub"] =
+  title: "Shower Scrub"
+  slug: "shower-scrub"
+  category: "products-personal"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: [
+    "Two Years of Field Testing!"
+    "Cleans All the Way Down, and Back Up"
+    "Gets You Super Clean"
+    "The Mechanics Wife's Best Friend"
+    "Cleans Hands, Face and Body"
+  ]
+  tags: [
+    "59782473d3cfff7cc5f926cc"
+    "59782473d3cfff7cc5f926c6"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-04T05:26:30.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2015-12-31T00:00:00.000Z"
+  embargo: "2017-12-31T23:59:59.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/products-personal/shower-scrub"
+  name: "Shower Scrub"
+#

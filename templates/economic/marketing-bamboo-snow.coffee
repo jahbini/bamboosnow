@@ -88,3 +88,30 @@ db[id="59782473d3cfff7cc5f926df"] =
   id: "59782473d3cfff7cc5f926df"
   name: "Marketing Bamboo Snow"
 #
+
+
+
+db[id="bamboosnow/economic/marketing-bamboo-snow"] =
+  title: "Marketing Bamboo Snow"
+  slug: "marketing-bamboo-snow"
+  category: "economic"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: false
+  index: false
+  headlines: []
+  tags: [
+    "59782473d3cfff7cc5f926c7"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-23T14:00:00.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2016-01-01T00:00:00.000Z"
+  embargo: "2030-01-01T00:00:00.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/economic/marketing-bamboo-snow"
+  name: "Marketing Bamboo Snow"
+#

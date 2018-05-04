@@ -91,3 +91,36 @@ db[id="59782473d3cfff7cc5f926e8"] =
   id: "59782473d3cfff7cc5f926e8"
   name: "Sweeping Compound"
 #
+
+
+
+db[id="bamboosnow/products-industrial/sweeping-compound"] =
+  title: "Sweeping Compound"
+  slug: "sweeping-compound"
+  category: "products-industrial"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: [
+    "Sweep Away Messes without Water"
+    "Tames the Messiest Spills"
+    "Clean Up That Garage Floor!"
+  ]
+  tags: [
+    "59782473d3cfff7cc5f926cf"
+    "59782473d3cfff7cc5f926d0"
+    "59782473d3cfff7cc5f926d1"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-02T05:26:30.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2015-12-31T00:00:00.000Z"
+  embargo: "2015-12-31T00:00:00.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/products-industrial/sweeping-compound"
+  name: "Sweeping Compound"
+#

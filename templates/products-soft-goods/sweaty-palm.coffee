@@ -90,3 +90,34 @@ db[id="59782473d3cfff7cc5f926e5"] =
   id: "59782473d3cfff7cc5f926e5"
   name: "Sweaty Palm"
 #
+
+
+
+db[id="bamboosnow/products-soft-goods/sweaty-palm"] =
+  title: "Sweaty Palm"
+  slug: "sweaty-palm"
+  category: "products-soft-goods"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: [
+    "Worried About that First Impression?"
+    "Assured: A Dry, Clean Handshake"
+    "Dry Hands Make the Best Impression"
+  ]
+  tags: [
+    "59782473d3cfff7cc5f926ce"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-05T05:24:19.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2015-12-31T00:00:00.000Z"
+  embargo: "2017-12-31T23:59:59.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/products-soft-goods/sweaty-palm"
+  name: "Sweaty Palm"
+#

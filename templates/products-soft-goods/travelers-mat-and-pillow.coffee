@@ -98,3 +98,34 @@ db[id="59782473d3cfff7cc5f926e3"] =
   id: "59782473d3cfff7cc5f926e3"
   name: "Traveler's Mat and Pillow"
 #
+
+
+
+db[id="bamboosnow/products-soft-goods/travelers-mat-and-pillow"] =
+  title: "Traveler's Mat and Pillow"
+  slug: "travelers-mat-and-pillow"
+  category: "products-soft-goods"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: [
+    "Hot and Sweaty Waiting for Take-Off?"
+    "Absorbent Pillow for those Long Layovers"
+    "Pillow Topper for Maximum Comfort"
+  ]
+  tags: [
+    "59782473d3cfff7cc5f926ce"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-14T05:24:47.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2015-12-31T00:00:00.000Z"
+  embargo: "2017-12-31T23:59:59.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/products-soft-goods/travelers-mat-and-pillow"
+  name: "Traveler's Mat and Pillow"
+#

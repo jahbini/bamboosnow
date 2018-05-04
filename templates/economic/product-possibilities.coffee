@@ -184,3 +184,32 @@ db[id="59782473d3cfff7cc5f926d8"] =
   id: "59782473d3cfff7cc5f926d8"
   name: "Product Possibilites"
 #
+
+
+
+db[id="bamboosnow/economic/product-possibilities"] =
+  title: "Product Possibilites"
+  slug: "product-possibilities"
+  category: "economic"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: [
+    "Easy Starter Business Ideas"
+    "Go Into Business for Pennies!"
+    "Money Making Opportunities"
+  ]
+  tags: []
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-24T05:26:30.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2015-12-31T00:00:00.000Z"
+  embargo: "2017-12-31T23:59:59.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/economic/product-possibilities"
+  name: "Product Possibilites"
+#

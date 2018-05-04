@@ -92,3 +92,35 @@ db[id="59782473d3cfff7cc5f926e0"] =
   id: "59782473d3cfff7cc5f926e0"
   name: "Sweat Band"
 #
+
+
+
+db[id="bamboosnow/products-soft-goods/sweat-band"] =
+  title: "Sweat Band"
+  slug: "sweat-band"
+  category: "products-soft-goods"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: [
+    "Keep the Sweat Out of Your Eyes"
+    "Best!"
+    "Athletes! Check this Out --"
+  ]
+  tags: [
+    "59782473d3cfff7cc5f926c4"
+    "59782473d3cfff7cc5f926cd"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-12T05:26:30.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2015-12-31T00:00:00.000Z"
+  embargo: "2017-12-31T23:59:59.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/products-soft-goods/sweat-band"
+  name: "Sweat Band"
+#

@@ -86,3 +86,30 @@ db[id="59782473d3cfff7cc5f926da"] =
   id: "59782473d3cfff7cc5f926da"
   name: "Charcoal Starter"
 #
+
+
+
+db[id="bamboosnow/products-household/charcoal-starter"] =
+  title: "Charcoal Starter"
+  slug: "charcoal-starter"
+  category: "products-household"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: []
+  tags: [
+    "59782473d3cfff7cc5f926c2"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-02T05:26:30.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2015-12-31T00:00:00.000Z"
+  embargo: "2017-12-31T23:59:59.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/products-household/charcoal-starter"
+  name: "Charcoal Starter"
+#

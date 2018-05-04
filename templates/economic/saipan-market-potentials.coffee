@@ -157,3 +157,35 @@ db[id="59782473d3cfff7cc5f926ea"] =
   id: "59782473d3cfff7cc5f926ea"
   name: "Saipan Market Potentials"
 #
+
+
+
+db[id="bamboosnow/economic/saipan-market-potentials"] =
+  title: "Saipan Market Potentials"
+  slug: "saipan-market-potentials"
+  category: "economic"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: []
+  tags: [
+    "59782473d3cfff7cc5f926d2"
+    "59782473d3cfff7cc5f926c7"
+    "59782473d3cfff7cc5f926d3"
+    "59782473d3cfff7cc5f926d4"
+    "59782473d3cfff7cc5f926d5"
+    "59782473d3cfff7cc5f926d6"
+  ]
+  snippets: "{}"
+  memberOf: []
+  created: "2017-07-26T05:11:15.000Z"
+  lastEdited: "2017-07-26T05:11:15.000Z"
+  published: "2017-07-26T05:11:15.000Z"
+  embargo: "2017-12-31T23:59:59.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/economic/saipan-market-potentials"
+  name: "Saipan Market Potentials"
+#

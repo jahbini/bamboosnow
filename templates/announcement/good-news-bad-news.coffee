@@ -126,3 +126,32 @@ db[id="59782473d3cfff7cc5f926dd"] =
   id: "59782473d3cfff7cc5f926dd"
   name: "Good News Bad News"
 #
+
+
+
+db[id="bamboosnow/announcement/good-news-bad-news"] =
+  title: "Good News Bad News"
+  slug: "good-news-bad-news"
+  category: "announcement"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: true
+  index: false
+  headlines: [
+    "Insane Inventor Finds Greatest Boon in Dust"
+    "Saipan Scientist Proves Everything He Knew was Wrong!"
+    "Bamboo Snow is Purified Bamboo!"
+  ]
+  tags: []
+  snippets: "{}"
+  memberOf: []
+  created: "2015-12-02T05:26:30.000Z"
+  lastEdited: "2016-03-17T00:00:00.000Z"
+  published: "2016-01-01T00:00:00.000Z"
+  embargo: "2016-01-01T00:00:00.000Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/announcement/good-news-bad-news"
+  name: "Good News Bad News"
+#

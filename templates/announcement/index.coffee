@@ -84,3 +84,33 @@ db[id="59782473d3cfff7cc5f926e1"] =
   id: "59782473d3cfff7cc5f926e1"
   name: "Bamboo Snow Timely Public Disclosures"
 #
+
+
+
+db[id="bamboosnow/announcement/index"] =
+  title: "Bamboo Snow Timely Public Disclosures"
+  slug: "index"
+  category: "announcement"
+  site: "59781236d3cfff7cc5f92608"
+  accepted: false
+  index: true
+  headlines: [
+    "Hear Ye"
+    "Take Notice"
+    "For Your Eyes!"
+    "The Important Stuff"
+  ]
+  tags: []
+  snippets: "{}"
+  memberOf: []
+  created: null
+  lastEdited: null
+  published: "2018-02-24T07:10:23.744Z"
+  embargo: "2018-02-24T07:10:23.743Z"
+  captureDate: "2017-07-26T05:11:15.000Z"
+  TimeStamp: "1501045875000"
+  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  debug: ""
+  id: "bamboosnow/announcement/index"
+  name: "Bamboo Snow Timely Public Disclosures"
+#
