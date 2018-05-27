@@ -35,10 +35,20 @@ renderer = class  index extends bamboosnowtemplate
   # section bloviation
   # 
   bloviation: =>
-    T.div "#bloviation.contents", "dangerously-set-inner-h-t-m-l": "[object Object]", =>
-      T.p =>
-        T.raw "Sorry, that does not exist...   Yet."
-        T.a href: "/announcement/two-years-with-bamboo-snow.html", => T.raw " but check out an incredible life with Bamboo Snow."
+    T.div "#bloviation.contents.c-card",=>
+      T.header ".c-card__header",->
+        T.h2 "A nation is guaged by it's public health"
+      T.div ".c-card__body",->
+        T.p => """The productivity and well-being of any society depends on the health of the people.
+Public Sanitation is not just a human right, but is a necessary component for society.
+"""
+        T.p -> """
+Bamboo Snow tames any kind of organic waste by encasing it in an odor free hull, and dehydrating the waste.
+      It turns the septic disaster of open defecation into a simple matter of covering the waste with dehydrating Bamboo Snow.
+"""
+        T.p -> """When the mixture is kept dry the Bamboo Snow maintains a sterile environment.  When water is added it quickly and safely produces useful compost."""
+      T.div ".border", ->
+        T.tag "video",".o-image",width:"420px",controls: true,preload:"metadata",src: "./sanitation/open-defecation/od-bamboo-snow.mp4"
   # 
   # section sidecar
   # 
@@ -56,53 +66,37 @@ renderer = class  index extends bamboosnowtemplate
 #
 #
 db = {} unless db
+# ------- db start
 #
 
 
-db[id="bamboosnowerror404"] =
-  title: "404"
-  slug: "404"
-  category: "error"
+db[id="bamboosnow/sanitation/open-defecation"] =
+  title: "open-defecation"
+  slug: "open-defecation"
+  category: "sanitation"
   site: "59781236d3cfff7cc5f92608"
   accepted: true
   index: false
+  sourcePath: ""
   headlines: []
-  tags: []
+  tags: [
+    "open defecation"
+    "sanitation"
+    "public health"
+    "odorless"
+    "compost"
+    "clean water"
+  ]
   snippets: "{\"first name\":\"first name\"}"
   memberOf: []
-  created: "2018-03-05T04:46:34.618Z"
-  lastEdited: "2018-03-05T04:46:34.621Z"
-  published: "2018-03-05T04:46:34.621Z"
-  embargo: "2018-03-05T04:46:34.621Z"
-  captureDate: "2018-03-05T04:46:34.621Z"
-  TimeStamp: 1520225194621
+  created: "2018-05-06T00:50:00.775Z"
+  lastEdited: "2018-05-06T00:50:00.776Z"
+  published: "2018-05-06T00:50:00.776Z"
+  embargo: "2018-05-06T00:50:00.776Z"
+  captureDate: "2018-05-06T00:50:00.776Z"
+  TimeStamp: 1525567800776
   debug: ""
-  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
-  id: "bamboosnowerror404"
-  name: "404"
-#
-
-
-
-db[id="bamboosnow/error/404"] =
-  title: "404"
-  slug: "404"
-  category: "error"
-  site: "59781236d3cfff7cc5f92608"
-  accepted: true
-  index: false
-  headlines: []
-  tags: []
-  snippets: "{\"first name\":\"first name\"}"
-  memberOf: []
-  created: "2018-03-05T04:46:34.618Z"
-  lastEdited: "2018-03-05T04:46:34.621Z"
-  published: "2018-03-05T04:46:34.621Z"
-  embargo: "2018-03-05T04:46:34.621Z"
-  captureDate: "2018-03-05T04:46:34.621Z"
-  TimeStamp: 1520225194621
-  debug: ""
-  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
-  id: "bamboosnow/error/404"
-  name: "404"
+  author: "James A. Hinds: Bubba Baba Bamboo Jim"
+  id: "bamboosnow/sanitation/open-defecation"
+  name: "open-defecation"
 #
