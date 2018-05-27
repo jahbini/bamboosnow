@@ -1,5 +1,5 @@
 # #-------- class start
-class  climate_busting_vest extends bamboosnowtemplate
+renderer = class  climate_busting_vest extends bamboosnowtemplate
   # 
   # section html
   # 
@@ -82,8 +82,8 @@ This vest is reversable one side reflects heat back to the body, and the other i
   allMeta = [[["name","author"],["content","James A. Hinds: Bubba Baba Bamboo Jim"]],[["http-equiv","Content-Type"],["content","text/html"],["charset","UTF-8"]],[["name","viewport"],["content","width=device-width, initial-scale=1"]],[["name","description"],["content","All that is known about Bamboo Snow"]],[["name","keywords"],["content","bamboo snow,dinoderus minutus,absorbant,dessicant,organic,bamboo byproduct,bamboo"]],[["property","fb:admins"],["content","263369930812986"]],[["name","msapplication-TileColor"],["content","#ffffff"]],[["name","msapplication-TileImage"],["content","/assets/icons/ms-icon-144x144.png"]],[["name","theme-color"],["content","#ffffff"]]]
   htmlTitle = "Bamboo Snow: The Amazing Substance"
 #-------- class end
-page = new climate_busting_vest
-rendered =  T.render page.html
+#
+#
 # ------- db start
 db = {} unless db
 

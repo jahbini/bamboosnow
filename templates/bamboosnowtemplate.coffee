@@ -1,6 +1,8 @@
 # 
 T = require 'halvalla'
+#include card.coffee
 module.exports = class bamboosnowtemplate
+  constructor: (@db)->
   # 
   # section html
   # 
@@ -137,10 +139,28 @@ FB.api('/me', 'get', {'fields':'first_name,gender'}, function(response) {
           @sidecar()
         T.div ".o-grid__cell", =>
           T.div ".o-grid", =>
-            @storybar()
+            T.div "#storybar.o-grid__cell.order-1.bg-lighten-4",=>
+              @storyBar()
             @sidebarTop()
         @footer()
         @cover()
+  # 
+  # section storyBar
+  #
+  storyBar: =>
+    headlines = @db.headlines?
+    headline = '---'
+    if l=headlines?.length
+      r = Math.floor (Math.random() * l)
+      headline = headlines[r ]
+    HalvallaCard "#main.bg-silver",{
+      shadow:"highest"
+      divider:true
+      footerText: "that's all--"
+      headerText: @db?.title
+      subHeaderText: headline
+      content: @bloviation
+      }
   # 
   # section cover
   # 
