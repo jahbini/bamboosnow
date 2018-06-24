@@ -63,7 +63,7 @@ db[id="bamboosnowerror404"] =
   title: "404"
   slug: "404"
   category: "error"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: []
@@ -88,7 +88,7 @@ db[id="bamboosnow/error/404"] =
   title: "404"
   slug: "404"
   category: "error"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: []

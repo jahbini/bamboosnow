@@ -68,7 +68,7 @@ db[id="59782473d3cfff7cc5f926df"] =
   title: "Marketing Bamboo Snow"
   slug: "marketing-bamboo-snow"
   category: "economic"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: false
   index: false
   headlines: []
@@ -95,7 +95,7 @@ db[id="bamboosnow/economic/marketing-bamboo-snow"] =
   title: "Marketing Bamboo Snow"
   slug: "marketing-bamboo-snow"
   category: "economic"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: false
   index: false
   headlines: []

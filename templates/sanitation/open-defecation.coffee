@@ -74,7 +74,7 @@ db[id="bamboosnow/sanitation/open-defecation"] =
   title: "open-defecation"
   slug: "open-defecation"
   category: "sanitation"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   sourcePath: ""

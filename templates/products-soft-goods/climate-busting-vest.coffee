@@ -92,7 +92,7 @@ db[id="59782473d3cfff7cc5f926e4"] =
   title: "Climate Busting Vest"
   slug: "climate-busting-vest"
   category: "products-soft-goods"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [
@@ -125,7 +125,7 @@ db[id="bamboosnow/products-soft-goods/climate-busting-vest"] =
   title: "Climate Busting Vest"
   slug: "climate-busting-vest"
   category: "products-soft-goods"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [

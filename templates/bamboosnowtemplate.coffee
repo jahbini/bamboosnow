@@ -2,7 +2,13 @@
 T = require 'halvalla'
 #include card.coffee
 module.exports = class bamboosnowtemplate
-  constructor: (@db)->
+  #pass the db entry into the class so that the classes have access to it
+  constructor: (@db,@allDB)->
+  #
+  # section storyHeadMatter
+  #
+  storyHeadMatter: =>
+    return
   # 
   # section html
   # 
@@ -17,84 +23,8 @@ module.exports = class bamboosnowtemplate
         T.title => T.raw "Bamboo Snow: The Amazing Substance"
         T.meta name: "description", content: "All that is known about Bamboo Snow"
         T.meta name: "keywords", content: "bamboo snow,dinoderus minutus,absorbant,dessicant,organic,bamboo byproduct,bamboo"
-        T.meta property: "fb:admins", content: "263369930812986"
-        T.script """
-// This is called with the results from from FB.getLoginStatus().
-function statusChangeCallback(response) {
-//console.log('statusChangeCallback');
-//console.log(response);
-// The response object is returned with a status field that lets the
-// app know the current login status of the person.
-// Full docs on the response object can be found in the documentation
-// for FB.getLoginStatus().
-if (response.status === 'connected') {
-  // Logged into your app and Facebook.
-  testAPI();
-} else {
-  // The person is not logged into your app or we are unable to tell.
-  document.getElementById('fb-status').innerHTML = 'Please log ' +
-    'into this app.';
-}
-}
-
-// This function is called when someone finishes with the Login
-// Button.  See the onlogin handler attached to it in the sample
-// code below.
-function checkLoginState() {
-FB.getLoginStatus(function(response) {
-  statusChangeCallback(response);
-});
-}
-
-window.fbAsyncInit = function() {
-FB.init({
-appId      : '263369930812986',
-cookie     : true,  // enable cookies to allow the server to access 
-                    // the session
-xfbml      : true,  // parse social plugins on this page
-version    : 'v2.8' // use graph api version 2.8
-});
-
-// Now that we've initialized the JavaScript SDK, we call 
-// FB.getLoginStatus().  This function gets the state of the
-// person visiting this page and can return one of three states to
-// the callback you provide.  They can be:
-//
-// 1. Logged into your app ('connected')
-// 2. Logged into Facebook, but not your app ('not_authorized')
-// 3. Not logged into Facebook and can't tell if they are logged into
-//    your app or not.
-//
-// These three cases are handled in the callback function.
-
-FB.getLoginStatus(function(response) {
-statusChangeCallback(response);
-});
-
-};
-
-// Load the SDK asynchronously
-(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = \"//connect.facebook.net/en_US/sdk.js\";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-// Here we run a very simple test of the Graph API after login is
-// successful.  See statusChangeCallback() for when this call is made.
-function testAPI() {
-//console.log('Welcome!  Fetching your information.... ');
-FB.api('/me', 'get', {'fields':'first_name,gender'}, function(response) {
-  //console.log('Successful login for: ', response);
-  $('.FBname').text(response.first_name);
-  document.getElementById('fb-status').innerHTML =
-    'Thanks for logging in, ' + response.first_name + '!';
-});
-}
-"""
         T.script "document.styling = {\"palx\":\"#03c\",\"black\":\"#000\",\"white\":\"#fff\"}"
+        @faceBook()
         T.link rel: "apple-touch-icon", sizes: "57x57", href: "/assets/icons/apple-icon-57x57.png"
         T.link rel: "apple-touch-icon", sizes: "60x60", href: "/assets/icons/apple-icon-60x60.png"
         T.link rel: "apple-touch-icon", sizes: "72x72", href: "/assets/icons/apple-icon-72x72.png"
@@ -122,26 +52,44 @@ FB.api('/me', 'get', {'fields':'first_name,gender'}, function(response) {
         T.script src: "assets/js/vendor.js", "-content--type": "text/javascript", "-content--encoding": "gzip"
         T.script src: "assets/js/app.js", "-content--type": "text/javascript", "-content--encoding": "gzip"
         T.script "siteHandle = 'bamboosnow'; topDomain = 'bamboosnow.com'; require('initialize');"
-      T.body =>
+        T.style '',"""#cover {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  height:100%;
+  width:100%;
+}
+"""
+        @storyHeadMatter()
+      T.body  =>
         @bamboosnow_body()
+      return
+  #
+  # section faceBook
+  #
+  faceBook: =>
+    #include fb-script.teacup
   # 
   # section bamboosnow_body
   # 
   bamboosnow_body: =>
-    T.div "#bamboosnow-body.c-text.o-grid--full", style: "min-height:100vh", =>
-      T.div ".c-hero.o-grid__cell.u-higher", =>
+    T.div "#bamboosnow-body", style: "min-height:100vh", =>
+      T.div ".container-fluid", =>
         T.header ".center.flex.p2.border-bottom.bg-darken-4", =>
           T.div ".flex-auto", "min-height": "250px", =>
             T.a href: "//bamboosnow.com", target: "_blank", =>
               @logoimg()
           T.div ".flex-auto.align-middle", =>
-            T.h1 ".slogan.silver", => T.raw "Bamboo Snow -- Multi-Purpose Boon for the World"
+            T.h1 ".font-italic.text-white-50.jah", => T.raw "Bamboo Snow -- Multi-Purpose Boon for the World"
           @sidecar()
-        T.div ".o-grid__cell", =>
-          T.div ".o-grid", =>
-            T.div "#storybar.o-grid__cell.order-1.bg-lighten-4",=>
-              @storyBar()
-            @sidebarTop()
+        T.div ".row", =>
+          T.div ".col.col-12.col-md-9.order-md-last.order-first",=>
+            @storyBar()
+          T.div ".col.col-12.col-md-3",=>
+            @sidebarCap()
         @footer()
         @cover()
   # 
@@ -153,8 +101,8 @@ FB.api('/me', 'get', {'fields':'first_name,gender'}, function(response) {
     if l=headlines?.length
       r = Math.floor (Math.random() * l)
       headline = headlines[r ]
-    HalvallaCard "#main.bg-silver",{
-      shadow:"highest"
+    HalvallaCard "#mainline.bg-lighten-4",{
+      shadow:"shadow"
       divider:true
       footerText: "that's all--"
       headerText: @db?.title
@@ -164,6 +112,8 @@ FB.api('/me', 'get', {'fields':'first_name,gender'}, function(response) {
   # 
   # section cover
   # 
+  cover: =>
+    T.div "#cover.fixed-top", style: "background-image:url(assets/images/cover.jpg);"
   # 
   # section footer
   # 
@@ -176,8 +126,11 @@ FB.api('/me', 'get', {'fields':'first_name,gender'}, function(response) {
           T.raw "Powered by"
           T.a href: "https://github.com/jahbini/site-master", target: "_blank", => T.raw "Site Master"
   # 
-  # section sidebarTop
-  # 
+  # section sidebarCap
+  #
+  sidebarCap: =>
+    T.div "#sidebarCap", =>
+      @sidebar()
   # 
   # section sidebar
   # 
@@ -204,5 +157,6 @@ FB.api('/me', 'get', {'fields':'first_name,gender'}, function(response) {
   # 
   # section logoimg
   # 
-  allMeta = [[["name","author"],["content","James A. Hinds: Bubba Baba Bamboo Jim"]],[["http-equiv","Content-Type"],["content","text/html"],["charset","UTF-8"]],[["name","viewport"],["content","width=device-width, initial-scale=1"]],[["name","description"],["content","All that is known about Bamboo Snow"]],[["name","keywords"],["content","bamboo snow,dinoderus minutus,absorbant,dessicant,organic,bamboo byproduct,bamboo"]],[["property","fb:admins"],["content","263369930812986"]],[["name","msapplication-TileColor"],["content","#ffffff"]],[["name","msapplication-TileImage"],["content","/assets/icons/ms-icon-144x144.png"]],[["name","theme-color"],["content","#ffffff"]]]
-  htmlTitle = "Bamboo Snow: The Amazing Substance"
+  logoimg: =>
+    T.img "#logoimg.align-middle", src: "assets/images/logo.svg", width: "150px"
+   

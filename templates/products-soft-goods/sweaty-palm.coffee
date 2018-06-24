@@ -66,7 +66,7 @@ db[id="59782473d3cfff7cc5f926e5"] =
   title: "Sweaty Palm"
   slug: "sweaty-palm"
   category: "products-soft-goods"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [
@@ -97,7 +97,7 @@ db[id="bamboosnow/products-soft-goods/sweaty-palm"] =
   title: "Sweaty Palm"
   slug: "sweaty-palm"
   category: "products-soft-goods"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [

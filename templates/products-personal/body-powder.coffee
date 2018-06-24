@@ -81,7 +81,7 @@ db[id="59782473d3cfff7cc5f926ef"] =
   title: "Body Powder"
   slug: "body-powder"
   category: "products-personal"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [
@@ -114,7 +114,7 @@ db[id="bamboosnow/products-personal/body-powder"] =
   title: "Body Powder"
   slug: "body-powder"
   category: "products-personal"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [

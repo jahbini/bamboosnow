@@ -76,7 +76,7 @@ db[id="59782473d3cfff7cc5f926de"] =
   title: "the Bamboo Snow Story"
   slug: "index"
   category: "-"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: true
   headlines: [
@@ -106,7 +106,7 @@ db[id="bamboosnow/-/index"] =
   title: "the Bamboo Snow Story"
   slug: "index"
   category: "-"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: true
   headlines: [

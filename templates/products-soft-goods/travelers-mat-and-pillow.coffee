@@ -74,7 +74,7 @@ db[id="59782473d3cfff7cc5f926e3"] =
   title: "Traveler's Mat and Pillow"
   slug: "travelers-mat-and-pillow"
   category: "products-soft-goods"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [
@@ -105,7 +105,7 @@ db[id="bamboosnow/products-soft-goods/travelers-mat-and-pillow"] =
   title: "Traveler's Mat and Pillow"
   slug: "travelers-mat-and-pillow"
   category: "products-soft-goods"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [

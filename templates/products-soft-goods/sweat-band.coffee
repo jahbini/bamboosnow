@@ -67,7 +67,7 @@ db[id="59782473d3cfff7cc5f926e0"] =
   title: "Sweat Band"
   slug: "sweat-band"
   category: "products-soft-goods"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [
@@ -99,7 +99,7 @@ db[id="bamboosnow/products-soft-goods/sweat-band"] =
   title: "Sweat Band"
   slug: "sweat-band"
   category: "products-soft-goods"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [

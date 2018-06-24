@@ -65,7 +65,7 @@ db[id="59782473d3cfff7cc5f926e8"] =
   title: "Sweeping Compound"
   slug: "sweeping-compound"
   category: "products-industrial"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [
@@ -98,7 +98,7 @@ db[id="bamboosnow/products-industrial/sweeping-compound"] =
   title: "Sweeping Compound"
   slug: "sweeping-compound"
   category: "products-industrial"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [

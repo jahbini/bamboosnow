@@ -60,7 +60,7 @@ db[id="59782473d3cfff7cc5f926e2"] =
   title: "Product Prototypes"
   slug: "index"
   category: "products"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: false
   index: true
   headlines: [
@@ -89,7 +89,7 @@ db[id="bamboosnow/products/index"] =
   title: "Product Prototypes"
   slug: "index"
   category: "products"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: false
   index: true
   headlines: [

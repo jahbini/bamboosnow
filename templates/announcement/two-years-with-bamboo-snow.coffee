@@ -235,7 +235,7 @@ db[id="59782473d3cfff7cc5f926d9"] =
   title: "Two Years with Bamboo Snow"
   slug: "two-years-with-bamboo-snow"
   category: "announcement"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [
@@ -262,7 +262,7 @@ db[id="bamboosnow/announcement/two-years-with-bamboo-snow"] =
   title: "Two Years with Bamboo Snow"
   slug: "two-years-with-bamboo-snow"
   category: "announcement"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [

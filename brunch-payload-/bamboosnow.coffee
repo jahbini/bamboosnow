@@ -38,8 +38,8 @@ module.exports = class BamboosnowLook
       delete attrs.id
       title = attrs.title
       delete attrs.title
-      attrs.bg = '#c5a31788'
-      T.div '.Container.widget-wrap.bg-silver.p2.m1', attrs , ->
-        T.h3 '.Text.widget-title', f:3, color: 'black', bg: '#c5a317', title unless !title
-        T.div '.widget.m2.p2', ->contents
+      #attrs.bg = '#c5a31788'
+      T.div '.widget-wrap.bg-lighten-4.p-2.my-1', attrs , ->
+        T.h3 '.widget-title', f:3, color: 'black', bg: '#c5a317', title unless !title
+        T.div '.btn-group.btn-group-vertical.widget.my-2.p-2', ->contents
 

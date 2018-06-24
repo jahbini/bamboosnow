@@ -104,7 +104,7 @@ db[id="59782473d3cfff7cc5f926dd"] =
   title: "Good News Bad News"
   slug: "good-news-bad-news"
   category: "announcement"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [
@@ -133,7 +133,7 @@ db[id="bamboosnow/announcement/good-news-bad-news"] =
   title: "Good News Bad News"
   slug: "good-news-bad-news"
   category: "announcement"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: true
   index: false
   headlines: [

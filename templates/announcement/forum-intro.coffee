@@ -79,7 +79,7 @@ db[id="59782473d3cfff7cc5f926db"] =
   title: "The Forum Is Open"
   slug: "forum-intro"
   category: "announcement"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: false
   index: false
   headlines: [
@@ -110,7 +110,7 @@ db[id="bamboosnow/announcement/forum-intro"] =
   title: "The Forum Is Open"
   slug: "forum-intro"
   category: "announcement"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: false
   index: false
   headlines: [

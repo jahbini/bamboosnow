@@ -60,7 +60,7 @@ db[id="bamboosnow/announcement/index"] =
   title: "Bamboo Snow Timely Public Disclosures"
   slug: "index"
   category: "announcement"
-  site: "59781236d3cfff7cc5f92608"
+  site: "bamboosnow"
   accepted: false
   index: true
   headlines: [
