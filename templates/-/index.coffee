@@ -1,10 +1,10 @@
 # #-------- class start
-renderer = class  index extends bamboosnowtemplate
+renderer = class  index extends cambodiancenterforbamboostudiestemplate
   # 
   # section html
   # 
   # 
-  # section bamboosnow_body
+  # section cambodiancenterforbamboostudies_body
   # 
   # 
   # section cover
@@ -72,11 +72,11 @@ renderer = class  index extends bamboosnowtemplate
 db = {} unless db
 
 
-db[id="59782473d3cfff7cc5f926de"] =
+db[id="cambodiancenterforbamboostudies/-/index"] =
   title: "the Bamboo Snow Story"
   slug: "index"
   category: "-"
-  site: "bamboosnow"
+  site: "cambodiancenterforbamboostudies"
   accepted: true
   index: true
   headlines: [
@@ -94,38 +94,8 @@ db[id="59782473d3cfff7cc5f926de"] =
   embargo: "2016-03-11T12:40:04.000Z"
   captureDate: "2017-07-26T05:11:15.000Z"
   TimeStamp: "1501045875000"
-  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  author: "Copyright 2020 James A. Hinds"
   debug: "marked"
-  id: "59782473d3cfff7cc5f926de"
-  name: "the Bamboo Snow Story"
-#
-
-
-
-db[id="bamboosnow/-/index"] =
-  title: "the Bamboo Snow Story"
-  slug: "index"
-  category: "-"
-  site: "bamboosnow"
-  accepted: true
-  index: true
-  headlines: [
-    "Inventor Discovers Miracle Substance"
-    "Dust Farmer Tells All"
-    "Better Hygiene With Bamboo Snow"
-    "A Discovery that Slept for a Million Years"
-  ]
-  tags: []
-  snippets: "{}"
-  memberOf: []
-  created: "2016-03-11T12:40:04.000Z"
-  lastEdited: "2016-03-11T14:20:28.000Z"
-  published: "2017-07-26T05:11:15.000Z"
-  embargo: "2016-03-11T12:40:04.000Z"
-  captureDate: "2017-07-26T05:11:15.000Z"
-  TimeStamp: "1501045875000"
-  author: "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
-  debug: "marked"
-  id: "bamboosnow/-/index"
-  name: "the Bamboo Snow Story"
+  id: "cambodiancenterforbamboostudies/-/index"
+  name: "Bamboo for Cambodians"
 #

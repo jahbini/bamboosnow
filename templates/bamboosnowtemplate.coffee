@@ -1,7 +1,7 @@
 # 
 T = require 'halvalla'
 #include card.coffee
-module.exports = class bamboosnowtemplate
+module.exports = class cambodiancenterforbamboostudiestemplate
   #pass the db entry into the class so that the classes have access to it
   constructor: (@db,@allDB)->
   #
@@ -51,7 +51,7 @@ module.exports = class bamboosnowtemplate
         T.script src: "mystories.json"
         T.script src: "assets/js/vendor.js", "-content--type": "text/javascript", "-content--encoding": "gzip"
         T.script src: "assets/js/app.js", "-content--type": "text/javascript", "-content--encoding": "gzip"
-        T.script "siteHandle = 'bamboosnow'; topDomain = 'bamboosnow.com'; require('initialize');"
+        T.script "siteHandle = 'cambodiancenterforbamboostudies'; topDomain = 'cambodiancenterforbamboostudies.com'; require('initialize');"
         T.style '',"""#cover {
   top: 0;
   left: 0;
@@ -65,7 +65,7 @@ module.exports = class bamboosnowtemplate
 """
         @storyHeadMatter()
       T.body  =>
-        @bamboosnow_body()
+        @cambodiancenterforbamboostudies_body()
       return
   #
   # section faceBook
@@ -73,14 +73,14 @@ module.exports = class bamboosnowtemplate
   faceBook: =>
     #include fb-script.teacup
   # 
-  # section bamboosnow_body
+  # section cambodiancenterforbamboostudies_body
   # 
-  bamboosnow_body: =>
-    T.div "#bamboosnow-body", style: "min-height:100vh", =>
+  cambodiancenterforbamboostudies_body: =>
+    T.div "#cambodiancenterforbamboostudies-body", style: "min-height:100vh", =>
       T.div ".container-fluid", =>
         T.header ".center.flex.p2.border-bottom.bg-darken-4", =>
           T.div ".flex-auto", "min-height": "250px", =>
-            T.a href: "//bamboosnow.com", target: "_blank", =>
+            T.a href: "//cambodiancenterforbamboostudies.com", target: "_blank", =>
               @logoimg()
           T.div ".flex-auto.align-middle", =>
             T.h1 ".font-italic.text-white-50.jah", => T.raw "Bamboo Snow -- Multi-Purpose Boon for the World"

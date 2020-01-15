@@ -1,5 +1,5 @@
 # #-------- class start
-renderer = class  index extends bamboosnowtemplate
+renderer = class  index extends cambodiancenterforbamboostudiestemplate
   #
   # section storyHeadMatter
   #
@@ -9,7 +9,7 @@ renderer = class  index extends bamboosnowtemplate
   # section html
   # 
   # 
-  # section bamboosnow_body
+  # section cambodiancenterforbamboostudies_body
   # 
   # 
   # section cover
