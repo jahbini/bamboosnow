@@ -1,5 +1,10 @@
 # #-------- class start
 renderer = class  index extends cambodiancenterforbamboostudiestemplate
+  #
+  # section storyHeadMatter
+  #
+  storyHeadMatter: => # override in story
+    return
   # 
   # section html
   # 
@@ -9,49 +14,27 @@ renderer = class  index extends cambodiancenterforbamboostudiestemplate
   # 
   # section cover
   # 
-  cover: =>
-    T.div "#cover", style: "background-image:url(assets/images/cover.jpg);"
   # 
   # section footer
   # 
   # 
   # section sidebarTop
   # 
-  sidebarTop: =>
-    T.div "#sidebarTop.o-grid__cell.o-grid__cell--width-25.order-0.bg-darken-2", style: "min-width:33rem", =>
-      @sidebar()
   # 
   # section sidebar
   # 
   # 
   # section storybar
   # 
-  storybar: =>
-    T.div "#storybar.o-grid__cell.order-1.bg-lighten-4", =>
-      T.h1 => T.raw "the Bamboo Snow Story"
-      T.hr()
-      @bloviation()
   # 
   # section bloviation
   # 
   bloviation: =>
-    T.div "#bloviation.contents", "dangerously-set-inner-h-t-m-l": "[object Object]", =>
-      @bamboo_snow_the_multi_purpose_boon_for_the_world()
-      T.ul =>
-        T.li => T.raw "Bamboo Snow is new, and ancient."
-        T.li => T.raw "Bamboo Snow controls bacteria - from zero bacteria growth to 100%."
-        T.li => T.raw "Bamboo Snow controls fire - puts out oil fires easily, and slows combustion."
-        T.li => T.raw "Bamboo Snow cleans nearly everything you have: mirrors, plastic, dishes, glass.  Even You and all your 1000 parts."
-        T.li => T.raw "It’s the Mechanic’s Wife’s Best Friend!"
-        T.li => T.raw "It is the newest member of the exclusive club of honey and silk."
+    T.div "#bloviation.contents", =>
       T.p =>
-        T.raw "Get the full story about my"
-        T.a href: "/announcement/two-years-with-bamboo-snow.html", => T.raw "incredible life with Bamboo Snow."
-  # 
-  # section bamboo_snow_the_multi_purpose_boon_for_the_world
-  # 
-  bamboo_snow_the_multi_purpose_boon_for_the_world: =>
-    T.h4 "#bamboo-snow-the-multi-purpose-boon-for-the-world", => T.raw "Bamboo Snow: the Multi-Purpose Boon for the World"
+        T.raw """We are tasked with uncovering knowledge of the uses of bamboo and bamboo by-products for the people of Cambodia.
+ Our first focus will be on the by-product """
+        T.a href: "https://bamboosnow.com/", => T.raw "Bamboo Snow."
   # 
   # section sidecar
   # 
@@ -61,41 +44,37 @@ renderer = class  index extends cambodiancenterforbamboostudiestemplate
   # 
   # section logoimg
   # 
-  logoimg: =>
-    T.img "#logoimg.align-middle", src: "assets/images/logo.svg", width: "150px"
   allMeta = [[["name","author"],["content","James A. Hinds: Bubba Baba Bamboo Jim"]],[["http-equiv","Content-Type"],["content","text/html"],["charset","UTF-8"]],[["name","viewport"],["content","width=device-width, initial-scale=1"]],[["name","description"],["content","All that is known about Bamboo Snow"]],[["name","keywords"],["content","bamboo snow,dinoderus minutus,absorbant,dessicant,organic,bamboo byproduct,bamboo"]],[["property","fb:admins"],["content","263369930812986"]],[["name","msapplication-TileColor"],["content","#ffffff"]],[["name","msapplication-TileImage"],["content","/assets/icons/ms-icon-144x144.png"]],[["name","theme-color"],["content","#ffffff"]]]
-  htmlTitle = "Bamboo Snow: The Amazing Substance"
+  htmlTitle = "Cambodian Center for Bamboo Studies"
 #-------- class end
 #
 #
-# ------- db start
 db = {} unless db
+# ------- db start
+
+#
 
 
 db[id="cambodiancenterforbamboostudies/-/index"] =
-  title: "the Bamboo Snow Story"
+  title: "index"
   slug: "index"
   category: "-"
   site: "cambodiancenterforbamboostudies"
   accepted: true
-  index: true
-  headlines: [
-    "Inventor Discovers Miracle Substance"
-    "Dust Farmer Tells All"
-    "Better Hygiene With Bamboo Snow"
-    "A Discovery that Slept for a Million Years"
-  ]
+  index: false
+  sourcePath: ""
+  headlines: []
   tags: []
-  snippets: "{}"
+  snippets: "{\"first name\":\"first name\"}"
   memberOf: []
-  created: "2016-03-11T12:40:04.000Z"
-  lastEdited: "2016-03-11T14:20:28.000Z"
-  published: "2017-07-26T05:11:15.000Z"
-  embargo: "2016-03-11T12:40:04.000Z"
-  captureDate: "2017-07-26T05:11:15.000Z"
-  TimeStamp: "1501045875000"
-  author: "Copyright 2020 James A. Hinds"
-  debug: "marked"
+  created: "2020-01-15T04:14:51.570Z"
+  lastEdited: "2020-01-15T04:14:51.571Z"
+  published: "2020-01-15T04:14:51.571Z"
+  embargo: "2020-01-15T04:14:51.571Z"
+  captureDate: "2020-01-15T04:14:51.571Z"
+  TimeStamp: 1579061691571
+  debug: ""
+  author: ""
   id: "cambodiancenterforbamboostudies/-/index"
-  name: "Bamboo for Cambodians"
+  name: "index"
 #
