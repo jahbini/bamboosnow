@@ -31,6 +31,10 @@ renderer = class  index extends cambodiancenterforbamboostudiestemplate
   # 
   bloviation: =>
     T.div "#bloviation.contents", =>
+      T.p ->
+        T.raw """The Prek Leap National Institute for Agriculture is pleased to announce the 
+newly formed Cambodian Center for Bamboo Studies -- """
+        T.a href: "organization/foundation", => T.raw " Founding Papers here."
       T.p =>
         T.raw """We are tasked with uncovering knowledge of the uses of bamboo and bamboo by-products for the people of Cambodia.
  Our first focus will be on the by-product """

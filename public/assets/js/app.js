@@ -951,10 +951,13 @@ PylonTemplate = Backbone.Model.extend({
   Halvalla: require('halvalla/lib/halvalla-mithril'),
   Palx: require('palx'),
   Utils: require('./lib/utils'),
-  Underscore: require('underscore')
+  Underscore: require('underscore'),
+  Backbone: Backbone
 });
 
 window.Pylon = Pylon = new PylonTemplate;
+
+window._$_ = Pylon;
 
 Pylon.Button = require('./components/button'); // Pylon is assumed to be a global for this guy
 
@@ -1780,7 +1783,7 @@ module.exports = routes;
 
 });
 
-require.register("payload-/bamboosnow.coffee", function(exports, require, module) {
+require.register("payload-/cambodiancenterforbamboostudies.coffee", function(exports, require, module) {
 /*
 styling: "Lookand Feel"
 */
@@ -1843,9 +1846,24 @@ module.exports = BamboosnowLook = class BamboosnowLook {
 
 };
 
+/*
+Pylon.on "newt-flash", (where)->
+  i=Math.floor 30*Math.random()
+  console.log i, "draft/khmer/consonants/audio/c#{i+1}.mp3"
+  $(where).html T.render ->
+    khmerChar = String.fromCharCode(0x1780+i)
+    T.div ".card",->
+      T.div style: "line-height:18rem;font-size:15rem", khmerChar
+      T.div ".card-block",->
+T.div ".media",->
+  T.tag "figure",".d-flex.mr-3",->
+    T.div ".media-body",->
+      T.tag "audio", controls:"controls",src: "draft/khmer/consonants/audio/c#{i+1}.mp3","broken browser"
+*/
+
 });
 
-require.alias("buffer/index.js", "buffer");
+;require.alias("buffer/index.js", "buffer");
 require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 
