@@ -283,7 +283,7 @@ exports['Assets'] = (cb)->
        cb() if cb
 
 
-exports['Css'] = do (site) -> return (cb)->
+exports['Css'] = (cb)->
     console.log site, "performing CSS"
     a=gulp.src([
         "./node_modules/blaze/scss/dist/blaze.min.css",
@@ -312,10 +312,8 @@ exports.watch = (cb)->
     console.log done,"DONE"
   cb()
 
-exports.dist = (cb)->
-    console.log "Activating Series",site
-    gulp.series exports.VendorJs, exports.AppJs, exports.Html, exports.Css, exports.Assets
-    cb()
+exports.dist = gulp.series exports.VendorJs, exports.AppJs, exports.Html, exports.Css, exports.Assets
+
 
 # Init live server browser sync
 initBrowserSync = (done)->
