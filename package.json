@@ -1,32 +1,25 @@
 {
-  "name": "bamboosnow",
+  "name": "stjohnsjim",
   "version": "1.7.1",
-  "description": "Original Disclosure of Bamboo Snow - making, attributes and using",
+  "description": "Stories FRom St. Johns Jim dot com",
   "main": "site.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node_modules/.bin/gulp start",
-    "watch": "node_modules/.bin/gulp watch",
-    "dist": "node_modules/.bin/gulp"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jahbini/bamboosnow.git"
+    "url": "git+https://BambooJim@bitbucket.org/BambooJim/stjohnsjim.git"
   },
   "keywords": [
-    "bamboo",
-    "organic",
-    "cleaning",
-    "insulating",
-    "anti-bacterial",
-    "commodity",
-    "hygiene"
+    "stories",
+    "fiction"
   ],
   "author": "James A. Hinds",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/BambooJim/bamboosnow#readme",
+  "homepage": "https://bitbucket.org/BambooJim/stjohnsjim#readme",
   "dependencies": {
-    "site-master": "https://github.com/jahbini/site-master",
+    "backbone": "^1.3.3",
     "underscore": "^1.8.3"
-  }
+  },
+  "devDependencies": {}
 }
