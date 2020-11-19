@@ -23,6 +23,7 @@
   "license": "UNLICENSED",
   "homepage": "https://github.com/BambooJim/bamboosnow#readme",
   "dependencies": {
+    "site-master": "https://github.com/jahbini/site-master",
     "underscore": "^1.8.3"
   }
 }
