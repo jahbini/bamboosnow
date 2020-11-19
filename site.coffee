@@ -1,10 +1,10 @@
 module.exports =
-  bamboosnow:
-    author: "James A. Hinds: Bubba Baba Bamboo Jim"
-    description: "All that is known about Bamboo Snow"
-    title: "Bamboo Snow: The Amazing Substance"
-    keywords:"bamboo snow,dinoderus minutus,absorbent,dessicant,organic,bamboo byproduct,bamboo"
-    lurl: 'bamboosnow.com'
-    rsyncDestination: "stjohnsjim@stjohnsjim.com:bamboosnow.com"
-    #port: 3131
+  celarien:
+    author: "James A. Hinds: The Celarien"
+    title: "Meta-mental tools"
+    description: "Values, NLP and Metaphysics in Daily Life"
+    lurl: 'celarien.com'
+    keywords: "NLP, values, reframing, hypnosis"
+    rsyncDestination: "celarien@celarien.com:celarien.com"
+    #port: 3142
     #lurl: '0.0.0.0'
