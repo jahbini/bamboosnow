@@ -14,6 +14,7 @@
   "author": "James A. Hinds",
   "license": "ISC",
   "dependencies": {
+    "site-master": "https://github.com/jahbini/site-master",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
