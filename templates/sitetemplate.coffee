@@ -84,7 +84,7 @@ module.exports = class celarientemplate
           T.div "#storybar.col.col-12.col-md-9",=>
             @storyBar()
           T.div ".col.col-12.col-md-3",=>
-          	@sidebar()
+            @sidebar()
           @sidecar()
       @footer()
       @cover()

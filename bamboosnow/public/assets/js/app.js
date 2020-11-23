@@ -1,995 +1,116 @@
-(function() {
-  'use strict';
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})();
+require.register("../bamboosnow/node_modules/site-master/app/initialize.coffee",function(exports,require,module){
+var Backbone, Fibonacci, FontFaceObserver, Mithril, Palx, Pylon, PylonTemplate, Sidebar, Storybar, T, allStories, myStories, newColors, ref, routes,
+  slice = [].slice;
 
-  var globals = typeof global === 'undefined' ? self : global;
-  if (typeof globals.require === 'function') return;
+window.$ = jQuery;
 
-  var modules = {};
-  var cache = {};
-  var aliases = {};
-  var has = {}.hasOwnProperty;
+window._ = require('lodash');
 
-  var expRe = /^\.\.?(\/|$)/;
-  var expand = function(root, name) {
-    var results = [], part;
-    var parts = (expRe.test(name) ? root + '/' + name : name).split('/');
-    for (var i = 0, length = parts.length; i < length; i++) {
-      part = parts[i];
-      if (part === '..') {
-        results.pop();
-      } else if (part !== '.' && part !== '') {
-        results.push(part);
-      }
-    }
-    return results.join('/');
-  };
+Backbone = require('backbone');
 
-  var dirname = function(path) {
-    return path.split('/').slice(0, -1).join('/');
-  };
+PylonTemplate = Backbone.Model.extend({
+  Mithril: require('mithril'),
+  Mss: require('mss-js'),
+  Halvalla: require('halvalla/lib/halvalla-mithril'),
+  Palx: require('palx'),
+  Utils: require('./lib/utils'),
+  Underscore: require('underscore'),
+  Backbone: Backbone
+});
 
-  var localRequire = function(path) {
-    return function expanded(name) {
-      var absolute = expand(dirname(path), name);
-      return globals.require(absolute, path);
-    };
-  };
+window.Pylon = Pylon = new PylonTemplate;
 
-  var initModule = function(name, definition) {
-    var hot = hmr && hmr.createHot(name);
-    var module = {id: name, exports: {}, hot: hot};
-    cache[name] = module;
-    definition(module.exports, localRequire(name), module);
-    return module.exports;
-  };
+window._$_ = Pylon;
 
-  var expandAlias = function(name) {
-    var val = aliases[name];
-    return (val && name !== val) ? expandAlias(val) : name;
-  };
+Pylon.Button = require('./components/button');
 
-  var _resolve = function(name, dep) {
-    return expandAlias(expand(dirname(name), dep));
-  };
-
-  var require = function(name, loaderPath) {
-    if (loaderPath == null) loaderPath = '/';
-    var path = expandAlias(name);
-
-    if (has.call(cache, path)) return cache[path].exports;
-    if (has.call(modules, path)) return initModule(path, modules[path]);
-
-    throw new Error("Cannot find module '" + name + "' from '" + loaderPath + "'");
-  };
-
-  require.alias = function(from, to) {
-    aliases[to] = from;
-  };
-
-  var extRe = /\.[^.\/]+$/;
-  var indexRe = /\/index(\.[^\/]+)?$/;
-  var addExtensions = function(bundle) {
-    if (extRe.test(bundle)) {
-      var alias = bundle.replace(extRe, '');
-      if (!has.call(aliases, alias) || aliases[alias].replace(extRe, '') === alias + '/index') {
-        aliases[alias] = bundle;
-      }
-    }
-
-    if (indexRe.test(bundle)) {
-      var iAlias = bundle.replace(indexRe, '');
-      if (!has.call(aliases, iAlias)) {
-        aliases[iAlias] = bundle;
-      }
-    }
-  };
-
-  require.register = require.define = function(bundle, fn) {
-    if (bundle && typeof bundle === 'object') {
-      for (var key in bundle) {
-        if (has.call(bundle, key)) {
-          require.register(key, bundle[key]);
-        }
-      }
-    } else {
-      modules[bundle] = fn;
-      delete cache[bundle];
-      addExtensions(bundle);
-    }
-  };
-
-  require.list = function() {
-    var list = [];
-    for (var item in modules) {
-      if (has.call(modules, item)) {
-        list.push(item);
-      }
-    }
-    return list;
-  };
-
-  var hmr = globals._hmr && new globals._hmr(_resolve, require, modules, cache);
-  require._cache = cache;
-  require.hmr = hmr && hmr.wrap;
-  require.brunch = true;
-  globals.require = require;
-})();
-;
-require.register("../bamboosnow/node_modules/font-face-observer/src/dom.js",function(exports,require,module){
-var dom = {};
-
-module.exports = dom;
-
-/**
- * @param {string} name
- * @return {Element}
- */
-dom.createElement = function (name) {
-  return document.createElement(name);
-};
-
-/**
- * @param {string} text
- * @return {Text}
- */
-dom.createText = function (text) {
-  return document.createTextNode(text);
-};
-
-/**
- * @param {Element} element
- * @param {string} style
- */
-dom.style = function (element, style) {
-  element.style.cssText = style;
-};
-
-/**
- * @param {Node} parent
- * @param {Node} child
- */
-dom.append = function (parent, child) {
-  parent.appendChild(child);
-};
-
-/**
- * @param {Node} parent
- * @param {Node} child
- */
-dom.remove = function (parent, child) {
-  parent.removeChild(child);
-};
-
-},{})
-require.register("../bamboosnow/node_modules/font-face-observer/src/observer.js",function(exports,require,module){
-var Promise = require('promise');
-var dom = require('./dom');
-var Ruler = require('./ruler');
-
-/**
- * @constructor
- *
- * @param {string} family
- * @param [fontface.Descriptors] descriptors
- */
-var Observer = function (family, descriptors) {
-  descriptors = descriptors || {weight: 'normal'};
-
-  /**
-   * @type {string}
-   */
-  this['family'] = family;
-
-  /**
-   * @type {string}
-   */
-  this['style'] = descriptors.style || 'normal';
-
-  /**
-   * @type {string}
-   */
-  this['variant'] = descriptors.variant || 'normal';
-
-  /**
-   * @type {string}
-   */
-  this['weight'] = descriptors.weight || 'normal';
-
-  /**
-   * @type {string}
-   */
-  this['stretch'] = descriptors.stretch || 'stretch';
-
-  /**
-   * @type {string}
-   */
-  this['featureSettings'] = descriptors.featureSettings || 'normal';
-};
-
-module.exports = Observer;
-
-/**
- * @type {null|boolean}
- */
-Observer.HAS_WEBKIT_FALLBACK_BUG = null;
-
-/**
- * @type {number}
- */
-Observer.DEFAULT_TIMEOUT = 3000;
-
-/**
- * @return {string}
- */
-Observer.getUserAgent = function () {
-  return window.navigator.userAgent;
-};
-
-/**
- * Returns true if this browser is WebKit and it has the fallback bug
- * which is present in WebKit 536.11 and earlier.
- *
- * @return {boolean}
- */
-Observer.hasWebKitFallbackBug = function () {
-  if (Observer.HAS_WEBKIT_FALLBACK_BUG === null) {
-    var match = /AppleWeb[kK]it\/([0-9]+)(?:\.([0-9]+))/.exec(Observer.getUserAgent());
-
-    Observer.HAS_WEBKIT_FALLBACK_BUG = !!match &&
-                                        (parseInt(match[1], 10) < 536 ||
-                                         (parseInt(match[1], 10) === 536 &&
-                                          parseInt(match[2], 10) <= 11));
+Pylon.on('all', function() {
+  var event, mim, rest;
+  event = arguments[0], rest = 2 <= arguments.length ? slice.call(arguments, 1) : [];
+  mim = event.match(/((.*):.*):/);
+  if (!mim || mim[2] !== 'systemEvent') {
+    return null;
   }
-  return Observer.HAS_WEBKIT_FALLBACK_BUG;
-};
-
-/**
- * @private
- * @return {string}
- */
-Observer.prototype.getStyle = function () {
-  return 'font-style:' + this['style'] + ';' +
-         'font-variant:' + this['variant'] + ';' +
-         'font-weight:' + this['weight'] + ';' +
-         'font-stretch:' + this['stretch'] + ';' +
-         'font-feature-settings:' + this['featureSettings'] + ';' +
-         '-moz-font-feature-settings:' + this['featureSettings'] + ';' +
-         '-webkit-font-feature-settings:' + this['featureSettings'] + ';';
-};
-
-/**
- * @param {string=} text Optional test string to use for detecting if a font is available.
- * @param {number=} timeout Optional timeout for giving up on font load detection and rejecting the promise (defaults to 3 seconds).
- * @return {Promise.<fontface.Observer>}
- */
-Observer.prototype.check = function (text, timeout) {
-  var testString = text || 'BESbswy',
-      timeoutValue = timeout || Observer.DEFAULT_TIMEOUT,
-      style = this.getStyle(),
-      container = dom.createElement('div'),
-
-      rulerA = new Ruler(testString),
-      rulerB = new Ruler(testString),
-      rulerC = new Ruler(testString),
-
-      widthA = -1,
-      widthB = -1,
-      widthC = -1,
-
-      fallbackWidthA = -1,
-      fallbackWidthB = -1,
-      fallbackWidthC = -1,
-
-      that = this;
-
-  rulerA.setFont('"Times New Roman", sans-serif', style);
-  rulerB.setFont('serif', style);
-  rulerC.setFont('monospace', style);
-
-  dom.append(container, rulerA.getElement());
-  dom.append(container, rulerB.getElement());
-  dom.append(container, rulerC.getElement());
-
-  dom.append(document.body, container);
-
-  fallbackWidthA = rulerA.getWidth();
-  fallbackWidthB = rulerB.getWidth();
-  fallbackWidthC = rulerC.getWidth();
-
-  return new Promise(function (resolve, reject) {
-    /**
-     * @private
-     */
-    function removeContainer() {
-      if (container.parentNode !== null) {
-        dom.remove(document.body, container);
-      }
-    }
-
-    /**
-     * @private
-     *
-     * Cases:
-     * 1) Font loads: both a, b and c are called and have the same value.
-     * 2) Font fails to load: resize callback is never called and timeout happens.
-     * 3) WebKit bug: both a, b and c are called and have the same value, but the
-     *    values are equal to one of the last resort fonts, we ignore this and
-     *    continue waiting until we get new values (or a timeout).
-     */
-    function check() {
-      if (widthA !== -1 && widthB !== -1 && widthC !== -1) {
-        // All values are changed from their initial state
-
-        if (widthA === widthB && widthB === widthC) {
-          // All values are the same, so the browser has most likely loaded the web font
-
-          if (Observer.hasWebKitFallbackBug()) {
-            // Except if the browser has the WebKit fallback bug, in which case we check to see if all
-            // values are set to one of the last resort fonts.
-
-            if (!((widthA === fallbackWidthA && widthB === fallbackWidthA && widthC === fallbackWidthA) ||
-                  (widthA === fallbackWidthB && widthB === fallbackWidthB && widthC === fallbackWidthB) ||
-                  (widthA === fallbackWidthC && widthB === fallbackWidthC && widthC === fallbackWidthC))) {
-              // The width we got doesn't match any of the known last resort fonts, so let's assume fonts are loaded.
-              removeContainer();
-              resolve(that);
-            }
-          } else {
-            removeContainer();
-            resolve(that);
-          }
-        }
-      }
-    }
-
-    setTimeout(function () {
-      removeContainer();
-      reject(that);
-    }, timeoutValue);
-
-    rulerA.onResize(function (width) {
-      widthA = width;
-      check();
-    });
-
-    rulerA.setFont(that['family'] + ',sans-serif', style);
-
-    rulerB.onResize(function (width) {
-      widthB = width;
-      check();
-    });
-
-    rulerB.setFont(that['family'] + ',serif', style);
-
-    rulerC.onResize(function (width) {
-      widthC = width;
-      check();
-    });
-
-    rulerC.setFont(that['family'] + ',monospace', style);
-  });
-};
-
-},{"./dom":"../bamboosnow/node_modules/font-face-observer/src/dom.js","./ruler":"../bamboosnow/node_modules/font-face-observer/src/ruler.js","promise":"../bamboosnow/node_modules/promise/index.js"})
-require.register("../bamboosnow/node_modules/font-face-observer/src/ruler.js",function(exports,require,module){
-var dom = require('./dom');
-
-/**
- * @constructor
- * @param {string} text
- */
-var Ruler = function (text) {
-  var style = 'display:inline-block;' +
-    'position:absolute;' +
-    'height:100%;' +
-    'width:100%;' +
-    'overflow:scroll;';
-
-  this.element = dom.createElement('div');
-  this.element.setAttribute('aria-hidden', 'true');
-
-  dom.append(this.element, dom.createText(text));
-
-  this.collapsible = dom.createElement('span');
-  this.expandable = dom.createElement('span');
-  this.collapsibleInner = dom.createElement('span');
-  this.expandableInner = dom.createElement('span');
-
-  this.lastOffsetWidth = -1;
-
-  dom.style(this.collapsible, style);
-  dom.style(this.expandable, style);
-  dom.style(this.expandableInner, style);
-  dom.style(this.collapsibleInner, 'display:inline-block;width:200%;height:200%;');
-
-  dom.append(this.collapsible, this.collapsibleInner);
-  dom.append(this.expandable, this.expandableInner);
-
-  dom.append(this.element, this.collapsible);
-  dom.append(this.element, this.expandable);
-};
-
-module.exports = Ruler;
-
-/**
- * @return {Element}
- */
-Ruler.prototype.getElement = function () {
-  return this.element;
-};
-
-/**
- * @param {string} family
- * @param {string} description
- */
-Ruler.prototype.setFont = function (family, description) {
-  dom.style(this.element, 'min-width:20px;' +
-            'min-height:20px;' +
-            'display:inline-block;' +
-            'position:absolute;' +
-            'width:auto;' +
-            'margin:0;' +
-            'padding:0;' +
-            'top:-999px;' +
-            'left:-999px;' +
-            'white-space:nowrap;' +
-            'font-size:100px;' +
-            'font-family:' + family + ';' +
-            description);
-};
-
-/**
- * @return {number}
- */
-Ruler.prototype.getWidth = function () {
-  return this.element.offsetWidth;
-};
-
-/**
- * @param {string} width
- */
-Ruler.prototype.setWidth = function (width) {
-  this.element.style.width = width + 'px';
-};
-
-/**
- * @private
- *
- * @return {boolean}
- */
-Ruler.prototype.reset = function () {
-  var offsetWidth = this.getWidth(),
-    width = offsetWidth + 100;
-
-  this.expandableInner.style.width = width + 'px';
-  this.expandable.scrollLeft = width;
-  this.collapsible.scrollLeft = this.collapsible.scrollWidth + 100;
-
-  if (this.lastOffsetWidth !== offsetWidth) {
-    this.lastOffsetWidth = offsetWidth;
-    return true;
-  } else {
-    return false;
-  }
-};
-
-/**
- * @private
- * @param {function(number)} callback
- */
-Ruler.prototype.onScroll = function (callback) {
-  if (this.reset() && this.element.parentNode !== null) {
-    callback(this.lastOffsetWidth);
-  }
-};
-
-/**
- * @param {function(number)} callback
- */
-Ruler.prototype.onResize = function (callback) {
-  var that = this;
-
-  this.collapsible.addEventListener('scroll', function () {
-    that.onScroll(callback);
-  }, false);
-  this.expandable.addEventListener('scroll', function () {
-    that.onScroll(callback);
-  }, false);
-  this.reset();
-};
-
-},{"./dom":"../bamboosnow/node_modules/font-face-observer/src/dom.js"})
-require.register("../bamboosnow/node_modules/promise/index.js",function(exports,require,module){
-'use strict';
-
-module.exports = require('./lib/core.js')
-require('./lib/done.js')
-require('./lib/es6-extensions.js')
-require('./lib/node-extensions.js')
-},{"./lib/core.js":"../bamboosnow/node_modules/promise/lib/core.js","./lib/done.js":"../bamboosnow/node_modules/promise/lib/done.js","./lib/es6-extensions.js":"../bamboosnow/node_modules/promise/lib/es6-extensions.js","./lib/node-extensions.js":"../bamboosnow/node_modules/promise/lib/node-extensions.js"})
-require.register("../bamboosnow/node_modules/promise/lib/core.js",function(exports,require,module){
-'use strict';
-
-var asap = require('asap')
-
-module.exports = Promise;
-function Promise(fn) {
-  if (typeof this !== 'object') throw new TypeError('Promises must be constructed via new')
-  if (typeof fn !== 'function') throw new TypeError('not a function')
-  var state = null
-  var value = null
-  var deferreds = []
-  var self = this
-
-  this.then = function(onFulfilled, onRejected) {
-    return new self.constructor(function(resolve, reject) {
-      handle(new Handler(onFulfilled, onRejected, resolve, reject))
-    })
-  }
-
-  function handle(deferred) {
-    if (state === null) {
-      deferreds.push(deferred)
-      return
-    }
-    asap(function() {
-      var cb = state ? deferred.onFulfilled : deferred.onRejected
-      if (cb === null) {
-        (state ? deferred.resolve : deferred.reject)(value)
-        return
-      }
-      var ret
-      try {
-        ret = cb(value)
-      }
-      catch (e) {
-        deferred.reject(e)
-        return
-      }
-      deferred.resolve(ret)
-    })
-  }
-
-  function resolve(newValue) {
-    try { //Promise Resolution Procedure: https://github.com/promises-aplus/promises-spec#the-promise-resolution-procedure
-      if (newValue === self) throw new TypeError('A promise cannot be resolved with itself.')
-      if (newValue && (typeof newValue === 'object' || typeof newValue === 'function')) {
-        var then = newValue.then
-        if (typeof then === 'function') {
-          doResolve(then.bind(newValue), resolve, reject)
-          return
-        }
-      }
-      state = true
-      value = newValue
-      finale()
-    } catch (e) { reject(e) }
-  }
-
-  function reject(newValue) {
-    state = false
-    value = newValue
-    finale()
-  }
-
-  function finale() {
-    for (var i = 0, len = deferreds.length; i < len; i++)
-      handle(deferreds[i])
-    deferreds = null
-  }
-
-  doResolve(fn, resolve, reject)
-}
-
-
-function Handler(onFulfilled, onRejected, resolve, reject){
-  this.onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : null
-  this.onRejected = typeof onRejected === 'function' ? onRejected : null
-  this.resolve = resolve
-  this.reject = reject
-}
-
-/**
- * Take a potentially misbehaving resolver function and make sure
- * onFulfilled and onRejected are only called once.
- *
- * Makes no guarantees about asynchrony.
- */
-function doResolve(fn, onFulfilled, onRejected) {
-  var done = false;
-  try {
-    fn(function (value) {
-      if (done) return
-      done = true
-      onFulfilled(value)
-    }, function (reason) {
-      if (done) return
-      done = true
-      onRejected(reason)
-    })
-  } catch (ex) {
-    if (done) return
-    done = true
-    onRejected(ex)
-  }
-}
-
-},{"asap":"../bamboosnow/node_modules/promise/node_modules/asap/asap.js"})
-require.register("../bamboosnow/node_modules/promise/lib/done.js",function(exports,require,module){
-'use strict';
-
-var Promise = require('./core.js')
-var asap = require('asap')
-
-module.exports = Promise
-Promise.prototype.done = function (onFulfilled, onRejected) {
-  var self = arguments.length ? this.then.apply(this, arguments) : this
-  self.then(null, function (err) {
-    asap(function () {
-      throw err
-    })
-  })
-}
-},{"./core.js":"../bamboosnow/node_modules/promise/lib/core.js","asap":"../bamboosnow/node_modules/promise/node_modules/asap/asap.js"})
-require.register("../bamboosnow/node_modules/promise/lib/es6-extensions.js",function(exports,require,module){
-'use strict';
-
-//This file contains the ES6 extensions to the core Promises/A+ API
-
-var Promise = require('./core.js')
-var asap = require('asap')
-
-module.exports = Promise
-
-/* Static Functions */
-
-function ValuePromise(value) {
-  this.then = function (onFulfilled) {
-    if (typeof onFulfilled !== 'function') return this
-    return new Promise(function (resolve, reject) {
-      asap(function () {
-        try {
-          resolve(onFulfilled(value))
-        } catch (ex) {
-          reject(ex);
-        }
-      })
-    })
-  }
-}
-ValuePromise.prototype = Promise.prototype
-
-var TRUE = new ValuePromise(true)
-var FALSE = new ValuePromise(false)
-var NULL = new ValuePromise(null)
-var UNDEFINED = new ValuePromise(undefined)
-var ZERO = new ValuePromise(0)
-var EMPTYSTRING = new ValuePromise('')
-
-Promise.resolve = function (value) {
-  if (value instanceof Promise) return value
-
-  if (value === null) return NULL
-  if (value === undefined) return UNDEFINED
-  if (value === true) return TRUE
-  if (value === false) return FALSE
-  if (value === 0) return ZERO
-  if (value === '') return EMPTYSTRING
-
-  if (typeof value === 'object' || typeof value === 'function') {
-    try {
-      var then = value.then
-      if (typeof then === 'function') {
-        return new Promise(then.bind(value))
-      }
-    } catch (ex) {
-      return new Promise(function (resolve, reject) {
-        reject(ex)
-      })
-    }
-  }
-
-  return new ValuePromise(value)
-}
-
-Promise.all = function (arr) {
-  var args = Array.prototype.slice.call(arr)
-
-  return new Promise(function (resolve, reject) {
-    if (args.length === 0) return resolve([])
-    var remaining = args.length
-    function res(i, val) {
-      try {
-        if (val && (typeof val === 'object' || typeof val === 'function')) {
-          var then = val.then
-          if (typeof then === 'function') {
-            then.call(val, function (val) { res(i, val) }, reject)
-            return
-          }
-        }
-        args[i] = val
-        if (--remaining === 0) {
-          resolve(args);
-        }
-      } catch (ex) {
-        reject(ex)
-      }
-    }
-    for (var i = 0; i < args.length; i++) {
-      res(i, args[i])
-    }
-  })
-}
-
-Promise.reject = function (value) {
-  return new Promise(function (resolve, reject) { 
-    reject(value);
-  });
-}
-
-Promise.race = function (values) {
-  return new Promise(function (resolve, reject) { 
-    values.forEach(function(value){
-      Promise.resolve(value).then(resolve, reject);
-    })
-  });
-}
-
-/* Prototype Methods */
-
-Promise.prototype['catch'] = function (onRejected) {
-  return this.then(null, onRejected);
-}
-
-},{"./core.js":"../bamboosnow/node_modules/promise/lib/core.js","asap":"../bamboosnow/node_modules/promise/node_modules/asap/asap.js"})
-require.register("../bamboosnow/node_modules/promise/lib/node-extensions.js",function(exports,require,module){
-'use strict';
-
-//This file contains then/promise specific extensions that are only useful for node.js interop
-
-var Promise = require('./core.js')
-var asap = require('asap')
-
-module.exports = Promise
-
-/* Static Functions */
-
-Promise.denodeify = function (fn, argumentCount) {
-  argumentCount = argumentCount || Infinity
-  return function () {
-    var self = this
-    var args = Array.prototype.slice.call(arguments)
-    return new Promise(function (resolve, reject) {
-      while (args.length && args.length > argumentCount) {
-        args.pop()
-      }
-      args.push(function (err, res) {
-        if (err) reject(err)
-        else resolve(res)
-      })
-      var res = fn.apply(self, args)
-      if (res && (typeof res === 'object' || typeof res === 'function') && typeof res.then === 'function') {
-        resolve(res)
-      }
-    })
-  }
-}
-Promise.nodeify = function (fn) {
-  return function () {
-    var args = Array.prototype.slice.call(arguments)
-    var callback = typeof args[args.length - 1] === 'function' ? args.pop() : null
-    var ctx = this
-    try {
-      return fn.apply(this, arguments).nodeify(callback, ctx)
-    } catch (ex) {
-      if (callback === null || typeof callback == 'undefined') {
-        return new Promise(function (resolve, reject) { reject(ex) })
-      } else {
-        asap(function () {
-          callback.call(ctx, ex)
-        })
-      }
-    }
-  }
-}
-
-Promise.prototype.nodeify = function (callback, ctx) {
-  if (typeof callback != 'function') return this
-
-  this.then(function (value) {
-    asap(function () {
-      callback.call(ctx, null, value)
-    })
-  }, function (err) {
-    asap(function () {
-      callback.call(ctx, err)
-    })
-  })
-}
-
-},{"./core.js":"../bamboosnow/node_modules/promise/lib/core.js","asap":"../bamboosnow/node_modules/promise/node_modules/asap/asap.js"})
-require.register("../bamboosnow/node_modules/promise/node_modules/asap/asap.js",function(exports,require,module){
-(function (process,setImmediate){(function (){
-
-// Use the fastest possible means to execute a task in a future turn
-// of the event loop.
-
-// linked list of tasks (single, with head node)
-var head = {task: void 0, next: null};
-var tail = head;
-var flushing = false;
-var requestFlush = void 0;
-var isNodeJS = false;
-
-function flush() {
-    /* jshint loopfunc: true */
-
-    while (head.next) {
-        head = head.next;
-        var task = head.task;
-        head.task = void 0;
-        var domain = head.domain;
-
-        if (domain) {
-            head.domain = void 0;
-            domain.enter();
-        }
-
-        try {
-            task();
-
-        } catch (e) {
-            if (isNodeJS) {
-                // In node, uncaught exceptions are considered fatal errors.
-                // Re-throw them synchronously to interrupt flushing!
-
-                // Ensure continuation if the uncaught exception is suppressed
-                // listening "uncaughtException" events (as domains does).
-                // Continue in next event to avoid tick recursion.
-                if (domain) {
-                    domain.exit();
-                }
-                setTimeout(flush, 0);
-                if (domain) {
-                    domain.enter();
-                }
-
-                throw e;
-
-            } else {
-                // In browsers, uncaught exceptions are not fatal.
-                // Re-throw them asynchronously to avoid slow-downs.
-                setTimeout(function() {
-                   throw e;
-                }, 0);
-            }
-        }
-
-        if (domain) {
-            domain.exit();
-        }
-    }
-
-    flushing = false;
-}
-
-if (typeof process !== "undefined" && process.nextTick) {
-    // Node.js before 0.9. Note that some fake-Node environments, like the
-    // Mocha test runner, introduce a `process` global without a `nextTick`.
-    isNodeJS = true;
-
-    requestFlush = function () {
-        process.nextTick(flush);
-    };
-
-} else if (typeof setImmediate === "function") {
-    // In IE10, Node.js 0.9+, or https://github.com/NobleJS/setImmediate
-    if (typeof window !== "undefined") {
-        requestFlush = setImmediate.bind(window, flush);
-    } else {
-        requestFlush = function () {
-            setImmediate(flush);
-        };
-    }
-
-} else if (typeof MessageChannel !== "undefined") {
-    // modern browsers
-    // http://www.nonblocking.io/2011/06/windownexttick.html
-    var channel = new MessageChannel();
-    channel.port1.onmessage = flush;
-    requestFlush = function () {
-        channel.port2.postMessage(0);
-    };
-
-} else {
-    // old browsers
-    requestFlush = function () {
-        setTimeout(flush, 0);
-    };
-}
-
-function asap(task) {
-    tail = tail.next = {
-        task: task,
-        domain: isNodeJS && process.domain,
-        next: null
-    };
-
-    if (!flushing) {
-        flushing = true;
-        requestFlush();
-    }
-};
-
-module.exports = asap;
-
-
-}).call(this)}).call(this,require('_process'),require("timers").setImmediate)
-},{"_process":"node_modules/process/browser.js","timers":"node_modules/timers-browserify/main.js"})
-require.register("../bamboosnow/payload-/run-time-template.coffee",function(exports,require,module){
-
-/*
-#global Pylon
- */
-var CelarienLook, T, _;
+  applogger("event " + event);
+  Pylon.trigger(mim[1], event, rest);
+  Pylon.trigger(mim[2], event, rest);
+  return null;
+});
+
+FontFaceObserver = require('font-face-observer');
 
 T = Pylon.Halvalla;
 
-_ = Pylon.underscore;
+Mithril = Pylon.Mithril;
+
+Sidebar = require('./components/sidebar-view');
+
+Storybar = require('./components/storybar-view');
+
+Fibonacci = require('./components/fibonacci');
+
+routes = require('./routes');
+
+Palx = Pylon.Palx;
+
+newColors = Palx(document.styling.palx);
+
+newColors.black = document.styling.black;
+
+newColors.white = document.styling.white;
+
+ref = require('./models/stories'), myStories = ref.myStories, allStories = ref.allStories;
+
+
+/*
+styled= require   'styled-components'
+{ injectGlobal, keyframes } = styled
+styled = styled.default
+
+injectGlobal""" 
+  body {
+    * {box-sizing: border-box; }
+    body { margin: 0; }
+    font-family: sans-serif;
+  }
+"""
+ */
 
 $(function() {
-  var FontFaceObserver, badDog, observeVastShadow, observeVidaLoca;
+  var badDog, bloviation, divs, mine, realNode, sidebarContents, theirs;
+  mine = {
+    collection: myStories,
+    filter: function(story) {
+      return 'draft' !== story.get('category');
+    }
+  };
+  theirs = {
+    collection: allStories,
+    filter: function(story) {
+      return 'draft' !== story.get('category');
+    }
+  };
   try {
-    FontFaceObserver = require('font-face-observer');
-    observeVidaLoca = new FontFaceObserver("vidaloka", {
-      weight: 400
-    });
-    observeVidaLoca.check(null, 10000).then(function() {
-      return document.documentElement.className += " vidaloka-loaded";
-    }, function() {
-      return console.warn("Vida Loka Font Problem?!");
-    });
-    observeVastShadow = new FontFaceObserver("vastshadow", {
-      weight: 400
-    });
-    return observeVastShadow.check(null, 10000).then(function() {
-      return document.documentElement.className += " vastshadow-loaded";
-    }, function() {
-      return console.warn("vastshadow Font Problem?!");
-    });
+    realNode = document.getElementById('sidebar');
+    sidebarContents = Sidebar(mine);
+    Mithril.render(realNode, sidebarContents);
   } catch (error) {
     badDog = error;
-    console.log("Font Loader Error-- OK for site-master build phase");
-    return console.log(badDog);
+    console.log(badDog);
+  }
+  divs = $('.siteInvitation');
+  divs.each(function(key, div) {
+    return Mithril.render(div, Storybar(theirs));
+  });
+  bloviation = document.getElementById('fibonacci');
+  if (bloviation) {
+    return Mithril.render(bloviation, Fibonacci(1, 2, 3, 4, 5, 6));
   }
 });
 
-module.exports = CelarienLook = (function() {
-  function CelarienLook() {}
 
-  CelarienLook.prototype.widgetWrap = function() {
-    var attrs, contents, id, ref, title;
-    ref = T.normalizeArgs(arguments), attrs = ref.attrs, contents = ref.contents;
-    id = attrs.id;
-    delete attrs.id;
-    title = attrs.title;
-    delete attrs.title;
-    return T.div('.container.widget-wrap.p-2.my-1', attrs, function() {
-      if (!!title) {
-        T.h3(title);
-      }
-      return T.div('.btn-group.btn-group-vertical.widget', function() {
-        return contents;
-      });
-    });
-  };
-
-  return CelarienLook;
-
-})();
-
-
-},{"font-face-observer":"../bamboosnow/node_modules/font-face-observer/src/observer.js"})
+},{"./components/button":"app/components/button.coffee","./components/fibonacci":"app/components/fibonacci.coffee","./components/sidebar-view":"app/components/sidebar-view.coffee","./components/storybar-view":"app/components/storybar-view.coffee","./lib/utils":"app/lib/utils.coffee","./models/stories":"app/models/stories.coffee","./routes":"app/routes.coffee","backbone":"node_modules/backbone/backbone.js","font-face-observer":"node_modules/font-face-observer/src/observer.js","halvalla/lib/halvalla-mithril":"node_modules/halvalla/lib/halvalla-mithril.js","lodash":"node_modules/lodash/lodash.js","mithril":"node_modules/mithril/index.js","mss-js":"node_modules/mss-js/mss.js","palx":"node_modules/palx/dist/index.js","underscore":"node_modules/underscore/underscore.js"})
 require.register("app/components/button.coffee",function(exports,require,module){
 var $, B, T, V;
 
@@ -1305,6 +426,7 @@ module.exports = T.bless(Fibonacci = (function(superClass) {
 
 },{"backbone":"node_modules/backbone/backbone.js"})
 require.register("app/components/sidebar-view.coffee",function(exports,require,module){
+(function (process){(function (){
 var B, Sidebar, T, Template, template,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
@@ -1314,7 +436,7 @@ T = Pylon.Halvalla;
 
 B = require('backbone');
 
-Template = require("run-time-template.coffee");
+Template = require(process.env.CWD + "/payload-/run-time-template.coffee");
 
 template = new Template(T);
 
@@ -1427,7 +549,8 @@ module.exports = T.bless(Sidebar = (function(superClass) {
 })(B.Model));
 
 
-},{"backbone":"node_modules/backbone/backbone.js","run-time-template.coffee":"../bamboosnow/payload-/run-time-template.coffee"})
+}).call(this)}).call(this,require('_process'))
+},{"_process":"node_modules/process/browser.js","backbone":"node_modules/backbone/backbone.js"})
 require.register("app/components/storybar-view.coffee",function(exports,require,module){
 var B, Storybar, T, siteBase, z,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
@@ -1498,116 +621,6 @@ module.exports = T.bless(Storybar = (function() {
 
 
 },{"backbone":"node_modules/backbone/backbone.js"})
-require.register("app/initialize.coffee",function(exports,require,module){
-var Backbone, Fibonacci, Mithril, Palx, Pylon, PylonTemplate, Sidebar, Storybar, T, allStories, myStories, newColors, ref, routes,
-  slice = [].slice;
-
-window.$ = jQuery;
-
-window._ = require('lodash');
-
-Backbone = require('backbone');
-
-PylonTemplate = Backbone.Model.extend({
-  Mithril: require('mithril'),
-  Mss: require('mss-js'),
-  Halvalla: require('halvalla/lib/halvalla-mithril'),
-  Palx: require('palx'),
-  Utils: require('./lib/utils'),
-  Underscore: require('underscore'),
-  Backbone: Backbone
-});
-
-window.Pylon = Pylon = new PylonTemplate;
-
-window._$_ = Pylon;
-
-Pylon.Button = require('./components/button');
-
-Pylon.on('all', function() {
-  var event, mim, rest;
-  event = arguments[0], rest = 2 <= arguments.length ? slice.call(arguments, 1) : [];
-  mim = event.match(/((.*):.*):/);
-  if (!mim || mim[2] !== 'systemEvent') {
-    return null;
-  }
-  applogger("event " + event);
-  Pylon.trigger(mim[1], event, rest);
-  Pylon.trigger(mim[2], event, rest);
-  return null;
-});
-
-T = Pylon.Halvalla;
-
-Mithril = Pylon.Mithril;
-
-Sidebar = require('./components/sidebar-view');
-
-Storybar = require('./components/storybar-view');
-
-Fibonacci = require('./components/fibonacci');
-
-routes = require('./routes');
-
-Palx = Pylon.Palx;
-
-newColors = Palx(document.styling.palx);
-
-newColors.black = document.styling.black;
-
-newColors.white = document.styling.white;
-
-ref = require('./models/stories'), myStories = ref.myStories, allStories = ref.allStories;
-
-
-/*
-styled= require   'styled-components'
-{ injectGlobal, keyframes } = styled
-styled = styled.default
-
-injectGlobal""" 
-  body {
-    * {box-sizing: border-box; }
-    body { margin: 0; }
-    font-family: sans-serif;
-  }
-"""
- */
-
-$(function() {
-  var badDog, bloviation, divs, mine, realNode, sidebarContents, theirs;
-  mine = {
-    collection: myStories,
-    filter: function(story) {
-      return 'draft' !== story.get('category');
-    }
-  };
-  theirs = {
-    collection: allStories,
-    filter: function(story) {
-      return 'draft' !== story.get('category');
-    }
-  };
-  try {
-    realNode = document.getElementById('sidebar');
-    sidebarContents = Sidebar(mine);
-    Mithril.render(realNode, sidebarContents);
-  } catch (error) {
-    badDog = error;
-    console.log(badDog);
-  }
-  divs = $('.siteInvitation');
-  divs.each(function(key, div) {
-    return Mithril.render(div, Storybar(theirs));
-  });
-  bloviation = document.getElementById('fibonacci');
-  if (bloviation) {
-    return Mithril.render(bloviation, Fibonacci(1, 2, 3, 4, 5, 6));
-  }
-});
-
-
-},{"./components/button":"app/components/button.coffee","./components/fibonacci":"app/components/fibonacci.coffee","./components/sidebar-view":"app/components/sidebar-view.coffee","./components/storybar-view":"app/components/storybar-view.coffee","./lib/utils":"app/lib/utils.coffee","./models/stories":"app/models/stories.coffee","./routes":"app/routes.coffee","backbone":"node_modules/backbone/backbone.js","halvalla/lib/halvalla-mithril":"node_modules/halvalla/lib/halvalla-mithril.js","lodash":"node_modules/lodash/lodash.js","mithril":"node_modules/mithril/index.js","mss-js":"node_modules/mss-js/mss.js","palx":"node_modules/palx/dist/index.js","underscore":"node_modules/underscore/underscore.js"})
 require.register("app/lib/utils.coffee",function(exports,require,module){
 var Pylon, Utility,
   hasProp = {}.hasOwnProperty,
@@ -2077,7 +1090,7 @@ Stories = (function(superClass) {
 })(Collection);
 
 module.exports = {
-  allStories: new Stories(typeof allStories !== "undefined" && allStories !== null),
+  allStories: new Stories(allStories),
   myStories: new Stories(myStories),
   Class: Stories
 };
@@ -4241,6 +3254,390 @@ require.register("node_modules/backbone/backbone.js",function(exports,require,mo
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"jquery":"node_modules/jquery/dist/jquery.js","underscore":"node_modules/underscore/underscore.js"})
+require.register("node_modules/font-face-observer/src/dom.js",function(exports,require,module){
+var dom = {};
+
+module.exports = dom;
+
+/**
+ * @param {string} name
+ * @return {Element}
+ */
+dom.createElement = function (name) {
+  return document.createElement(name);
+};
+
+/**
+ * @param {string} text
+ * @return {Text}
+ */
+dom.createText = function (text) {
+  return document.createTextNode(text);
+};
+
+/**
+ * @param {Element} element
+ * @param {string} style
+ */
+dom.style = function (element, style) {
+  element.style.cssText = style;
+};
+
+/**
+ * @param {Node} parent
+ * @param {Node} child
+ */
+dom.append = function (parent, child) {
+  parent.appendChild(child);
+};
+
+/**
+ * @param {Node} parent
+ * @param {Node} child
+ */
+dom.remove = function (parent, child) {
+  parent.removeChild(child);
+};
+
+},{})
+require.register("node_modules/font-face-observer/src/observer.js",function(exports,require,module){
+var Promise = require('promise');
+var dom = require('./dom');
+var Ruler = require('./ruler');
+
+/**
+ * @constructor
+ *
+ * @param {string} family
+ * @param [fontface.Descriptors] descriptors
+ */
+var Observer = function (family, descriptors) {
+  descriptors = descriptors || {weight: 'normal'};
+
+  /**
+   * @type {string}
+   */
+  this['family'] = family;
+
+  /**
+   * @type {string}
+   */
+  this['style'] = descriptors.style || 'normal';
+
+  /**
+   * @type {string}
+   */
+  this['variant'] = descriptors.variant || 'normal';
+
+  /**
+   * @type {string}
+   */
+  this['weight'] = descriptors.weight || 'normal';
+
+  /**
+   * @type {string}
+   */
+  this['stretch'] = descriptors.stretch || 'stretch';
+
+  /**
+   * @type {string}
+   */
+  this['featureSettings'] = descriptors.featureSettings || 'normal';
+};
+
+module.exports = Observer;
+
+/**
+ * @type {null|boolean}
+ */
+Observer.HAS_WEBKIT_FALLBACK_BUG = null;
+
+/**
+ * @type {number}
+ */
+Observer.DEFAULT_TIMEOUT = 3000;
+
+/**
+ * @return {string}
+ */
+Observer.getUserAgent = function () {
+  return window.navigator.userAgent;
+};
+
+/**
+ * Returns true if this browser is WebKit and it has the fallback bug
+ * which is present in WebKit 536.11 and earlier.
+ *
+ * @return {boolean}
+ */
+Observer.hasWebKitFallbackBug = function () {
+  if (Observer.HAS_WEBKIT_FALLBACK_BUG === null) {
+    var match = /AppleWeb[kK]it\/([0-9]+)(?:\.([0-9]+))/.exec(Observer.getUserAgent());
+
+    Observer.HAS_WEBKIT_FALLBACK_BUG = !!match &&
+                                        (parseInt(match[1], 10) < 536 ||
+                                         (parseInt(match[1], 10) === 536 &&
+                                          parseInt(match[2], 10) <= 11));
+  }
+  return Observer.HAS_WEBKIT_FALLBACK_BUG;
+};
+
+/**
+ * @private
+ * @return {string}
+ */
+Observer.prototype.getStyle = function () {
+  return 'font-style:' + this['style'] + ';' +
+         'font-variant:' + this['variant'] + ';' +
+         'font-weight:' + this['weight'] + ';' +
+         'font-stretch:' + this['stretch'] + ';' +
+         'font-feature-settings:' + this['featureSettings'] + ';' +
+         '-moz-font-feature-settings:' + this['featureSettings'] + ';' +
+         '-webkit-font-feature-settings:' + this['featureSettings'] + ';';
+};
+
+/**
+ * @param {string=} text Optional test string to use for detecting if a font is available.
+ * @param {number=} timeout Optional timeout for giving up on font load detection and rejecting the promise (defaults to 3 seconds).
+ * @return {Promise.<fontface.Observer>}
+ */
+Observer.prototype.check = function (text, timeout) {
+  var testString = text || 'BESbswy',
+      timeoutValue = timeout || Observer.DEFAULT_TIMEOUT,
+      style = this.getStyle(),
+      container = dom.createElement('div'),
+
+      rulerA = new Ruler(testString),
+      rulerB = new Ruler(testString),
+      rulerC = new Ruler(testString),
+
+      widthA = -1,
+      widthB = -1,
+      widthC = -1,
+
+      fallbackWidthA = -1,
+      fallbackWidthB = -1,
+      fallbackWidthC = -1,
+
+      that = this;
+
+  rulerA.setFont('"Times New Roman", sans-serif', style);
+  rulerB.setFont('serif', style);
+  rulerC.setFont('monospace', style);
+
+  dom.append(container, rulerA.getElement());
+  dom.append(container, rulerB.getElement());
+  dom.append(container, rulerC.getElement());
+
+  dom.append(document.body, container);
+
+  fallbackWidthA = rulerA.getWidth();
+  fallbackWidthB = rulerB.getWidth();
+  fallbackWidthC = rulerC.getWidth();
+
+  return new Promise(function (resolve, reject) {
+    /**
+     * @private
+     */
+    function removeContainer() {
+      if (container.parentNode !== null) {
+        dom.remove(document.body, container);
+      }
+    }
+
+    /**
+     * @private
+     *
+     * Cases:
+     * 1) Font loads: both a, b and c are called and have the same value.
+     * 2) Font fails to load: resize callback is never called and timeout happens.
+     * 3) WebKit bug: both a, b and c are called and have the same value, but the
+     *    values are equal to one of the last resort fonts, we ignore this and
+     *    continue waiting until we get new values (or a timeout).
+     */
+    function check() {
+      if (widthA !== -1 && widthB !== -1 && widthC !== -1) {
+        // All values are changed from their initial state
+
+        if (widthA === widthB && widthB === widthC) {
+          // All values are the same, so the browser has most likely loaded the web font
+
+          if (Observer.hasWebKitFallbackBug()) {
+            // Except if the browser has the WebKit fallback bug, in which case we check to see if all
+            // values are set to one of the last resort fonts.
+
+            if (!((widthA === fallbackWidthA && widthB === fallbackWidthA && widthC === fallbackWidthA) ||
+                  (widthA === fallbackWidthB && widthB === fallbackWidthB && widthC === fallbackWidthB) ||
+                  (widthA === fallbackWidthC && widthB === fallbackWidthC && widthC === fallbackWidthC))) {
+              // The width we got doesn't match any of the known last resort fonts, so let's assume fonts are loaded.
+              removeContainer();
+              resolve(that);
+            }
+          } else {
+            removeContainer();
+            resolve(that);
+          }
+        }
+      }
+    }
+
+    setTimeout(function () {
+      removeContainer();
+      reject(that);
+    }, timeoutValue);
+
+    rulerA.onResize(function (width) {
+      widthA = width;
+      check();
+    });
+
+    rulerA.setFont(that['family'] + ',sans-serif', style);
+
+    rulerB.onResize(function (width) {
+      widthB = width;
+      check();
+    });
+
+    rulerB.setFont(that['family'] + ',serif', style);
+
+    rulerC.onResize(function (width) {
+      widthC = width;
+      check();
+    });
+
+    rulerC.setFont(that['family'] + ',monospace', style);
+  });
+};
+
+},{"./dom":"node_modules/font-face-observer/src/dom.js","./ruler":"node_modules/font-face-observer/src/ruler.js","promise":"node_modules/promise/index.js"})
+require.register("node_modules/font-face-observer/src/ruler.js",function(exports,require,module){
+var dom = require('./dom');
+
+/**
+ * @constructor
+ * @param {string} text
+ */
+var Ruler = function (text) {
+  var style = 'display:inline-block;' +
+    'position:absolute;' +
+    'height:100%;' +
+    'width:100%;' +
+    'overflow:scroll;';
+
+  this.element = dom.createElement('div');
+  this.element.setAttribute('aria-hidden', 'true');
+
+  dom.append(this.element, dom.createText(text));
+
+  this.collapsible = dom.createElement('span');
+  this.expandable = dom.createElement('span');
+  this.collapsibleInner = dom.createElement('span');
+  this.expandableInner = dom.createElement('span');
+
+  this.lastOffsetWidth = -1;
+
+  dom.style(this.collapsible, style);
+  dom.style(this.expandable, style);
+  dom.style(this.expandableInner, style);
+  dom.style(this.collapsibleInner, 'display:inline-block;width:200%;height:200%;');
+
+  dom.append(this.collapsible, this.collapsibleInner);
+  dom.append(this.expandable, this.expandableInner);
+
+  dom.append(this.element, this.collapsible);
+  dom.append(this.element, this.expandable);
+};
+
+module.exports = Ruler;
+
+/**
+ * @return {Element}
+ */
+Ruler.prototype.getElement = function () {
+  return this.element;
+};
+
+/**
+ * @param {string} family
+ * @param {string} description
+ */
+Ruler.prototype.setFont = function (family, description) {
+  dom.style(this.element, 'min-width:20px;' +
+            'min-height:20px;' +
+            'display:inline-block;' +
+            'position:absolute;' +
+            'width:auto;' +
+            'margin:0;' +
+            'padding:0;' +
+            'top:-999px;' +
+            'left:-999px;' +
+            'white-space:nowrap;' +
+            'font-size:100px;' +
+            'font-family:' + family + ';' +
+            description);
+};
+
+/**
+ * @return {number}
+ */
+Ruler.prototype.getWidth = function () {
+  return this.element.offsetWidth;
+};
+
+/**
+ * @param {string} width
+ */
+Ruler.prototype.setWidth = function (width) {
+  this.element.style.width = width + 'px';
+};
+
+/**
+ * @private
+ *
+ * @return {boolean}
+ */
+Ruler.prototype.reset = function () {
+  var offsetWidth = this.getWidth(),
+    width = offsetWidth + 100;
+
+  this.expandableInner.style.width = width + 'px';
+  this.expandable.scrollLeft = width;
+  this.collapsible.scrollLeft = this.collapsible.scrollWidth + 100;
+
+  if (this.lastOffsetWidth !== offsetWidth) {
+    this.lastOffsetWidth = offsetWidth;
+    return true;
+  } else {
+    return false;
+  }
+};
+
+/**
+ * @private
+ * @param {function(number)} callback
+ */
+Ruler.prototype.onScroll = function (callback) {
+  if (this.reset() && this.element.parentNode !== null) {
+    callback(this.lastOffsetWidth);
+  }
+};
+
+/**
+ * @param {function(number)} callback
+ */
+Ruler.prototype.onResize = function (callback) {
+  var that = this;
+
+  this.collapsible.addEventListener('scroll', function () {
+    that.onScroll(callback);
+  }, false);
+  this.expandable.addEventListener('scroll', function () {
+    that.onScroll(callback);
+  }, false);
+  this.reset();
+};
+
+},{"./dom":"node_modules/font-face-observer/src/dom.js"})
 require.register("node_modules/halvalla/lib/halvalla-mithril.js",function(exports,require,module){
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -39355,6 +38752,433 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{})
+require.register("node_modules/promise/index.js",function(exports,require,module){
+'use strict';
+
+module.exports = require('./lib/core.js')
+require('./lib/done.js')
+require('./lib/es6-extensions.js')
+require('./lib/node-extensions.js')
+},{"./lib/core.js":"node_modules/promise/lib/core.js","./lib/done.js":"node_modules/promise/lib/done.js","./lib/es6-extensions.js":"node_modules/promise/lib/es6-extensions.js","./lib/node-extensions.js":"node_modules/promise/lib/node-extensions.js"})
+require.register("node_modules/promise/lib/core.js",function(exports,require,module){
+'use strict';
+
+var asap = require('asap')
+
+module.exports = Promise;
+function Promise(fn) {
+  if (typeof this !== 'object') throw new TypeError('Promises must be constructed via new')
+  if (typeof fn !== 'function') throw new TypeError('not a function')
+  var state = null
+  var value = null
+  var deferreds = []
+  var self = this
+
+  this.then = function(onFulfilled, onRejected) {
+    return new self.constructor(function(resolve, reject) {
+      handle(new Handler(onFulfilled, onRejected, resolve, reject))
+    })
+  }
+
+  function handle(deferred) {
+    if (state === null) {
+      deferreds.push(deferred)
+      return
+    }
+    asap(function() {
+      var cb = state ? deferred.onFulfilled : deferred.onRejected
+      if (cb === null) {
+        (state ? deferred.resolve : deferred.reject)(value)
+        return
+      }
+      var ret
+      try {
+        ret = cb(value)
+      }
+      catch (e) {
+        deferred.reject(e)
+        return
+      }
+      deferred.resolve(ret)
+    })
+  }
+
+  function resolve(newValue) {
+    try { //Promise Resolution Procedure: https://github.com/promises-aplus/promises-spec#the-promise-resolution-procedure
+      if (newValue === self) throw new TypeError('A promise cannot be resolved with itself.')
+      if (newValue && (typeof newValue === 'object' || typeof newValue === 'function')) {
+        var then = newValue.then
+        if (typeof then === 'function') {
+          doResolve(then.bind(newValue), resolve, reject)
+          return
+        }
+      }
+      state = true
+      value = newValue
+      finale()
+    } catch (e) { reject(e) }
+  }
+
+  function reject(newValue) {
+    state = false
+    value = newValue
+    finale()
+  }
+
+  function finale() {
+    for (var i = 0, len = deferreds.length; i < len; i++)
+      handle(deferreds[i])
+    deferreds = null
+  }
+
+  doResolve(fn, resolve, reject)
+}
+
+
+function Handler(onFulfilled, onRejected, resolve, reject){
+  this.onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : null
+  this.onRejected = typeof onRejected === 'function' ? onRejected : null
+  this.resolve = resolve
+  this.reject = reject
+}
+
+/**
+ * Take a potentially misbehaving resolver function and make sure
+ * onFulfilled and onRejected are only called once.
+ *
+ * Makes no guarantees about asynchrony.
+ */
+function doResolve(fn, onFulfilled, onRejected) {
+  var done = false;
+  try {
+    fn(function (value) {
+      if (done) return
+      done = true
+      onFulfilled(value)
+    }, function (reason) {
+      if (done) return
+      done = true
+      onRejected(reason)
+    })
+  } catch (ex) {
+    if (done) return
+    done = true
+    onRejected(ex)
+  }
+}
+
+},{"asap":"node_modules/promise/node_modules/asap/asap.js"})
+require.register("node_modules/promise/lib/done.js",function(exports,require,module){
+'use strict';
+
+var Promise = require('./core.js')
+var asap = require('asap')
+
+module.exports = Promise
+Promise.prototype.done = function (onFulfilled, onRejected) {
+  var self = arguments.length ? this.then.apply(this, arguments) : this
+  self.then(null, function (err) {
+    asap(function () {
+      throw err
+    })
+  })
+}
+},{"./core.js":"node_modules/promise/lib/core.js","asap":"node_modules/promise/node_modules/asap/asap.js"})
+require.register("node_modules/promise/lib/es6-extensions.js",function(exports,require,module){
+'use strict';
+
+//This file contains the ES6 extensions to the core Promises/A+ API
+
+var Promise = require('./core.js')
+var asap = require('asap')
+
+module.exports = Promise
+
+/* Static Functions */
+
+function ValuePromise(value) {
+  this.then = function (onFulfilled) {
+    if (typeof onFulfilled !== 'function') return this
+    return new Promise(function (resolve, reject) {
+      asap(function () {
+        try {
+          resolve(onFulfilled(value))
+        } catch (ex) {
+          reject(ex);
+        }
+      })
+    })
+  }
+}
+ValuePromise.prototype = Promise.prototype
+
+var TRUE = new ValuePromise(true)
+var FALSE = new ValuePromise(false)
+var NULL = new ValuePromise(null)
+var UNDEFINED = new ValuePromise(undefined)
+var ZERO = new ValuePromise(0)
+var EMPTYSTRING = new ValuePromise('')
+
+Promise.resolve = function (value) {
+  if (value instanceof Promise) return value
+
+  if (value === null) return NULL
+  if (value === undefined) return UNDEFINED
+  if (value === true) return TRUE
+  if (value === false) return FALSE
+  if (value === 0) return ZERO
+  if (value === '') return EMPTYSTRING
+
+  if (typeof value === 'object' || typeof value === 'function') {
+    try {
+      var then = value.then
+      if (typeof then === 'function') {
+        return new Promise(then.bind(value))
+      }
+    } catch (ex) {
+      return new Promise(function (resolve, reject) {
+        reject(ex)
+      })
+    }
+  }
+
+  return new ValuePromise(value)
+}
+
+Promise.all = function (arr) {
+  var args = Array.prototype.slice.call(arr)
+
+  return new Promise(function (resolve, reject) {
+    if (args.length === 0) return resolve([])
+    var remaining = args.length
+    function res(i, val) {
+      try {
+        if (val && (typeof val === 'object' || typeof val === 'function')) {
+          var then = val.then
+          if (typeof then === 'function') {
+            then.call(val, function (val) { res(i, val) }, reject)
+            return
+          }
+        }
+        args[i] = val
+        if (--remaining === 0) {
+          resolve(args);
+        }
+      } catch (ex) {
+        reject(ex)
+      }
+    }
+    for (var i = 0; i < args.length; i++) {
+      res(i, args[i])
+    }
+  })
+}
+
+Promise.reject = function (value) {
+  return new Promise(function (resolve, reject) { 
+    reject(value);
+  });
+}
+
+Promise.race = function (values) {
+  return new Promise(function (resolve, reject) { 
+    values.forEach(function(value){
+      Promise.resolve(value).then(resolve, reject);
+    })
+  });
+}
+
+/* Prototype Methods */
+
+Promise.prototype['catch'] = function (onRejected) {
+  return this.then(null, onRejected);
+}
+
+},{"./core.js":"node_modules/promise/lib/core.js","asap":"node_modules/promise/node_modules/asap/asap.js"})
+require.register("node_modules/promise/lib/node-extensions.js",function(exports,require,module){
+'use strict';
+
+//This file contains then/promise specific extensions that are only useful for node.js interop
+
+var Promise = require('./core.js')
+var asap = require('asap')
+
+module.exports = Promise
+
+/* Static Functions */
+
+Promise.denodeify = function (fn, argumentCount) {
+  argumentCount = argumentCount || Infinity
+  return function () {
+    var self = this
+    var args = Array.prototype.slice.call(arguments)
+    return new Promise(function (resolve, reject) {
+      while (args.length && args.length > argumentCount) {
+        args.pop()
+      }
+      args.push(function (err, res) {
+        if (err) reject(err)
+        else resolve(res)
+      })
+      var res = fn.apply(self, args)
+      if (res && (typeof res === 'object' || typeof res === 'function') && typeof res.then === 'function') {
+        resolve(res)
+      }
+    })
+  }
+}
+Promise.nodeify = function (fn) {
+  return function () {
+    var args = Array.prototype.slice.call(arguments)
+    var callback = typeof args[args.length - 1] === 'function' ? args.pop() : null
+    var ctx = this
+    try {
+      return fn.apply(this, arguments).nodeify(callback, ctx)
+    } catch (ex) {
+      if (callback === null || typeof callback == 'undefined') {
+        return new Promise(function (resolve, reject) { reject(ex) })
+      } else {
+        asap(function () {
+          callback.call(ctx, ex)
+        })
+      }
+    }
+  }
+}
+
+Promise.prototype.nodeify = function (callback, ctx) {
+  if (typeof callback != 'function') return this
+
+  this.then(function (value) {
+    asap(function () {
+      callback.call(ctx, null, value)
+    })
+  }, function (err) {
+    asap(function () {
+      callback.call(ctx, err)
+    })
+  })
+}
+
+},{"./core.js":"node_modules/promise/lib/core.js","asap":"node_modules/promise/node_modules/asap/asap.js"})
+require.register("node_modules/promise/node_modules/asap/asap.js",function(exports,require,module){
+(function (process,setImmediate){(function (){
+
+// Use the fastest possible means to execute a task in a future turn
+// of the event loop.
+
+// linked list of tasks (single, with head node)
+var head = {task: void 0, next: null};
+var tail = head;
+var flushing = false;
+var requestFlush = void 0;
+var isNodeJS = false;
+
+function flush() {
+    /* jshint loopfunc: true */
+
+    while (head.next) {
+        head = head.next;
+        var task = head.task;
+        head.task = void 0;
+        var domain = head.domain;
+
+        if (domain) {
+            head.domain = void 0;
+            domain.enter();
+        }
+
+        try {
+            task();
+
+        } catch (e) {
+            if (isNodeJS) {
+                // In node, uncaught exceptions are considered fatal errors.
+                // Re-throw them synchronously to interrupt flushing!
+
+                // Ensure continuation if the uncaught exception is suppressed
+                // listening "uncaughtException" events (as domains does).
+                // Continue in next event to avoid tick recursion.
+                if (domain) {
+                    domain.exit();
+                }
+                setTimeout(flush, 0);
+                if (domain) {
+                    domain.enter();
+                }
+
+                throw e;
+
+            } else {
+                // In browsers, uncaught exceptions are not fatal.
+                // Re-throw them asynchronously to avoid slow-downs.
+                setTimeout(function() {
+                   throw e;
+                }, 0);
+            }
+        }
+
+        if (domain) {
+            domain.exit();
+        }
+    }
+
+    flushing = false;
+}
+
+if (typeof process !== "undefined" && process.nextTick) {
+    // Node.js before 0.9. Note that some fake-Node environments, like the
+    // Mocha test runner, introduce a `process` global without a `nextTick`.
+    isNodeJS = true;
+
+    requestFlush = function () {
+        process.nextTick(flush);
+    };
+
+} else if (typeof setImmediate === "function") {
+    // In IE10, Node.js 0.9+, or https://github.com/NobleJS/setImmediate
+    if (typeof window !== "undefined") {
+        requestFlush = setImmediate.bind(window, flush);
+    } else {
+        requestFlush = function () {
+            setImmediate(flush);
+        };
+    }
+
+} else if (typeof MessageChannel !== "undefined") {
+    // modern browsers
+    // http://www.nonblocking.io/2011/06/windownexttick.html
+    var channel = new MessageChannel();
+    channel.port1.onmessage = flush;
+    requestFlush = function () {
+        channel.port2.postMessage(0);
+    };
+
+} else {
+    // old browsers
+    requestFlush = function () {
+        setTimeout(flush, 0);
+    };
+}
+
+function asap(task) {
+    tail = tail.next = {
+        task: task,
+        domain: isNodeJS && process.domain,
+        next: null
+    };
+
+    if (!flushing) {
+        flushing = true;
+        requestFlush();
+    }
+};
+
+module.exports = asap;
+
+
+}).call(this)}).call(this,require('_process'),require("timers").setImmediate)
+},{"_process":"node_modules/process/browser.js","timers":"node_modules/timers-browserify/main.js"})
 require.register("node_modules/timers-browserify/main.js",function(exports,require,module){
 (function (setImmediate,clearImmediate){(function (){
 var nextTick = require('process/browser.js').nextTick;
@@ -41403,15 +41227,15 @@ require.alias("app/components/button.coffee","./components/button");
 require.alias("app/components/fibonacci.coffee","./components/fibonacci");
 require.alias("app/components/sidebar-view.coffee","./components/sidebar-view");
 require.alias("app/components/storybar-view.coffee","./components/storybar-view");
-require.alias("../bamboosnow/node_modules/promise/lib/core.js","./core.js");
-require.alias("../bamboosnow/node_modules/font-face-observer/src/dom.js","./dom");
+require.alias("node_modules/promise/lib/core.js","./core.js");
+require.alias("node_modules/font-face-observer/src/dom.js","./dom");
 require.alias("node_modules/palx/dist/hue-name.js","./hue-name");
 require.alias("node_modules/mithril/hyperscript.js","./hyperscript");
 require.alias("node_modules/mithril/render/hyperscriptVnode.js","./hyperscriptVnode");
-require.alias("../bamboosnow/node_modules/promise/lib/core.js","./lib/core.js");
-require.alias("../bamboosnow/node_modules/promise/lib/done.js","./lib/done.js");
-require.alias("../bamboosnow/node_modules/promise/lib/es6-extensions.js","./lib/es6-extensions.js");
-require.alias("../bamboosnow/node_modules/promise/lib/node-extensions.js","./lib/node-extensions.js");
+require.alias("node_modules/promise/lib/core.js","./lib/core.js");
+require.alias("node_modules/promise/lib/done.js","./lib/done.js");
+require.alias("node_modules/promise/lib/es6-extensions.js","./lib/es6-extensions.js");
+require.alias("node_modules/promise/lib/node-extensions.js","./lib/node-extensions.js");
 require.alias("app/lib/utils.coffee","./lib/utils");
 require.alias("app/models/stories.coffee","./models/stories");
 require.alias("node_modules/mithril/mount-redraw.js","./mount-redraw");
@@ -41433,12 +41257,12 @@ require.alias("node_modules/mithril/request.js","./request");
 require.alias("node_modules/mithril/request/request.js","./request/request");
 require.alias("node_modules/mithril/route.js","./route");
 require.alias("app/routes.coffee","./routes");
-require.alias("../bamboosnow/node_modules/font-face-observer/src/ruler.js","./ruler");
+require.alias("node_modules/font-face-observer/src/ruler.js","./ruler");
 require.alias("node_modules/process/browser.js","_process");
-require.alias("../bamboosnow/node_modules/promise/node_modules/asap/asap.js","asap");
+require.alias("node_modules/promise/node_modules/asap/asap.js","asap");
 require.alias("node_modules/backbone/backbone.js","backbone");
 require.alias("node_modules/palx/node_modules/chroma-js/chroma.js","chroma-js");
-require.alias("../bamboosnow/node_modules/font-face-observer/src/observer.js","font-face-observer");
+require.alias("node_modules/font-face-observer/src/observer.js","font-face-observer");
 require.alias("node_modules/halvalla/lib/halvalla-mithril.js","halvalla/lib/halvalla-mithril");
 require.alias("node_modules/jquery/dist/jquery.js","jquery");
 require.alias("node_modules/lodash/lodash.js","lodash");
@@ -41446,8 +41270,7 @@ require.alias("node_modules/mithril/index.js","mithril");
 require.alias("node_modules/mss-js/mss.js","mss-js");
 require.alias("node_modules/palx/dist/index.js","palx");
 require.alias("node_modules/process/browser.js","process/browser.js");
-require.alias("../bamboosnow/node_modules/promise/index.js","promise");
-require.alias("../bamboosnow/payload-/run-time-template.coffee","run-time-template.coffee");
+require.alias("node_modules/promise/index.js","promise");
 require.alias("node_modules/timers-browserify/main.js","timers");
 require.alias("node_modules/underscore/underscore.js","underscore");
 ;
