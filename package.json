@@ -5,9 +5,9 @@
   "main": "site.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node_modules/.bin/gulp start",
-    "watch": "node_modules/.bin/gulp watch",
-    "dist": "node_modules/.bin/gulp"
+    "start": "node_modules/.bin/gulp start -f node_modules/site-master/gulpfile.coffee",
+    "watch": "node_modules/.bin/gulp watch -f node_modules/site-master/gulpfile.coffee",
+    "dist": "node_modules/.bin/gulp -f node_modules/site-master/gulpfile.coffee"
   },
   "repository": {
     "type": "git",
