@@ -5648,7 +5648,7 @@ simple-concat@^1.0.0:
 
 "site-master@https://github.com/jahbini/site-master":
   version "1.0.1"
-  resolved "https://github.com/jahbini/site-master#62bf95027da6a5fab001f8e2c58d58bd3ad7290c"
+  resolved "https://github.com/jahbini/site-master#a577fc19a00fbabeea368936cac2276d85ac8f88"
   dependencies:
     ace-css "^1.1.0"
     backbone "^1.4.0"

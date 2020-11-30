@@ -114,7 +114,7 @@
   require.brunch = true;
   globals.require = require;
 })();
-;require.register("jquery/dist/jquery.js", function(exports, require, module){
+;require.register("node_modules/jquery/dist/jquery.js", function(exports, require, module){
   /*!
  * jQuery JavaScript Library v3.5.1
  * https://jquery.com/
@@ -10992,78 +10992,126 @@ return jQuery;
 });
 
 
-require.register("asap/asap.js", function(exports, require, module){
-  "use strict";
+require.register("../../cambodia/bamboosnow/node_modules/asap/asap.js", function(exports, require, module){
+  
+// Use the fastest possible means to execute a task in a future turn
+// of the event loop.
 
-var rawAsap = require("./raw");
-var freeTasks = [];
+// linked list of tasks (single, with head node)
+var head = {task: void 0, next: null};
+var tail = head;
+var flushing = false;
+var requestFlush = void 0;
+var isNodeJS = false;
 
-/**
- * Calls a task as soon as possible after returning, in its own event, with
- * priority over IO events. An exception thrown in a task can be handled by
- * `process.on("uncaughtException") or `domain.on("error")`, but will otherwise
- * crash the process. If the error is handled, all subsequent tasks will
- * resume.
- *
- * @param {{call}} task A callable object, typically a function that takes no
- * arguments.
- */
-module.exports = asap;
-function asap(task) {
-    var rawTask;
-    if (freeTasks.length) {
-        rawTask = freeTasks.pop();
+function flush() {
+    /* jshint loopfunc: true */
+
+    while (head.next) {
+        head = head.next;
+        var task = head.task;
+        head.task = void 0;
+        var domain = head.domain;
+
+        if (domain) {
+            head.domain = void 0;
+            domain.enter();
+        }
+
+        try {
+            task();
+
+        } catch (e) {
+            if (isNodeJS) {
+                // In node, uncaught exceptions are considered fatal errors.
+                // Re-throw them synchronously to interrupt flushing!
+
+                // Ensure continuation if the uncaught exception is suppressed
+                // listening "uncaughtException" events (as domains does).
+                // Continue in next event to avoid tick recursion.
+                if (domain) {
+                    domain.exit();
+                }
+                setTimeout(flush, 0);
+                if (domain) {
+                    domain.enter();
+                }
+
+                throw e;
+
+            } else {
+                // In browsers, uncaught exceptions are not fatal.
+                // Re-throw them asynchronously to avoid slow-downs.
+                setTimeout(function() {
+                   throw e;
+                }, 0);
+            }
+        }
+
+        if (domain) {
+            domain.exit();
+        }
+    }
+
+    flushing = false;
+}
+
+if (typeof process !== "undefined" && process.nextTick) {
+    // Node.js before 0.9. Note that some fake-Node environments, like the
+    // Mocha test runner, introduce a `process` global without a `nextTick`.
+    isNodeJS = true;
+
+    requestFlush = function () {
+        process.nextTick(flush);
+    };
+
+} else if (typeof setImmediate === "function") {
+    // In IE10, Node.js 0.9+, or https://github.com/NobleJS/setImmediate
+    if (typeof window !== "undefined") {
+        requestFlush = setImmediate.bind(window, flush);
     } else {
-        rawTask = new RawTask();
+        requestFlush = function () {
+            setImmediate(flush);
+        };
     }
-    rawTask.task = task;
-    rawTask.domain = process.domain;
-    rawAsap(rawTask);
+
+} else if (typeof MessageChannel !== "undefined") {
+    // modern browsers
+    // http://www.nonblocking.io/2011/06/windownexttick.html
+    var channel = new MessageChannel();
+    channel.port1.onmessage = flush;
+    requestFlush = function () {
+        channel.port2.postMessage(0);
+    };
+
+} else {
+    // old browsers
+    requestFlush = function () {
+        setTimeout(flush, 0);
+    };
 }
 
-function RawTask() {
-    this.task = null;
-    this.domain = null;
-}
+function asap(task) {
+    tail = tail.next = {
+        task: task,
+        domain: isNodeJS && process.domain,
+        next: null
+    };
 
-RawTask.prototype.call = function () {
-    if (this.domain) {
-        this.domain.enter();
-    }
-    var threw = true;
-    try {
-        this.task.call();
-        threw = false;
-        // If the task throws an exception (presumably) Node.js restores the
-        // domain stack for the next event.
-        if (this.domain) {
-            this.domain.exit();
-        }
-    } finally {
-        // We use try/finally and a threw flag to avoid messing up stack traces
-        // when we catch and release errors.
-        if (threw) {
-            // In Node.js, uncaught exceptions are considered fatal errors.
-            // Re-throw them to interrupt flushing!
-            // Ensure that flushing continues if an uncaught exception is
-            // suppressed listening process.on("uncaughtException") or
-            // domain.on("error").
-            rawAsap.requestFlush();
-        }
-        // If the task threw an error, we do not want to exit the domain here.
-        // Exiting the domain would prevent the domain from catching the error.
-        this.task = null;
-        this.domain = null;
-        freeTasks.push(this);
+    if (!flushing) {
+        flushing = true;
+        requestFlush();
     }
 };
+
+module.exports = asap;
 
 
   
 });
 
 
-require.register("bootstrap/dist/js/bootstrap.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/bootstrap/dist/js/bootstrap.js", function(exports, require, module){
   /*!
   * Bootstrap v4.5.3 (https://getbootstrap.com/)
   * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
@@ -15487,7 +15535,7 @@ require.register("bootstrap/dist/js/bootstrap.js", function(exports, require, mo
 });
 
 
-require.register("backbone/backbone.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/backbone/backbone.js", function(exports, require, module){
   //     Backbone.js 1.4.0
 
 //     (c) 2010-2019 Jeremy Ashkenas and DocumentCloud
@@ -17589,7 +17637,7 @@ require.register("backbone/backbone.js", function(exports, require, module){
 });
 
 
-require.register("base64-js/index.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/base64-js/index.js", function(exports, require, module){
   'use strict'
 
 exports.byteLength = byteLength
@@ -17745,7 +17793,7 @@ function fromByteArray (uint8) {
 });
 
 
-require.register("buffer/index.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/buffer/index.js", function(exports, require, module){
   /*!
  * The buffer module from node.js, for the browser.
  *
@@ -19528,7 +19576,7 @@ function numberIsNaN (obj) {
 });
 
 
-require.register("chroma-js/chroma.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/chroma-js/chroma.js", function(exports, require, module){
   /**
  * chroma.js - JavaScript library for color conversions
  *
@@ -22759,7 +22807,7 @@ require.register("chroma-js/chroma.js", function(exports, require, module){
 });
 
 
-require.register("font-face-observer/src/dom.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/font-face-observer/src/dom.js", function(exports, require, module){
   var dom = {};
 
 module.exports = dom;
@@ -22808,7 +22856,7 @@ dom.remove = function (parent, child) {
 });
 
 
-require.register("font-face-observer/src/observer.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/font-face-observer/src/observer.js", function(exports, require, module){
   var Promise = require('promise');
 var dom = require('./dom');
 var Ruler = require('./ruler');
@@ -23021,7 +23069,7 @@ Observer.prototype.check = function (text, timeout) {
 });
 
 
-require.register("font-face-observer/src/ruler.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/font-face-observer/src/ruler.js", function(exports, require, module){
   var dom = require('./dom');
 
 /**
@@ -23152,7 +23200,7 @@ Ruler.prototype.onResize = function (callback) {
 });
 
 
-require.register("halvalla/lib/halvalla-mithril.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/halvalla/lib/halvalla-mithril.js", function(exports, require, module){
   // Generated by CoffeeScript 1.12.7
 (function() {
   var Component, Halvalla, Mithril, Oracle;
@@ -23205,7 +23253,7 @@ require.register("halvalla/lib/halvalla-mithril.js", function(exports, require, 
 });
 
 
-require.register("halvalla/lib/html-tags.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/halvalla/lib/html-tags.js", function(exports, require, module){
   // Generated by CoffeeScript 1.12.7
 (function() {
   var BagMan, doctypes, elements, escape, mergeElements, nickName, normalizeArray, quote,
@@ -23388,7 +23436,7 @@ require.register("halvalla/lib/html-tags.js", function(exports, require, module)
 });
 
 
-require.register("halvalla/lib/name-mine.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/halvalla/lib/name-mine.js", function(exports, require, module){
   // Generated by CoffeeScript 1.12.7
 (function() {
   var nameMine, nextName;
@@ -23425,7 +23473,7 @@ require.register("halvalla/lib/name-mine.js", function(exports, require, module)
 });
 
 
-require.register("halvalla/lib/halvalla.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/halvalla/lib/halvalla.js", function(exports, require, module){
   // Generated by CoffeeScript 1.12.7
 
 /*
@@ -24148,7 +24196,7 @@ require.register("halvalla/lib/halvalla.js", function(exports, require, module){
 });
 
 
-require.register("halvalla/lib/teacup.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/halvalla/lib/teacup.js", function(exports, require, module){
   // Generated by CoffeeScript 1.12.7
 (function() {
   var BagMan, Teacup, allTags, doctypes, elements, escape, fn, fn1, fn2, fn3, fn4, i, j, l, len, len1, len2, len3, len4, m, mergeElements, normalizeArray, o, quote, ref, ref1, ref2, ref3, ref4, ref5, tagName,
@@ -24550,7 +24598,7 @@ require.register("halvalla/lib/teacup.js", function(exports, require, module){
 });
 
 
-require.register("ieee754/index.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/ieee754/index.js", function(exports, require, module){
   /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -24641,7 +24689,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 });
 
 
-require.register("isarray/index.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/isarray/index.js", function(exports, require, module){
   module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
@@ -24650,7 +24698,7 @@ require.register("isarray/index.js", function(exports, require, module){
 });
 
 
-require.register("mithril/mithril.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/mithril/mithril.js", function(exports, require, module){
   ;(function() {
 "use strict"
 function Vnode(tag, key, attrs0, children0, text, dom) {
@@ -26497,7 +26545,7 @@ else window.m = m
 });
 
 
-require.register("mss-js/mss.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/mss-js/mss.js", function(exports, require, module){
   // Generated by CoffeeScript 1.9.3
 
 /*
@@ -26988,7 +27036,7 @@ require.register("mss-js/mss.js", function(exports, require, module){
 });
 
 
-require.register("palx/dist/hue-name.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/palx/dist/hue-name.js", function(exports, require, module){
   'use strict';
 
 var names = ['red', // 0
@@ -27016,7 +27064,7 @@ module.exports = hueName;
 });
 
 
-require.register("palx/dist/index.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/palx/dist/index.js", function(exports, require, module){
   'use strict';
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
@@ -27138,7 +27186,7 @@ module.exports = palx;
 });
 
 
-require.register("process/browser.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/process/browser.js", function(exports, require, module){
   // shim for using process in browser
 var process = module.exports = {};
 
@@ -27328,7 +27376,7 @@ process.umask = function() { return 0; };
 });
 
 
-require.register("promise/index.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/promise/index.js", function(exports, require, module){
   'use strict';
 
 module.exports = require('./lib/core.js')
@@ -27339,7 +27387,7 @@ require('./lib/node-extensions.js')
 });
 
 
-require.register("promise/lib/node-extensions.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/promise/lib/node-extensions.js", function(exports, require, module){
   'use strict';
 
 //This file contains then/promise specific extensions that are only useful for node.js interop
@@ -27408,7 +27456,7 @@ Promise.prototype.nodeify = function (callback, ctx) {
 });
 
 
-require.register("promise/lib/es6-extensions.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/promise/lib/es6-extensions.js", function(exports, require, module){
   'use strict';
 
 //This file contains the ES6 extensions to the core Promises/A+ API
@@ -27522,7 +27570,7 @@ Promise.prototype['catch'] = function (onRejected) {
 });
 
 
-require.register("promise/lib/done.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/promise/lib/done.js", function(exports, require, module){
   'use strict';
 
 var Promise = require('./core.js')
@@ -27541,7 +27589,7 @@ Promise.prototype.done = function (onFulfilled, onRejected) {
 });
 
 
-require.register("promise/lib/core.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/promise/lib/core.js", function(exports, require, module){
   'use strict';
 
 var asap = require('asap')
@@ -27652,7 +27700,7 @@ function doResolve(fn, onFulfilled, onRejected) {
 });
 
 
-require.register("underscore/underscore.js", function(exports, require, module){
+require.register("../../cambodia/bamboosnow/node_modules/underscore/underscore.js", function(exports, require, module){
   //     Underscore.js 1.9.1
 //     http://underscorejs.org
 //     (c) 2009-2018 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -29349,5 +29397,5 @@ require.register("underscore/underscore.js", function(exports, require, module){
   
 });
 
-require.alias('jquery/dist/jquery.js','jquery');
+require.alias('node_modules/jquery/dist/jquery.js','jquery');
 require("jquery");
