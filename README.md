@@ -1,4 +1,10 @@
-# bamboosnow
+# bamboosnow generic static site
+[![Gitpod ready-to-code - bamboosnow](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jahbini/bamboosnow/-/tree/bamboosnow)
+[![Gitpod ready-to-code - celarien](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jahbini/bamboosnow/-/tree/celarien)
+[![Gitpod ready-to-code - cambodia](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jahbini/bamboosnow/-/tree/cambodia)
+[![Gitpod ready-to-code - stjohnsjim](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jahbini/bamboosnow/-/tree/stjohnsjim)
+
+
 source for bamboo snow disclosures and public facing site for site-master system
 
 This repository holds the sources for each post as converted into an active templateless publishing system.
