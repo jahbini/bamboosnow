@@ -4,7 +4,10 @@
   "description": "Original Disclosure of Bamboo Snow - making, attributes and using",
   "main": "site.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/gulp start",
+    "watch": "node_modules/.bin/gulp watch",
+    "dist": "node_modules/.bin/gulp"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,7 @@
   "license": "UNLICENSED",
   "homepage": "https://github.com/BambooJim/bamboosnow#readme",
   "dependencies": {
-    "underscore": "^1.8.3"
+    "site-master": "https://github.com/jahbini/site-master",
+    "underscore": "^1.12.1"
   }
 }
