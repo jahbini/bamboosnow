@@ -1,5 +1,9 @@
 # #-------- class start
+<<<<<<< HEAD
 renderer = class  index extends bamboosnowtemplate
+=======
+renderer = class  index extends siteTemplate
+>>>>>>> 962918c (use siteTemplate class)
   #
   # section storyHeadMatter
   #

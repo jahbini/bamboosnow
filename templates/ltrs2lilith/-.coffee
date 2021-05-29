@@ -1,10 +1,21 @@
 # #-------- class start
+<<<<<<< HEAD
+<<<<<<<< HEAD:templates/ltrs2lilith/-.coffee
 renderer = class  index extends bamboosnowtemplate
+=======
+renderer = class  index extends siteTemplate
+>>>>>>> 962918c (use siteTemplate class)
   #
   # section storyHeadMatter
   #
   storyHeadMatter: => # override in story
     return
+<<<<<<< HEAD
+========
+renderer = class  index extends siteTemplate
+>>>>>>>> 962918c (use siteTemplate class):templates/announcement/index.coffee
+=======
+>>>>>>> 962918c (use siteTemplate class)
   # 
   # section html
   # 

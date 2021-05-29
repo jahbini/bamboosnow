@@ -248,7 +248,11 @@ module.exports = B.Model.extend({
 });
 
 require.register("components/fibonacci.coffee", function(exports, require, module) {
+<<<<<<< HEAD
 var B, Fibonacci, T, Template, template,
+=======
+var B, Fibonacci, T,
+>>>>>>> 962918c (use siteTemplate class)
   boundMethodCheck = function(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new Error('Bound instance method accessed before binding'); } };
 
 T = Pylon.Halvalla;
@@ -256,6 +260,7 @@ T = Pylon.Halvalla;
 B = require('backbone');
 
 //{  Panel, PanelHeader, Link } = Pylon.Rebass
+<<<<<<< HEAD
 
 //Panel = T.bless Panel
 //Link = T.bless Link
@@ -264,6 +269,12 @@ Template = require(`payload-/${siteHandle}.coffee`);
 
 template = new Template(T);
 
+=======
+
+//Panel = T.bless Panel
+//Link = T.bless Link
+//PanelHeader = T.bless PanelHeader
+>>>>>>> 962918c (use siteTemplate class)
 module.exports = T.bless(Fibonacci = (function() {
   var Lozenge, ratioToPixels, rollSquare;
 
@@ -478,7 +489,11 @@ B = require('backbone');
 //Panel = T.bless Panel
 //Link = T.bless Link
 //PanelHeader = T.bless PanelHeader
+<<<<<<< HEAD
 Template = require(`payload-/${siteHandle}.coffee`);
+=======
+Template = require("payload-/run-time-template.coffee");
+>>>>>>> 962918c (use siteTemplate class)
 
 template = new Template(T);
 
@@ -951,11 +966,17 @@ PylonTemplate = Backbone.Model.extend({
   Halvalla: require('halvalla/lib/halvalla-mithril'),
   Palx: require('palx'),
   Utils: require('./lib/utils'),
-  Underscore: require('underscore')
+  Underscore: require('underscore'),
+  Backbone: Backbone
 });
 
 window.Pylon = Pylon = new PylonTemplate;
 
+<<<<<<< HEAD
+=======
+window._$_ = Pylon;
+
+>>>>>>> 962918c (use siteTemplate class)
 Pylon.Button = require('./components/button'); // Pylon is assumed to be a global for this guy
 
 Pylon.on('all', function(event, ...rest) {
@@ -993,7 +1014,11 @@ newColors.black = document.styling.black;
 newColors.white = document.styling.white;
 
 // gather the global JSONs into Backbone collections 
+<<<<<<< HEAD
 ({myStories, allStories} = require('models/stories'));
+=======
+({myStories, allStories} = require('./models/stories'));
+>>>>>>> 962918c (use siteTemplate class)
 
 // suppress react styling
 /*
@@ -1630,6 +1655,7 @@ module.exports = Collection = class Collection extends Backbone.Collection.exten
 });
 
 ;require.register("models/base/model.coffee", function(exports, require, module) {
+<<<<<<< HEAD
 
 var Backbone, Model;
 
@@ -1665,18 +1691,30 @@ module.exports = Navigation = (function() {
       }
     ]
   };
+=======
 
-  return Navigation;
+var Backbone, Model;
 
+Backbone = require('backbone');
+>>>>>>> 962918c (use siteTemplate class)
+
+module.exports = Model = class Model extends Backbone.Model.extend({
+    state: {}
+  }) {};
+
+<<<<<<< HEAD
 }).call(this);
+=======
+// Place your application-specific model features here
+>>>>>>> 962918c (use siteTemplate class)
 
 });
 
-require.register("models/stories.coffee", function(exports, require, module) {
+;require.register("models/stories.coffee", function(exports, require, module) {
 var Collection, Stories, Story,
   boundMethodCheck = function(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new Error('Bound instance method accessed before binding'); } };
 
-Collection = require('models/base/collection', Story = require('models/story'));
+Collection = require('../models/base/collection.coffee', Story = require('../models/story.coffee'));
 
 //allStories is global, as is myStories
 'use strict';
@@ -1723,7 +1761,7 @@ require.register("models/story.coffee", function(exports, require, module) {
 var Model, Story,
   boundMethodCheck = function(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new Error('Bound instance method accessed before binding'); } };
 
-Model = require('models/base/model');
+Model = require('../models/base/model.coffee');
 
 'use strict';
 
@@ -1749,6 +1787,7 @@ module.exports = Story = class Story extends Model {
   initialize() {
     return super.initialize();
   }
+<<<<<<< HEAD
 
 };
 
@@ -1764,6 +1803,10 @@ Model = require('models/base/model');
 module.exports = User = class User extends Model {};
 
 // This model is intentionally left blank
+=======
+
+};
+>>>>>>> 962918c (use siteTemplate class)
 
 });
 
@@ -1780,7 +1823,11 @@ module.exports = routes;
 
 });
 
+<<<<<<< HEAD
 require.register("payload-/bamboosnow.coffee", function(exports, require, module) {
+=======
+require.register("payload-/run-time-template.coffee", function(exports, require, module) {
+>>>>>>> 962918c (use siteTemplate class)
 /*
 styling: "Lookand Feel"
 */
