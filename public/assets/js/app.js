@@ -244,15 +244,10 @@ module.exports = B.Model.extend({
     return this;
   }
 });
-
 });
 
-require.register("components/fibonacci.coffee", function(exports, require, module) {
-<<<<<<< HEAD
-var B, Fibonacci, T, Template, template,
-=======
+;require.register("components/fibonacci.coffee", function(exports, require, module) {
 var B, Fibonacci, T,
->>>>>>> 962918c (use siteTemplate class)
   boundMethodCheck = function(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new Error('Bound instance method accessed before binding'); } };
 
 T = Pylon.Halvalla;
@@ -260,21 +255,10 @@ T = Pylon.Halvalla;
 B = require('backbone');
 
 //{  Panel, PanelHeader, Link } = Pylon.Rebass
-<<<<<<< HEAD
 
 //Panel = T.bless Panel
 //Link = T.bless Link
 //PanelHeader = T.bless PanelHeader
-Template = require(`payload-/${siteHandle}.coffee`);
-
-template = new Template(T);
-
-=======
-
-//Panel = T.bless Panel
-//Link = T.bless Link
-//PanelHeader = T.bless PanelHeader
->>>>>>> 962918c (use siteTemplate class)
 module.exports = T.bless(Fibonacci = (function() {
   var Lozenge, ratioToPixels, rollSquare;
 
@@ -473,10 +457,9 @@ module.exports = T.bless(Fibonacci = (function() {
   return Fibonacci;
 
 }).call(this));
-
 });
 
-require.register("components/sidebar-view.coffee", function(exports, require, module) {
+;require.register("components/sidebar-view.coffee", function(exports, require, module) {
 var B, Sidebar, T, Template, template,
   boundMethodCheck = function(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new Error('Bound instance method accessed before binding'); } };
 
@@ -489,11 +472,7 @@ B = require('backbone');
 //Panel = T.bless Panel
 //Link = T.bless Link
 //PanelHeader = T.bless PanelHeader
-<<<<<<< HEAD
-Template = require(`payload-/${siteHandle}.coffee`);
-=======
 Template = require("payload-/run-time-template.coffee");
->>>>>>> 962918c (use siteTemplate class)
 
 template = new Template(T);
 
@@ -606,10 +585,9 @@ module.exports = T.bless(Sidebar = (function() {
   return Sidebar;
 
 }).call(this));
-
 });
 
-require.register("components/storybar-view.coffee", function(exports, require, module) {
+;require.register("components/storybar-view.coffee", function(exports, require, module) {
 // put outbound links into story
 var B, Storybar, T, siteBase, z;
 
@@ -679,10 +657,9 @@ module.exports = T.bless(Storybar = (function() {
   return Storybar;
 
 }).call(this));
-
 });
 
-require.register("config.js", function(exports, require, module) {
+;require.register("config.js", function(exports, require, module) {
 'use strict';
 
 var monospace = '"Roboto Mono", Menlo, Consolas, monospace';
@@ -743,10 +720,9 @@ var config = {
 };
 
 module.exports = config;
-
 });
 
-require.register("configurations/basic.js", function(exports, require, module) {
+;require.register("configurations/basic.js", function(exports, require, module) {
 'use strict';
 
 var init = {
@@ -770,10 +746,9 @@ var init = {
 };
 
 module.exports = init;
-
 });
 
-require.register("configurations/biblio.js", function(exports, require, module) {
+;require.register("configurations/biblio.js", function(exports, require, module) {
 'use strict';
 
 var config = require('config');
@@ -875,18 +850,16 @@ var biblio = {
 };
 
 module.exports = biblio;
-
 });
 
-require.register("controllers/base/controller.coffee", function(exports, require, module) {
+;require.register("controllers/base/controller.coffee", function(exports, require, module) {
 'use strict';
 var BaseController;
 
 module.exports = BaseController = class BaseController extends Chaplin.Controller {};
-
 });
 
-require.register("controllers/footer.coffee", function(exports, require, module) {
+;require.register("controllers/footer.coffee", function(exports, require, module) {
 var BaseController, FooterController;
 
 BaseController = require('controllers/base/controller');
@@ -894,10 +867,9 @@ BaseController = require('controllers/base/controller');
 'use strict';
 
 module.exports = FooterController = class FooterController extends BaseController {};
-
 });
 
-require.register("controllers/home.coffee", function(exports, require, module) {
+;require.register("controllers/home.coffee", function(exports, require, module) {
 var HomeController, PageController, log;
 
 PageController = require('controllers/page');
@@ -916,10 +888,9 @@ module.exports = HomeController = class HomeController extends PageController {
   }
 
 };
-
 });
 
-require.register("controllers/menu.coffee", function(exports, require, module) {
+;require.register("controllers/menu.coffee", function(exports, require, module) {
 var BaseController, MenuController;
 
 BaseController = require('controllers/base/controller');
@@ -927,10 +898,9 @@ BaseController = require('controllers/base/controller');
 'use strict';
 
 module.exports = MenuController = class MenuController extends BaseController {};
-
 });
 
-require.register("controllers/page.coffee", function(exports, require, module) {
+;require.register("controllers/page.coffee", function(exports, require, module) {
 var BaseController, PageController;
 
 BaseController = require('controllers/base/controller');
@@ -944,10 +914,9 @@ module.exports = PageController = class PageController extends BaseController {
   }
 
 };
-
 });
 
-require.register("initialize.coffee", function(exports, require, module) {
+;require.register("initialize.coffee", function(exports, require, module) {
 
 //routes = require 'routes'
 var Backbone, Fibonacci, FontFaceObserver, Mithril, Palx, Pylon, PylonTemplate, Sidebar, Storybar, T, allStories, myStories, newColors, routes;
@@ -972,11 +941,8 @@ PylonTemplate = Backbone.Model.extend({
 
 window.Pylon = Pylon = new PylonTemplate;
 
-<<<<<<< HEAD
-=======
 window._$_ = Pylon;
 
->>>>>>> 962918c (use siteTemplate class)
 Pylon.Button = require('./components/button'); // Pylon is assumed to be a global for this guy
 
 Pylon.on('all', function(event, ...rest) {
@@ -1014,11 +980,7 @@ newColors.black = document.styling.black;
 newColors.white = document.styling.white;
 
 // gather the global JSONs into Backbone collections 
-<<<<<<< HEAD
-({myStories, allStories} = require('models/stories'));
-=======
 ({myStories, allStories} = require('./models/stories'));
->>>>>>> 962918c (use siteTemplate class)
 
 // suppress react styling
 /*
@@ -1067,10 +1029,9 @@ $(function() {
     return Mithril.render(bloviation, Fibonacci(1, 2, 3, 4, 5, 6));
   }
 });
-
 });
 
-require.register("lib/badass.coffee", function(exports, require, module) {
+;require.register("lib/badass.coffee", function(exports, require, module) {
 var B, Link, Panel, PanelHeader, T;
 
 T = Pylon.Halvalla;
@@ -1126,7 +1087,6 @@ module.exports.PanelHeader =   class PanelHeader extends B.Model
       T.crel 'Header', style: @style @vode.style
 
 */
-
 });
 
 ;require.register("lib/utils.coffee", function(exports, require, module) {
@@ -1638,10 +1598,9 @@ module.exports = new (Utility = (function() {
   return Utility;
 
 }).call(this));
-
 });
 
-require.register("models/base/collection.coffee", function(exports, require, module) {
+;require.register("models/base/collection.coffee", function(exports, require, module) {
 var Backbone, Collection;
 
 Backbone = require('backbone');
@@ -1651,11 +1610,9 @@ module.exports = Collection = class Collection extends Backbone.Collection.exten
   }) {};
 
 // Place your application-specific collection features here
-
 });
 
 ;require.register("models/base/model.coffee", function(exports, require, module) {
-<<<<<<< HEAD
 
 var Backbone, Model;
 
@@ -1666,13 +1623,12 @@ module.exports = Model = class Model extends Backbone.Model.extend({
   }) {};
 
 // Place your application-specific model features here
-
 });
 
 ;require.register("models/navigation.coffee", function(exports, require, module) {
 var Model, Navigation;
 
-Model = require('models/base/model');
+Model = require('../models/base/model.coffee');
 
 'use strict';
 
@@ -1691,23 +1647,10 @@ module.exports = Navigation = (function() {
       }
     ]
   };
-=======
 
-var Backbone, Model;
+  return Navigation;
 
-Backbone = require('backbone');
->>>>>>> 962918c (use siteTemplate class)
-
-module.exports = Model = class Model extends Backbone.Model.extend({
-    state: {}
-  }) {};
-
-<<<<<<< HEAD
 }).call(this);
-=======
-// Place your application-specific model features here
->>>>>>> 962918c (use siteTemplate class)
-
 });
 
 ;require.register("models/stories.coffee", function(exports, require, module) {
@@ -1754,10 +1697,9 @@ module.exports = {
   myStories: new Stories(myStories),
   Class: Stories
 };
-
 });
 
-require.register("models/story.coffee", function(exports, require, module) {
+;require.register("models/story.coffee", function(exports, require, module) {
 var Model, Story,
   boundMethodCheck = function(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new Error('Bound instance method accessed before binding'); } };
 
@@ -1787,27 +1729,20 @@ module.exports = Story = class Story extends Model {
   initialize() {
     return super.initialize();
   }
-<<<<<<< HEAD
 
 };
-
 });
 
-require.register("models/user.coffee", function(exports, require, module) {
+;require.register("models/user.coffee", function(exports, require, module) {
 var Model, User;
 
-Model = require('models/base/model');
+Model = require('../models/base/model.coffee');
 
 'use strict';
 
 module.exports = User = class User extends Model {};
 
 // This model is intentionally left blank
-=======
-
-};
->>>>>>> 962918c (use siteTemplate class)
-
 });
 
 ;require.register("routes.coffee", function(exports, require, module) {
@@ -1820,14 +1755,9 @@ routes = function(match) {
 };
 
 module.exports = routes;
-
 });
 
-<<<<<<< HEAD
-require.register("payload-/bamboosnow.coffee", function(exports, require, module) {
-=======
-require.register("payload-/run-time-template.coffee", function(exports, require, module) {
->>>>>>> 962918c (use siteTemplate class)
+;require.register("payload-/run-time-template.coffee", function(exports, require, module) {
 /*
 styling: "Lookand Feel"
 */
@@ -1889,10 +1819,9 @@ module.exports = BamboosnowLook = class BamboosnowLook {
   }
 
 };
-
 });
 
-require.alias("buffer/index.js", "buffer");
+;require.alias("buffer/index.js", "buffer");
 require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 
@@ -1904,3 +1833,5 @@ window.fontFaceObserver = require("font-face-observer");
 
 });})();require('___globals___');
 
+
+//# sourceMappingURL=app.js.map

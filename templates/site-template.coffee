@@ -71,7 +71,7 @@ module.exports = class siteTemplate
   # section faceBook
   #
   faceBook: =>
-    #include fb-script.teacup
+    return # #noinclude fb-script.teacup
   # 
   # section bamboosnow_body
   # 
