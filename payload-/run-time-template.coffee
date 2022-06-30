@@ -30,8 +30,7 @@ $ ->
   finally
     console.log "Proceeding after font load"  
 
-module.exports = class BamboosnowLook
-    
+module.exports = {
   widgetWrap: ->
       {attrs,contents} = T.normalizeArgs arguments
       id = attrs.id
@@ -42,4 +41,4 @@ module.exports = class BamboosnowLook
       T.div '.widget-wrap.bg-lighten-4.p-2.my-1', attrs , ->
         T.h3 '.widget-title', f:3, color: 'black', bg: '#c5a317', title unless !title
         T.div '.btn-group.btn-group-vertical.widget.my-2.p-2', ->contents
-
+}
