@@ -1,0 +1,77 @@
+<script>
+//economic/product-possibilities
+</script>
+
+<template lang="pug">
+#mainline.shadow.bg-lighten-4.wow.card.bg-transparent
+  .jimm.bg-lighten-4
+    header.card-header
+      h2.card-title
+        | Product Possibilites
+        .card-subtitle.text-muted ---
+    .card-body
+      .m1.bg-darken-1
+        #bloviation.contents(dangerously-set-inner-h-t-m-l='[object Object]')
+          h1#product-prototypes-for-your-inspiration- Product prototypes for your inspiration.
+          p These are mostly unbranded products, but prototypes for further marketing. Production and Marketing on Saipan is severely limited by it’s remote location and primitive infrastructure.
+          h2#products-listed-in-increasing-processing-and-manufacturing-cost Products listed in increasing processing and manufacturing cost
+          h3#unprocessed Unprocessed
+          ul
+            li
+              em Composter:
+              a(href='/products/raw/compost') Odor Free Compost.
+              | Soil amendment, too.
+            li
+              em Oil Spill:
+              a(href='/products/raw/sweep') Sweeping Compound.
+              | Clean and dry your floor in a jiffy.
+          h3#sifted Sifted
+          ul
+            li
+              em Craft Powder:
+              a(href='/products/household/craft-powder') least processing, easy packaging
+          h3#placed-or-sewn-in-a-cloth-bag Placed or Sewn in a Cloth Bag
+          ul
+            li
+              em Window and Screen Cleaner:
+              a(href='/products/household/screen-cleaner') When water is a no-no
+            li
+              em Anti-stress:
+              a(href='/products/soft-goods/sweaty-palm') Got Sweaty Palms? Need to de-stress?
+          h3#mixed-with-liquid Mixed with Liquid
+          ul
+            li
+              em Body Powder:
+              a(href='/products/personal/body-powder') A dry, itch free skin is moments away
+            li
+              em Shower Soap:
+              a(href='/products/personal/shower-scrub') Bamboo Snow makes an excellent scrub for skin
+            li
+              em Dish Washing Powder:
+              a(href='/products/household/dish-cleaner') Less Elbow Grease, Less Water
+          h3#mixed-with-paraffin Mixed with Paraffin
+          ul
+            li
+              em Fire Starter:
+              a(href='/products/household/charcoal-starter') makes an excellent way to start charcoal cooking fires.
+          h3#sewn-goods Sewn goods
+          ul
+            li
+              em Sweat Band:
+              a(href='/products/soft-goods/sweat-band') more like no-sweat band
+            li
+              em Vest:
+              a(href='/products/soft-goods/vest') Personal Climate Control
+            li
+              em Pillow:
+              a(href='/products/soft-goods/pillow') Multi Use Traveler’s Mat
+          h3#experimental-and-potential experimental and potential
+          p
+            | Potential areas for possible uses
+            a(href='/potential') Research areas
+    footer.card-footer
+      p.text-muted that's all--
+</template>
+
+<style>
+</style>
