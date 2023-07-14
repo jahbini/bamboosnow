@@ -16,7 +16,7 @@
           p
           .clearfix.mb2.border-bottom.fit.soudelar.classes.fancybox
             a.block.mx-auto(href='products-personal/body-powder/soudelar.jpg', title='title')
-              img.fig-img(src='products-personal/body-powder/soudelar-t.jpg', alt='Soudelar Damage')
+              img.fig-img(src='products-personal/body-powder/size400/soudelar.jpg', alt='Soudelar Damage')
             p.caption No Power, No Water -- Lots of Sweat
           | Early in August of 2015, a typhoon of magnificent proportions slammed my homey little island in the Pacific. It uprooted giant trees and utility poles. It shut down our wells. Trees cluttered the roads. Waiting in the line for gasoline or bottled water took hours.
           p

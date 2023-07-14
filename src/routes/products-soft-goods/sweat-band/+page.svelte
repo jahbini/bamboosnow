@@ -16,7 +16,7 @@
           p
           .clearfix.mb2.border-bottom.fit.right.fancybox
             a.block.mx-auto(href='products-soft-goods/sweat-band/sweat-band.jpeg', title='title')
-              img.fig-img(src='products-soft-goods/sweat-band/sweat-band-t.jpeg', alt='sweatband')
+              img.fig-img(src='products-soft-goods/sweat-band/size400/sweat-band-t.jpeg', alt='sweatband')
             p.caption
           | This sweatband keeps working while you do.
           p

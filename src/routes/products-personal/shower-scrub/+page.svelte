@@ -19,7 +19,7 @@
           p
           .clearfix.mb2.border-bottom.fit.shower.right.fancybox.ml1
             a.block.mx-auto(href='products-personal/shower-scrub/shower.jpg', title='title')
-              img.fig-img(src='products-personal/shower-scrub/shower-t.jpg', alt='alt')
+              img.fig-img(src='products-personal/shower-scrub/shower.jpg', alt='alt')
             p.caption
           p
           p I have used bamboo snow for two full years: I have personally verified that bamboo snow is compatible with skin. Every part. Yes, that too.

@@ -13,10 +13,10 @@
       .m1.bg-darken-1
         #bloviation.contents(dangerously-set-inner-h-t-m-l='[object Object]')
           p Bamboo Snow also breathes — it will absorb the sweat from your body and keep you and your clothes dry when the humidity rises.
-          p
-            img.fancy(title='title', alt='vest1', src='products-soft-goods/climate-busting-vest/vest1.jpg')
-            img.fancy(title='title', alt='vest2', src='products-soft-goods/climate-busting-vest/vest2.jpg')
-            | A vest made with a one quarter to one half inch of bamboo snow filling absorbs sweat far better than cotton.
+          d
+            img.fancy(title='title', alt='vest1', src='products-soft-goods/climate-busting-vest/size400/vest1.jpg')
+            img.fancy(title='title', alt='vest2', src='products-soft-goods/climate-busting-vest/size100/vest2.jpg' style="float:right")
+          p  A vest made with a one quarter to one half inch of bamboo snow filling absorbs sweat far better than cotton.
           p Bamboo Snow is an excellent thermal insulator, and keeps you warm in the cold, and cool in the heat.
           p Bamboo Snow also breathes — it will absorb the sweat from your body and keep you and your clothes dry when the humidity rises.
           p
