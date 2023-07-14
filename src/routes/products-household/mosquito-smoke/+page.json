@@ -1,0 +1,35 @@
+{
+  "id": "bamboosnow/products-household/mosquito-smoke",
+  "name": "Mosquito Smoke",
+  "fields": {
+    "title": "Mosquito Smoke",
+    "slug": "mosquito-smoke",
+    "category": "products-household",
+    "site": "bamboosnow",
+    "accepted": true,
+    "index": false,
+    "headlines": [
+      "Insect Powder Sends Bugs Packing",
+      "Bamboo Snow Evicts Insects",
+      "Bamboo Snow Routes Mosquitoes",
+      "Bamboo Snow Sends Bugs Packing"
+    ],
+    "tags": [
+      "59782473d3cfff7cc5f926c2",
+      "59782473d3cfff7cc5f926c8",
+      "59782473d3cfff7cc5f926c9",
+      "59782473d3cfff7cc5f926ca",
+      "59782473d3cfff7cc5f926cb"
+    ],
+    "snippets": "{}",
+    "memberOf": [],
+    "created": "2016-09-01T05:26:30.000Z",
+    "lastEdited": "2016-09-01T00:00:00.000Z",
+    "published": "2016-09-01T00:00:00.000Z",
+    "embargo": "2016-09-01T00:00:00.000Z",
+    "captureDate": "2017-07-26T05:11:15.000Z",
+    "TimeStamp": "1501045875000",
+    "author": "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim",
+    "debug": ""
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "bamboosnow/error/404",
+  "name": "404",
+  "fields": {
+    "title": "404",
+    "slug": "404",
+    "category": "error",
+    "site": "bamboosnow",
+    "accepted": true,
+    "index": false,
+    "headlines": [],
+    "tags": [],
+    "snippets": "{\"first name\":\"first name\"}",
+    "memberOf": [],
+    "created": "2018-03-05T04:46:34.618Z",
+    "lastEdited": "2018-03-05T04:46:34.621Z",
+    "published": "2018-03-05T04:46:34.621Z",
+    "embargo": "2018-03-05T04:46:34.621Z",
+    "captureDate": "2018-03-05T04:46:34.621Z",
+    "TimeStamp": 1520225194621,
+    "debug": "",
+    "author": "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim"
+  }
+}

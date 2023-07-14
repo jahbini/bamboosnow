@@ -1,16 +1,38 @@
-# bamboosnow generic static site
-[![Gitpod ready-to-code - bamboosnow](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)]
+# create-svelte
 
-source for bamboo snow disclosures and public facing site for site-master system
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-This repository holds the sources for each post as converted into an active templateless publishing system.
+## Creating a project
 
-The sources are written in coffeescript, and executed to produce the final html, somewhat like static sites based on markdown.
+If you're seeing this, you've probably already done this step. Congrats!
 
-However, Markdown proved to be unsatisfactory for the expression of the current and future direction of these posts. For example, http://stjohnsjim.com/story/valkyrie-sms.html -- also published by this system.
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-For this reason, Markdown was dropped and raw coffeescript used with Teacup signatures provided by https://github.com/jahbini/halvalla. The template structure is Halvalla based coffeescript classes that describe the site temmplate, and an extension class that generates the page's inner content.
+# create a new project in my-app
+npm create svelte@latest my-app
+```
 
-The YAML front-end material has been dropped in favor of simple coffeescript executable that is at the bottom of each post.
+## Developing
 
-Productipn of the html is done by https://github.com/jahbini/site-loader, and the actual serving by https://github.com/jahbini/site-master
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

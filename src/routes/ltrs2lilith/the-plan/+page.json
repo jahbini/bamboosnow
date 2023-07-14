@@ -1,0 +1,25 @@
+{
+  "id": "bamboosnow/ltrs2lilith/the-plan",
+  "name": "the-plan",
+  "fields": {
+    "title": "the-plan",
+    "slug": "the-plan",
+    "category": "ltrs2lilith",
+    "site": "bamboosnow",
+    "accepted": true,
+    "index": false,
+    "sourcePath": "",
+    "headlines": [],
+    "tags": [],
+    "snippets": "{\"first name\":\"first name\"}",
+    "memberOf": [],
+    "created": "2019-03-08T08:02:56.333Z",
+    "lastEdited": "2019-03-08T08:02:56.334Z",
+    "published": "2019-03-08T08:02:56.334Z",
+    "embargo": "2019-03-08T08:02:56.334Z",
+    "captureDate": "2019-03-08T08:02:56.334Z",
+    "TimeStamp": 1552032176334,
+    "debug": "",
+    "author": "James A. Hinds: Bubba Baba Bamboo Jim"
+  }
+}

@@ -1,0 +1,39 @@
+<script>
+//products-personal/body-powder
+</script>
+
+<template lang="pug">
+#mainline.shadow.bg-lighten-4.wow.card.bg-transparent
+  .jimm.bg-lighten-4
+    header.card-header
+      h2.card-title
+        | Body Powder
+        .card-subtitle.text-muted ---
+    .card-body
+      .m1.bg-darken-1
+        #bloviation.contents(dangerously-set-inner-h-t-m-l='[object Object]')
+          p This is on my Must Have list for daily use Without Bamboo Snow, the recovery from Typhoon Soudelar would have been difficult.
+          p
+          .clearfix.mb2.border-bottom.fit.soudelar.classes.fancybox
+            a.block.mx-auto(href='products-personal/body-powder/soudelar.jpg', title='title')
+              img.fig-img(src='products-personal/body-powder/soudelar-t.jpg', alt='Soudelar Damage')
+            p.caption No Power, No Water -- Lots of Sweat
+          | Early in August of 2015, a typhoon of magnificent proportions slammed my homey little island in the Pacific. It uprooted giant trees and utility poles. It shut down our wells. Trees cluttered the roads. Waiting in the line for gasoline or bottled water took hours.
+          p
+          p
+            | The clean-up is still in progress: folks off the main roads still do not have electricity. (in all fairness, I should add that some people on Saipan did not have electricity
+            em even before
+            | Soudelar.)
+          p
+            | So how do you cope with six weeks of no washing and 95 degree heat and humidity?
+            em Bamboo Snow Body Powder!
+          p It kept my skin dry and smooth and free of itches.
+          p Simply mix a few drops of Essential Oils into bamboo snow. I use an off-the-shelf oil branded "White Flower," but Eucalyptus or Tea Tree oils work great too.
+          p Bamboo Snow mixes quickly and easily with nearly anything in any amount and is perfect for specialty powders for personal use.
+          p You can create unique and brand-able products from your own recipes.
+    footer.card-footer
+      p.text-muted that's all--
+</template>
+
+<style>
+</style>

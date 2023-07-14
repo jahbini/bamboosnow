@@ -1,0 +1,25 @@
+{
+  "id": "bamboosnow/ltrs2lilith/-",
+  "name": "-",
+  "fields": {
+    "title": "-",
+    "slug": "-",
+    "category": "ltrs2lilith",
+    "site": "bamboosnow",
+    "accepted": true,
+    "index": true,
+    "sourcePath": "",
+    "headlines": [],
+    "tags": [],
+    "snippets": "{\"first name\":\"first name\"}",
+    "memberOf": [],
+    "created": "2019-03-08T00:21:56.086Z",
+    "lastEdited": "2019-03-08T00:21:56.087Z",
+    "published": "2019-03-08T00:21:56.087Z",
+    "embargo": "2019-03-08T00:21:56.087Z",
+    "captureDate": "2019-03-08T00:21:56.087Z",
+    "TimeStamp": 1552004516087,
+    "debug": "",
+    "author": "James A. Hinds: Bubba Baba Bamboo Jim"
+  }
+}

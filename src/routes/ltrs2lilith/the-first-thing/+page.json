@@ -1,0 +1,25 @@
+{
+  "id": "bamboosnow/ltrs2lilith/the-first-thing",
+  "name": "the-first-thing",
+  "fields": {
+    "title": "the-first-thing",
+    "slug": "the-first-thing",
+    "category": "ltrs2lilith",
+    "site": "bamboosnow",
+    "accepted": true,
+    "index": false,
+    "sourcePath": "",
+    "headlines": [],
+    "tags": [],
+    "snippets": "{\"first name\":\"first name\"}",
+    "memberOf": [],
+    "created": "2019-03-08T07:41:10.028Z",
+    "lastEdited": "2019-03-08T07:41:10.029Z",
+    "published": "2019-03-08T07:41:10.029Z",
+    "embargo": "2019-03-08T07:41:10.029Z",
+    "captureDate": "2019-03-08T07:41:10.029Z",
+    "TimeStamp": 1552030870029,
+    "debug": "",
+    "author": "James A. Hinds: Bubba Baba Bamboo Jim"
+  }
+}

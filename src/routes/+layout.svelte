@@ -1,0 +1,108 @@
+<script>
+//app/app
+let styling = {"palx":"#03c","black":"#000","white":"#fff"}
+import allStories from './allstories.json';
+import stories from './mystories.json?raw';
+const siteHandle = 'bamboosnow';
+const topDomain = 'bamboosnow.com';
+import Header from './Header.svelte';
+import Aside from './Aside.svelte';
+import Footer from './Footer.svelte';
+</script>
+
+<template lang="pug">
+svelte:head
+  base(href='/')
+  meta(name='author', content='James A. Hinds: Bubba Baba Bamboo Jim')
+  meta(http-equiv='Content-Type', content='text/html', charset='UTF-8')
+  meta(name='viewport', content='width=device-width,initial-scale=1')
+  title Bamboo Snow: The Amazing Substance
+  meta(name='description', content='All that is known about Bamboo Snow')
+  meta(name='keywords', content='bamboo snow,dinoderus minutus,absorbant,dessicant,organic,bamboo byproduct,bamboo')
+  link(rel='apple-touch-icon', sizes='57x57', href='/icons/apple-icon-57x57.png')
+  link(rel='apple-touch-icon', sizes='60x60', href='/icons/apple-icon-60x60.png')
+  link(rel='apple-touch-icon', sizes='72x72', href='/icons/apple-icon-72x72.png')
+  link(rel='apple-touch-icon', sizes='76x76', href='/icons/apple-icon-76x76.png')
+  link(rel='apple-touch-icon', sizes='114x114', href='/icons/apple-icon-114x114.png')
+  link(rel='apple-touch-icon', sizes='120x120', href='/icons/apple-icon-120x120.png')
+  link(rel='apple-touch-icon', sizes='144x144', href='/icons/apple-icon-144x144.png')
+  link(rel='apple-touch-icon', sizes='152x152', href='/icons/apple-icon-152x152.png')
+  link(rel='apple-touch-icon', sizes='180x180', href='/icons/apple-icon-180x180.png')
+  link(rel='icon', type='image/png', sizes='192x192', href='/icons/android-icon-192x192.png')
+  link(rel='icon', type='image/png', sizes='32x32', href='/icons/favicon-32x32.png')
+  link(rel='icon', type='image/png', sizes='96x96', href='/icons/favicon-96x96.png')
+  link(rel='icon', type='image/png', sizes='16x16', href='/icons/favicon-16x16.png')
+  meta(name='msapplication-TileColor', content='#ffffff')
+  meta(name='msapplication-TileImage', content='/icons/ms-icon-144x144.png')
+  meta(name='theme-color', content='#ffffff')
+  link(rel='shortcut icon', href='icons/favicon.ico', type='image/x-icon')
+  link(rel='icon', href='icons/favicon.ico', type='image/x-icon')
+
+
+#stjohnsjim-body
+  div.sitecontainer
+    Header
+    div.site
+      div.mainly
+        slot
+        slot:storybar
+      Aside({stories}) 
+    Footer
+
+container
+  .container-fluid
+    header.center.flex.p2.border-bottom.bg-darken-4
+      #sidecar.flex-auto.border.rounded.bg-silver(min-width='33rem')
+        .fb-login-button(width='250px', data-width='33rem', data-max-rows='1', data-size='large', data-button-type='login_with', data-show-faces='true', data-auto-logout-link='true', data-use-continue-as='true')
+        #fb-status
+    .row
+      .col.col-12.col-md-9.order-md-last.order-first
+        slot:storybar
+        slot:default
+        slot
+      .col.col-12.col-md-3
+        #sidebarCap
+          aside#sidebar
+    #footer
+      .outer
+        .inner
+          | © 2016 James A. Hinds
+          br
+          | Powered by
+          a(href='https://github.com/jahbini/site-master', target='_blank') Site Master
+    #cover.fixed-top(style='background-image:url(images/cover.jpg);')
+</template>
+
+<style>
+  @import "@picocss/pico";
+  .sitecontainer {
+    padding: 0.1in;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+  }
+  .mainly {
+    grid-area: Main;
+    padding: 0 2em 0 2em;
+    background-color:rgba(255, 255, 255, .5)
+
+  }
+  .site {
+    display: grid;
+    gap: 5em 0em;
+    grid-template-columns: 1fr 5fr 2fr;
+    grid-template-areas: "None Main Aside";
+    min-height: 100vh;
+  }
+#cover {
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    height:100%;
+    width:100%;
+    }
+</style>

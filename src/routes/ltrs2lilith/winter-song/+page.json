@@ -1,0 +1,25 @@
+{
+  "id": "bamboosnow/ltrs2lilith/winter-song",
+  "name": "winter-song",
+  "fields": {
+    "title": "winter-song",
+    "slug": "winter-song",
+    "category": "ltrs2lilith",
+    "site": "bamboosnow",
+    "accepted": true,
+    "index": false,
+    "sourcePath": "",
+    "headlines": [],
+    "tags": [],
+    "snippets": "{\"first name\":\"first name\"}",
+    "memberOf": [],
+    "created": "2019-03-09T00:19:48.346Z",
+    "lastEdited": "2019-03-09T00:19:48.347Z",
+    "published": "2019-03-09T00:19:48.347Z",
+    "embargo": "2019-03-09T00:19:48.347Z",
+    "captureDate": "2019-03-09T00:19:48.347Z",
+    "TimeStamp": 1552090788347,
+    "debug": "",
+    "author": "James A. Hinds: Bubba Baba Bamboo Jim"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "bamboosnow/products-organic/compost",
+  "name": "Compost",
+  "fields": {
+    "title": "Compost",
+    "slug": "compost",
+    "category": "products-organic",
+    "site": "bamboosnow",
+    "accepted": true,
+    "index": false,
+    "headlines": [
+      "Vermin Free Cmpost",
+      "Make Your Own Fertilizer",
+      "Do NOT Throw Your Garbage Away!"
+    ],
+    "tags": [
+      "59782473d3cfff7cc5f926bb"
+    ],
+    "snippets": "{}",
+    "memberOf": [],
+    "created": "2015-12-02T05:26:30.000Z",
+    "lastEdited": "2016-03-17T00:00:00.000Z",
+    "published": "2018-02-24T06:00:11.993Z",
+    "embargo": "2018-02-24T06:00:11.991Z",
+    "captureDate": "2017-07-26T05:11:15.000Z",
+    "TimeStamp": "1501045875000",
+    "author": "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim",
+    "debug": "",
+    "bazoogies": "2018-02-24T05:35:09.350Z"
+  }
+}

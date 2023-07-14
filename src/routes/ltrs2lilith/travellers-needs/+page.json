@@ -1,0 +1,25 @@
+{
+  "id": "bamboosnow/ltrs2lilith/travellers-needs",
+  "name": "travellers-needs",
+  "fields": {
+    "title": "travellers-needs",
+    "slug": "travellers-needs",
+    "category": "ltrs2lilith",
+    "site": "bamboosnow",
+    "accepted": true,
+    "index": false,
+    "sourcePath": "",
+    "headlines": [],
+    "tags": [],
+    "snippets": "{\"first name\":\"first name\"}",
+    "memberOf": [],
+    "created": "2019-03-08T00:37:20.711Z",
+    "lastEdited": "2019-03-08T00:37:20.712Z",
+    "published": "2019-03-08T00:37:20.712Z",
+    "embargo": "2019-03-08T00:37:20.712Z",
+    "captureDate": "2019-03-08T00:37:20.712Z",
+    "TimeStamp": 1552005440712,
+    "debug": "",
+    "author": "James A. Hinds: Bubba Baba Bamboo Jim"
+  }
+}
