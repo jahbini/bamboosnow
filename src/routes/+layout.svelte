@@ -48,29 +48,7 @@ svelte:head
         slot:storybar
       Aside({stories}) 
     Footer
-
-container
-  .container-fluid
-    header.center.flex.p2.border-bottom.bg-darken-4
-      #sidecar.flex-auto.border.rounded.bg-silver(min-width='33rem')
-        .fb-login-button(width='250px', data-width='33rem', data-max-rows='1', data-size='large', data-button-type='login_with', data-show-faces='true', data-auto-logout-link='true', data-use-continue-as='true')
-        #fb-status
-    .row
-      .col.col-12.col-md-9.order-md-last.order-first
-        slot:storybar
-        slot:default
-        slot
-      .col.col-12.col-md-3
-        #sidebarCap
-          aside#sidebar
-    #footer
-      .outer
-        .inner
-          | © 2016 James A. Hinds
-          br
-          | Powered by
-          a(href='https://github.com/jahbini/site-master', target='_blank') Site Master
-    #cover.fixed-top(style='background-image:url(images/cover.jpg);')
+#cover.fixed-top(style='background-image:url(images/cover.jpg);')
 </template>
 
 <style>
