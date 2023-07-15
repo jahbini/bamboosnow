@@ -9,9 +9,9 @@
 
 <div class="aside">
   {#each info as category,indexx}
-  <details>
-  <summary>{info[indexx][0].category}</summary>
-  <ul>
+  <details role="list">
+  <summary class="text-vivid"  aria-haspopup="listbox" >{info[indexx][0].category}</summary>
+  <ul role="listbox">
   {#each info[indexx] as story}
   <li>  <a href="{story.category}/{story.slug}" >{story.title}</a></li>
   {/each}
@@ -31,10 +31,14 @@
     color: black;
   }
 
+.text-vivid {
+  color: #fff !important;
+  text-shadow: 1px 2px 3px #962;
+}
   .aside {
-    background-color: beige;
     border-radius: 4px;
     padding: 1rem;
     grid-area: Aside;
+    background: rgb(245, 245, 220, .35);
   }
 </style>
