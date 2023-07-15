@@ -1,5 +1,6 @@
 <script>
 //app/app
+export const prerender = true
 let styling = {"palx":"#03c","black":"#000","white":"#fff"}
 import allStories from './allstories.json';
 import stories from './mystories.json?raw';

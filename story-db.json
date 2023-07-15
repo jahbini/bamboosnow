@@ -801,12 +801,12 @@
       }
     },
     {
-      "id": "bamboosnow/ltrs2lilith/-",
+      "id": "bamboosnow/blog/-",
       "name": "-",
       "fields": {
         "title": "-",
         "slug": "-",
-        "category": "ltrs2lilith",
+        "category": "blog",
         "site": "bamboosnow",
         "accepted": true,
         "index": true,
@@ -826,12 +826,12 @@
       }
     },
     {
-      "id": "bamboosnow/ltrs2lilith/travellers-needs",
+      "id": "bamboosnow/blog/travellers-needs",
       "name": "travellers-needs",
       "fields": {
         "title": "travellers-needs",
         "slug": "travellers-needs",
-        "category": "ltrs2lilith",
+        "category": "blog",
         "site": "bamboosnow",
         "accepted": true,
         "index": false,
@@ -851,12 +851,12 @@
       }
     },
     {
-      "id": "bamboosnow/ltrs2lilith/the-first-thing",
+      "id": "bamboosnow/blog/the-first-thing",
       "name": "the-first-thing",
       "fields": {
         "title": "the-first-thing",
         "slug": "the-first-thing",
-        "category": "ltrs2lilith",
+        "category": "blog",
         "site": "bamboosnow",
         "accepted": true,
         "index": false,
@@ -876,12 +876,12 @@
       }
     },
     {
-      "id": "bamboosnow/ltrs2lilith/the-plan",
+      "id": "bamboosnow/blog/the-plan",
       "name": "the-plan",
       "fields": {
         "title": "the-plan",
         "slug": "the-plan",
-        "category": "ltrs2lilith",
+        "category": "blog",
         "site": "bamboosnow",
         "accepted": true,
         "index": false,
@@ -901,12 +901,12 @@
       }
     },
     {
-      "id": "bamboosnow/ltrs2lilith/winter-song",
+      "id": "bamboosnow/blog/winter-song",
       "name": "winter-song",
       "fields": {
         "title": "winter-song",
         "slug": "winter-song",
-        "category": "ltrs2lilith",
+        "category": "blog",
         "site": "bamboosnow",
         "accepted": true,
         "index": false,
