@@ -19,7 +19,7 @@
             p Bamboo Snow tames any kind of organic waste by encasing it in an odor free hull, and dehydrating the waste. It turns the septic disaster of open defecation into a simple matter of covering the waste with dehydrating Bamboo Snow.
             p When the mixture is kept dry the Bamboo Snow maintains a sterile environment. When water is added it quickly and safely produces useful compost.
           .border
-            video.o-image(width='420px', controls, preload='metadata', src='./sanitation/open-defecation/od-bamboo-snow.mp4')
+            video.o-image(width='420px', controls, preload='metadata',type="video/mv4",  src='sanitation/open-defecation/od-bamboo-snow.mpeg')
     footer.card-footer
       p.text-muted that's all--
 </template>

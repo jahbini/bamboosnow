@@ -152,7 +152,7 @@
   {
     "title": "Good News Bad News",
     "slug": "good-news-bad-news",
-    "category": "announcement",
+    "category": "blog",
     "site": "bamboosnow",
     "accepted": true,
     "index": false,
@@ -168,7 +168,7 @@
     "embargo": "2016-01-01T00:00:00.000Z",
     "author": "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim",
     "debug": "",
-    "id": "bamboosnow/announcement/good-news-bad-news",
+    "id": "bamboosnow/blog/good-news-bad-news",
     "name": "Good News Bad News"
   },
   {
@@ -377,7 +377,7 @@
   {
     "title": "The Big Picture",
     "slug": "the-big-picture",
-    "category": "announcement",
+    "category": "blog",
     "site": "bamboosnow",
     "accepted": true,
     "index": false,
@@ -394,7 +394,7 @@
     "embargo": "2015-12-31T00:00:00.000Z",
     "author": "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim",
     "debug": "",
-    "id": "bamboosnow/announcement/the-big-picture",
+    "id": "bamboosnow/blog/the-big-picture",
     "name": "The Big Picture"
   },
   {
@@ -424,7 +424,7 @@
   {
     "title": "Two Years with Bamboo Snow",
     "slug": "two-years-with-bamboo-snow",
-    "category": "announcement",
+    "category": "blog",
     "site": "bamboosnow",
     "accepted": true,
     "index": false,
@@ -438,31 +438,8 @@
     "embargo": "2015-12-31T00:00:00.000Z",
     "author": "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim",
     "debug": "",
-    "id": "bamboosnow/announcement/two-years-with-bamboo-snow",
+    "id": "bamboosnow/blog/two-years-with-bamboo-snow",
     "name": "Two Years with Bamboo Snow"
-  },
-  {
-    "title": "the Bamboo Snow Story",
-    "slug": "index",
-    "category": "-",
-    "site": "bamboosnow",
-    "accepted": true,
-    "index": true,
-    "headlines": [
-      "Inventor Discovers Miracle Substance",
-      "Dust Farmer Tells All",
-      "Better Hygiene With Bamboo Snow",
-      "A Discovery that Slept for a Million Years"
-    ],
-    "tags": [],
-    "snippets": "{}",
-    "memberOf": [],
-    "published": "2017-07-26T05:11:15.000Z",
-    "embargo": "2016-03-11T12:40:04.000Z",
-    "author": "Copyright 2010-2018 James A. Hinds: Bubba Baba Bamboo Jim",
-    "debug": "marked",
-    "id": "bamboosnow/-/index",
-    "name": "the Bamboo Snow Story"
   },
   {
     "title": "open-defecation",

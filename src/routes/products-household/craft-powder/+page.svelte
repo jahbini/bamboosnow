@@ -15,7 +15,7 @@
           p Bamboo Snow powder mixes well with many glues to make super putty.
           p
             | This mixture not only is easy to work with, but the
-            em bamboo snow
+            | bamboo snow 
             | actually sucks the glue off my fingers.
           p
             img(src='products-household/craft-powder/bamboo-snow-putty.gif', alt='Bamboo Snow Makes Clean Crafting@soudelar.classes.fancybox', title='Bamboo Snow makes for clean crafting')

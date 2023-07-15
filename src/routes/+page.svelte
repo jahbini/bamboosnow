@@ -22,7 +22,7 @@
             li It is the newest member of the exclusive club of honey and silk.
           p
             | Get the full story about my
-            a(href='/announcement/two-years-with-bamboo-snow.html') incredible life with Bamboo Snow.
+            a(href='/blog/two-years-with-bamboo-snow.html') incredible life with Bamboo Snow.
     footer.card-footer
       p.text-muted that's all--
 </template>

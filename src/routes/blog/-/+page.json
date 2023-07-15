@@ -1,10 +1,10 @@
 {
-  "id": "bamboosnow/ltrs2lilith/-",
+  "id": "bamboosnow/blog/-",
   "name": "-",
   "fields": {
     "title": "-",
     "slug": "-",
-    "category": "ltrs2lilith",
+    "category": "blog",
     "site": "bamboosnow",
     "accepted": true,
     "index": true,

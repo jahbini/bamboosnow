@@ -14,7 +14,7 @@
         #bloviation.contents
           p
             | put your text here
-            a(href='/announcement/two-years-with-bamboo-snow.html') incredible life with Bamboo Snow.
+            a(href='/blog/two-years-with-bamboo-snow.html') incredible life with Bamboo Snow.
     footer.card-footer
       p.text-muted that's all--
 </template>

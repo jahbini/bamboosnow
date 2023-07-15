@@ -24,7 +24,6 @@
 }
 #header {
   min-height:30px;
-  background:center 32% no-repeat url(/images/banner.jpg);
   padding: 1rem;
   grid-area: Header;
   grid-template-columns: 1fr 2fr 1fr;

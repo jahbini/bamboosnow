@@ -14,7 +14,7 @@
         #bloviation.contents(dangerously-set-inner-h-t-m-l='[object Object]')
           p
             | Sorry, that does not exist... Yet.
-            a(href='/announcement/two-years-with-bamboo-snow.html')  but check out an incredible life with Bamboo Snow.
+            a(href='/blog/two-years-with-bamboo-snow.html')  but check out an incredible life with Bamboo Snow.
     footer.card-footer
       p.text-muted that's all--
 </template>

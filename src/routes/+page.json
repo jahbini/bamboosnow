@@ -4,7 +4,7 @@
   "fields": {
     "title": "the Bamboo Snow Story",
     "slug": "index",
-    "category": "-",
+    "category": ".",
     "site": "bamboosnow",
     "accepted": true,
     "index": true,
