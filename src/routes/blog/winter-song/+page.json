@@ -1,10 +1,10 @@
 {
-  "id": "bamboosnow/ltrs2lilith/winter-song",
+  "id": "bamboosnow/blog/winter-song",
   "name": "winter-song",
   "fields": {
     "title": "winter-song",
     "slug": "winter-song",
-    "category": "ltrs2lilith",
+    "category": "blog",
     "site": "bamboosnow",
     "accepted": true,
     "index": false,

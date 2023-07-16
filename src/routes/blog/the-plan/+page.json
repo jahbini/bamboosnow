@@ -1,10 +1,10 @@
 {
-  "id": "bamboosnow/ltrs2lilith/the-plan",
+  "id": "bamboosnow/blog/the-plan",
   "name": "the-plan",
   "fields": {
     "title": "the-plan",
     "slug": "the-plan",
-    "category": "ltrs2lilith",
+    "category": "blog",
     "site": "bamboosnow",
     "accepted": true,
     "index": false,

@@ -1,10 +1,10 @@
 {
-  "id": "bamboosnow/ltrs2lilith/travellers-needs",
+  "id": "bamboosnow/blog/travellers-needs",
   "name": "travellers-needs",
   "fields": {
     "title": "travellers-needs",
     "slug": "travellers-needs",
-    "category": "ltrs2lilith",
+    "category": "blog",
     "site": "bamboosnow",
     "accepted": true,
     "index": false,
